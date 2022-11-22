@@ -1,15 +1,91 @@
 body {
     .main {
-        height: 100%;
-        width: 100%;
-
         .sidebar {
             width: 20%;
-            background-color: aqua;
+            background-color: whitesmoke;
+
+            a {
+                display: block;
+                color: black;
+                padding: 16px;
+                text-decoration: none;
+
+                &:active {
+                    background-color: $hoverColor;
+                    color: white;
+                }
+
+                &:hover:not(.active) {
+                    background-color: $hoverColor;
+                    color: white;
+                }
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .main-list {
+                padding: 0 10%;
+
+                li {
+                    font-weight: 600;
+
+                    div {
+                        svg {
+                            transform: rotate(-90deg);
+                            transition: all 200ms;
+                        }
+                    }
+
+                    div.collapsed {
+                        svg {
+                            transform: rotate(0);
+                        }
+                    }
+                }
+
+                .sub-items {
+                    margin-top: 10px;
+                    margin-left: 20px;
+                    font-weight: 500;
+
+                    ul {
+                        margin-left: 20px;
+
+                        li {
+                            margin-top: 5px;
+                            font-weight: 400;
+
+                            &:first-child {
+                                margin-top: 0;
+                            }
+
+                            span {
+                                margin-left: 7px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .bottom-sidebar {
+                position: absolute;
+                bottom: 0px;
+                height: 60px;
+                width: 20%;
+                background-color: $sidebarColor;
+                text-align: center;
+            }
         }
 
         .content {
-            background-color: bisque;
+            .top-bar {
+                height: 50px;
+                width: 100%;
+                background-color: $backgroundColor;
+            }
         }
     }
 }

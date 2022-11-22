@@ -10,4 +10,9 @@ class AdminController extends Controller
     {
         return view('admin.home');
     }
+
+    public function health_cases()
+    {
+        return view('admin.health_cases');
+    }
 }

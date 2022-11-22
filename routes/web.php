@@ -15,7 +15,10 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('layouts.app');
+    return view('home.home');
 });
 
+Route::get('/health_cases', [AdminController::class, "health_cases"])->name('health_cases');
 Route::get('/admin', [AdminController::class, 'home'])->name('admin-home');
+
+

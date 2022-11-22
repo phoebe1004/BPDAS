@@ -1,5 +1,8 @@
 // bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+// variables
+@import "variables";
 
 // layouts
 @import "layouts/base";
