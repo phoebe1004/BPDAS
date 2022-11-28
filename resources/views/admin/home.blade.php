@@ -1,9 +1,10 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
-
 @section('content')
-    <div>
-        Dashboard contents
+    <div class="card">
+        <div class="card-body">
+            <h1>My Dashboard</h1>
+        </div>
     </div>
+
 @endsection

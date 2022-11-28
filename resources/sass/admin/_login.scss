@@ -1,0 +1,62 @@
+#app-admin-login {
+    height: 100%;
+    width: 100%;
+
+    .content {
+        width: 600px;
+        padding: 30px 0;
+
+        .header-text {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 50px;
+        }
+
+        form {
+            margin: {
+                top: 10px;
+            }
+
+            .form-text {
+                color: rgb(255, 0, 0) !important;
+            }
+
+            input {
+                &.border-bottom {
+                    outline: none;
+                    border: none;
+                    background: inherit;
+                    border-bottom: 2px solid rgb(155, 155, 155) !important;
+
+                    &:focus {
+                        box-shadow: none;
+                        border-color: #000 !important;
+                    }
+                }
+            }
+
+            button {
+                width: 100%;
+                background-color: #324f69;
+                border-radius: 28px;
+                border: 1px solid #2a4054;
+                color: #ffffff;
+                font-size: 17px;
+                padding: 10px 31px;
+                text-shadow: 0px 1px 0px #2a4054;
+
+                &:hover {
+                    background-color: #141f29;
+                }
+
+                &:active {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+        }
+    }
+}

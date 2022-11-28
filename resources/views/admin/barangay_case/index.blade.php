@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Health Cases')
+@section('title', 'Barangaycase')
 
 @section('content')
     <div>
-        Health cases contents
+        Barangay cases ni!
     </div>
 @endsection

@@ -1,7 +1,12 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\PopulationController;
+use App\Http\Controllers\Admin\HealthcaseController;
+use App\Http\Controllers\Admin\ResidentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +24,12 @@ Route::get('/', function () {
 });
 
 Route::get('/health_cases', [AdminController::class, "health_cases"])->name('health_cases');
-Route::get('/admin', [AdminController::class, 'home'])->name('admin-home');
 
+Route::resource('populations', PopulationController::class);
+Route::resource('healthcases', HealthcaseController::class);
+Route::resource('residents', ResidentController::class);
 
+Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
+Route::get('/admin/auth/login', [LoginController::class, 'showAdminLogin'])->name('admin-login');
+Route::post('/admin/auth/login', [LoginController::class, 'adminLogin']);
+Route::get('/admin/auth/logout', [LoginController::class, 'adminLogout'])->name('admin-logout');
