@@ -74,7 +74,7 @@ class ResidentController extends Controller
     public function edit($id)
     {
         $resident = Resident::find($id);
-        return view('admin.resident.edit')->withResident($resident);
+        return view('admin.resident.edit')->with("resident", $resident);
     }
 
     /**
@@ -84,10 +84,9 @@ class ResidentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $resident = new Resident();
-
+        $resident = Resident::find($request->id);
         $resident->name = $request->name;
         $resident->age = $request->age;
         $resident->sex = $request->sex;
@@ -100,7 +99,7 @@ class ResidentController extends Controller
 
         $resident->save();
 
-        return redirect()->route('admin.resident.index');
+        return redirect()->route('residents.index');
     }
 
     /**
@@ -111,6 +110,9 @@ class ResidentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $resident = Resident::find($id);
+        $resident->delete();
+
+        return redirect()->route('admin.resident.index');
     }
 }

@@ -7,19 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resident extends Model
 {
-    // use HasFactory;
+    use HasFactory;
     protected $table = 'residents';
-    // protected $fillable = [
-    //     'id',
-    //     'name',
-    //     'age',
-    //     'sex',
-    //     'birthdate',
-        //  'civil_status',
-        //  'services_acquired',
-        //   'pwd_status',
-        //  'nutritional_status',
-        //  'employment_status',
-//
-    //  ];
+    protected $fillable = [
+        'name',
+        'age',
+        'sex',
+        'birthdate',
+        'civil_status',
+        'services_acquired',
+        'nutritional_status',
+        'employment_status',
+        'pwd_status',
+     ];
 }

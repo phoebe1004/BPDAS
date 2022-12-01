@@ -4,10 +4,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Admin\PopulationController;
-use App\Http\Controllers\Admin\HealthcaseController;
 use App\Http\Controllers\Admin\ResidentController;
-
+use App\Http\Controllers\Admin\EmploymentController;
+use App\Http\Controllers\Admin\HealthcaseController;
+use App\Http\Controllers\Admin\PopulationController;
+use App\Http\Controllers\Admin\BarangaycaseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,8 @@ Route::get('/health_cases', [AdminController::class, "health_cases"])->name('hea
 Route::resource('populations', PopulationController::class);
 Route::resource('healthcases', HealthcaseController::class);
 Route::resource('residents', ResidentController::class);
+Route::resource('barangaycases', BarangaycaseController::class);
+Route::resource('employments', EmploymentController::class);
 
 Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
 Route::get('/admin/auth/login', [LoginController::class, 'showAdminLogin'])->name('admin-login');

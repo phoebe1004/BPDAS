@@ -3,10 +3,10 @@
 @section('title', 'Resident')
 
 @section('content')
-    <div class="card">
-        <div class="card-header bg-success">
-            <h3 class="">Residents Page</h3>
-        </div>
+<div class="card">
+    <div class="card header">
+        <h4 class="ml-5 btn btn-success" style="width: 12rem">Resident Profile</h4>
+    </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
             <a class="btn btn-outline-info me-md-2" href="{{route('residents.create')}}">Add Resident</a>
             <a class="btn btn-outline-warning me-md-2" href="#">Completed Resident</a>
@@ -51,7 +51,7 @@
                                         type="button" href="{{route('residents.edit', $residents->id)}}"> Edit</a>
                                     <button
                                         class="btn btn-primary delete-modal btn btn-sm btn-danger glyphicon glyphicon-trash"
-                                        type="button" href="#"> Delete</button>
+                                        type="button" href="{{route('residents.destroy', $residents->id)}}"> Delete</button>
                                 </div>
                             </td>
                         </tr>

@@ -40,10 +40,10 @@
                         <a href="{{ route('healthcases.index') }}"><span>Health Cases</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
-                        <span>Barangay Cases</span>
+                        <a href="{{ route('barangaycases.index') }}"><span>Barangay Cases</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
-                        <span>Employment Status</span>
+                        <a href="{{ route('employments.index') }}"><span>Employment Status</span></a>
                     </div>
                 </li>
                 <div class="d-flex justify-content-between align-items-center">

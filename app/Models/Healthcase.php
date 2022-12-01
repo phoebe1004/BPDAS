@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Healthcase extends Model
 {
-    use HasFactory;
+    // use HasFactory;
     protected $table = 'healthcases';
-    protected $fillable = [
-        'pwd_rate',
-        'immunization_rate',
-        'maternal_rate',
-        'nutritional_rate',
-        'familyplanning_rate',
-    ];
+    // protected $fillable = [
+    //     'pwd_rate',
+    //     'immunization_rate',
+    //     'maternal_rate',
+    //     'nutritional_rate',
+    //     'familyplanning_rate',
+    // ];
 }
