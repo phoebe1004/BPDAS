@@ -1,6 +1,5 @@
 <?php
 
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\LoginController;
@@ -23,6 +22,7 @@ use App\Http\Controllers\Admin\BarangaycaseController;
 Route::get('/', function () {
     return view('home.home');
 });
+
 
 Route::get('/health_cases', [AdminController::class, "health_cases"])->name('health_cases');
 

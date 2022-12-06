@@ -37,6 +37,19 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
+        // $validation = $request->validate([
+        //     'name' => 'required',
+        //     'age' => 'required',
+        //     'sex' => 'required',
+        //     'birthdate' => 'required',
+        //     'civilStatus' => 'required',
+        //     'servicesAcquired' => 'required',
+        //     'nutritionalStatus' => 'required',
+        //     'employmentStatus' => 'required',
+        //     'pwdStatus' => 'required',
+
+        // ]);
+
         $resident = new Resident();
 
         $resident->name = $request->name;
@@ -49,9 +62,9 @@ class ResidentController extends Controller
         $resident->employment_status = $request->employment_status;
         $resident->pwd_status = $request->pwd_status;
 
-        $resident->save();
+       $resident->save();
 
-        return redirect()->route('residents.index');
+        return redirect()->route('residents.index')->with('status','Resident has been added successfully');
     }
 
     /**
@@ -84,9 +97,22 @@ class ResidentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        $resident = Resident::find($request->id);
+        // $validation = $request->validate([
+        //     'name' => 'required',
+        //     'age' => 'required',
+        //     'sex' => 'required',
+        //     'birthdate' => 'required',
+        //     'civilStatus' => 'required',
+        //     'servicesAcquired' => 'required',
+        //     'nutritionalStatus' => 'required',
+        //     'employmentStatus' => 'required',
+        //     'pwdStatus' => 'required',
+
+        // ]);
+
+        $resident = Resident::find($id);
         $resident->name = $request->name;
         $resident->age = $request->age;
         $resident->sex = $request->sex;
@@ -99,7 +125,7 @@ class ResidentController extends Controller
 
         $resident->save();
 
-        return redirect()->route('residents.index');
+        return redirect()->route('residents.index')->with('status','Resident has been edited successfully');
     }
 
     /**
@@ -113,6 +139,6 @@ class ResidentController extends Controller
         $resident = Resident::find($id);
         $resident->delete();
 
-        return redirect()->route('admin.resident.index');
+        return redirect()->route('residents.index');
     }
 }

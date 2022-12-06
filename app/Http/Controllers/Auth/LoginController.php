@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         if (Auth::attempt(['user_name' => $userName, 'password' => $password])) {
             // validation successful
-            return redirect()->route("admin-home");
+            return redirect()->route("admin-home")->with('status','Logged in successfully');
         }
 
         // return redirect()->route('admin-login');
@@ -40,6 +40,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin-login');
+        return redirect()->route('admin-login')->with('status','Logged out successfully');
     }
 }

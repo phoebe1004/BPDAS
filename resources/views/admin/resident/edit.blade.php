@@ -15,32 +15,32 @@
                             <div class="card-body center">
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="name" class="form-group mb-4" required>Name</label>
-                                    <input type="text" class="form-control" value="{{ $resident->name }}">
+                                    <label class="form-group mb-4" required>Name</label>
+                                    <input type="text" value="{{ $resident->name }}" class="form-control" name="name">
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="age" class="form-group mb-4">Age</label required>
-                                    <input type="number" class="form-control" name="age" value="{{ $resident->age }}">
+                                    <label class="form-group mb-4">Age</label required>
+                                    <input type="number" value="{{ $resident->age }}" class="form-control" name="age">
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="sex" class="mb-4" value="{{ $resident->sex}}">Sex</label required>
-                                    <input class="form-check-input"  type="radio" name="sex" value="{{ $resident->sex}}" id="male"> Male
-                                    <input class="form-check-input" type="radio"  name="sex"  value="{{ $resident->sex}}" id="female"> Female<br>
-
+                                    <label class="form-group mb-4" class="form-control">Sex</label required>
+                                    <input type="radio" id="male" value="{{ $resident->sex }}" name="sex"> Male
+                                    <input type="radio" id="female" value="{{ $resident->sex }}" name="sex"> Female<br>
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width: 18 rem">
-                                    <label for="birthdate" class="form-label fw-bold"  required>Birthday</label>
-                                    <input type="date" class="form-control" name="birthdate" value="{{ $resident->birthdate }}">
+                                    <label class="form-label fw-bold"><b>Birthday</b></label required>
+                                    <input type="date" value="{{ $resident->birthdate }}" class="form-control"
+                                        name="birthdate">
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="civil_status" class="form-group mb-4">Civil Status</label required>
-                                    <select class="form-select" value="" aria-label="Default select example" class="form-control"
-                                        name="civil_status" >
-                                        <option selected value="{{  $resident->civil_status }}" >--Select--</option>
+                                    <label class="form-group mb-4">Civil Status</label required>
+                                    <select class="form-select" aria-label="Default select example"
+                                        value="{{ $resident->civil_status }}" class="form-control" name="civil_status">
+                                        <option selected>--Select--</option>
                                         <option value="single">Single</option>
                                         <option value="married">Married</option>
                                         <option value="widowed">Widowed</option>
@@ -51,8 +51,9 @@
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="servicesAcquired" class="form-group mb-4">Services Acquired</label required>
-                                    <select class="form-select" value="{{ $resident->services_acquired }}" aria-label="Default select example" class="form-control"
+                                    <label class="form-group mb-4">Services Acquired</label required>
+                                    <select class="form-select" aria-label="Default select example"
+                                        value="{{ $resident->services_acquired }}" class="form-control"
                                         name="services_acquired">
                                         <option selected>--Select--</option>
                                         <option value="immunization">Immunization</option>
@@ -63,29 +64,27 @@
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="nutritional_status" class="form-group mb-4">Nutritional Status</label required>
-                                    <select class="form-select" value="{{ $resident->nutritional_status }}" aria-label="Default select example" class="form-control"
-                                        name="nutritionalStatus">
-                                        <option selected="selected">--Select--</option>
-                                        <option value="underweight" <?php if($resident['id'] == 'underweight') { ?> selected="selected"<?php } ?>>Underweight</option>
-                                        <option value="normal" <?php if($resident['id'] == 'normal') { ?> selected="selected"<?php } ?>>Normal</option>
-                                        <option value="overweight" <?php if($resident['id'] == 'overweight') { ?> selected="selected"<?php } ?>>Overweight</option>
+                                    <label class="form-group mb-4"><b>Nutritional Status</b></label required>
+                                    <select class="form-select" value="{{ $resident->nutritional_status }}"
+                                        aria-label="Default select example" class="form-control" name="nutritional_status">
+                                        <option selected>--Select--</option>
+                                        <option value="underweight">Underweight</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="Overweight">Overweight</option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label for="employmentStatus" class="mb-4">Employment Status</label required>
-                                    <input class="form-check-input" type="radio" name="employment_status">Employed
-                                    <input class="form-check-input" type="radio" name="employment_status">Unemployed<br>
-
+                                    <label class="form-group mb-4" class="form-control" value="{{ $resident->employment_status }}">Employment Status</label required>
+                                    <input type="radio" name="employment_status" value="1"> Employed
+                                    <input type="radio" name="employment_status" value="0"> Unemployed<br>
                                 </div>
 
-                                <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem" >
-                                    <label for="pwdStatus" class="mb-4" value="{{ $resident->pwd_status }}">Person with Disability</label required>
-                                    <input class="form-check-input" type="radio" name="pwd_status">Yes
-                                    <input class="form-check-input" type="radio" name="pwd_status">No<br>
-
-
+                                <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
+                                    <label class="form-group mb-4" value="{{ $resident->pwd_status }}"
+                                        class="form-control"><b>Person With Disability</b></label required><br>
+                                    <input type="radio" name="pwd_status" value="1"> Yes<br>
+                                    <input type="radio" name="pwd_status" value="0"> No<br>
 
                                     <div class="pt-4">
                                         <div class="row">

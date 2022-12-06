@@ -12,7 +12,7 @@
             <a class="btn btn-outline-warning me-md-2" href="#">Completed Population</a>
         </div>
         <div class="card-body">
-            <table class="table table-bordered" id="table">
+            <table class="table table-bordered" id="table" >
                 <thead>
                     <tr>
                         <th>ID</th>

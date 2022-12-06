@@ -16,6 +16,7 @@
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
                                 <label for="name" class="form-group mb-4">Name</label required>
                                 <input type="text" class="form-control" name="name" id="name">
+
                             </div>
 
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
@@ -25,8 +26,10 @@
 
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
                                 <label for="sex" class="mb-4"><b>Sex: </b></label required>
-                                <input class="form-check-input" type="radio" name="sex" value="male" id="sex"> Male
-                                <input class="form-check-input" type="radio" name="sex" value="female" id="sex"> Female<br>
+                                <input class="form-check-input" type="radio" name="sex" value="male" id="sex">
+                                Male
+                                <input class="form-check-input" type="radio" name="sex" value="female" id="sex">
+                                Female<br>
 
                             </div>
 
@@ -50,7 +53,8 @@
                             </div>
 
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                <label for="servicesAcquired" class="form-group mb-4"><b>Services Acquired</b></label required>
+                                <label for="servicesAcquired" class="form-group mb-4"><b>Services Acquired</b></label
+                                    required>
                                 <select class="form-select" aria-label="Default select example" class="form-control"
                                     name="services_acquired">
                                     <option selected>--Select--</option>
@@ -63,7 +67,8 @@
                             </div>
 
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                <label for="nutritionalStatus" class="form-group mb-4"><b>Nutritional Status</b></label required>
+                                <label for="nutritionalStatus" class="form-group mb-4"><b>Nutritional Status</b></label
+                                    required>
                                 <select class="form-select" aria-label="Default select example" class="form-control"
                                     name="nutritional_status">
                                     <option selected>--Select--</option>
