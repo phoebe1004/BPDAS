@@ -1,10 +1,16 @@
 @extends('layouts.base')
 
 @section('body')
+
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="nav-collapse collapse" style="display:none;" id="cwspear-is-awesome">.</div></body>
     <div id="app-admin-login" class="wrapper d-flex align-items-center justify-content-center">
         <div class="content container d-flex flex-column align-items-center justify-content-center shadow">
             <span class="header-text">BPDAS Login</span>
-            <form class="d-flex flex-column" action="{{ route('admin-login') }}" method="POST">
+            <form class="d-flex flex-column" action="{{ route('admin-login.post') }}" method="POST">
                 @csrf
                 <div class="form-group pt-5">
                     <input id="user-name" class="form-control border-bottom" type="text" name="user-name"

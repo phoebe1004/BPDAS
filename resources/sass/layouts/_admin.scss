@@ -2,11 +2,12 @@ body {
     .main {
         .sidebar {
             width: 18%;
-            background-color: whitesmoke;
+
+            background-color: rgba(11, 1, 1, 0.74);
 
             a {
                 display: block;
-                color: black;
+                color: rgb(220, 208, 208);
                 padding: 16px;
                 text-decoration: none;
 
@@ -24,7 +25,10 @@ body {
             .logo {
                 height: 50px;
             }
-
+            .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+              }
             .main-list {
                 padding: 0 10%;
 
@@ -75,7 +79,6 @@ body {
                 bottom: 0px;
                 height: 60px;
                 width: 20%;
-                background-color: $sidebarColor;
                 text-align: center;
             }
         }
@@ -84,9 +87,9 @@ body {
             .top-bar {
                 height: 50px;
                 width: 100%;
-                background-color: $backgroundColor;
-
+                background-color: rgba(23, 17, 197, 0.74);
             }
+
 
 
         }

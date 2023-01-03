@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('age');
-            $table->string('sex');
+            $table->tinyInteger('sex')->default('0');
             $table->date('birthdate');
             $table->string('civil_status');
             $table->string('services_acquired');
             $table->string('nutritional_status');
-            $table->tinyInteger('employment_status');
-            $table->tinyInteger('pwd_status');
+            $table->tinyInteger('employment_status')->default('0');
+            $table->tinyInteger('pwd_status')->default('0');
             $table->timestamps();
 
         });

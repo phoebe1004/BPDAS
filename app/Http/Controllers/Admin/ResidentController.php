@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Resident;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class ResidentController extends Controller
 {
@@ -37,19 +38,20 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        // $validation = $request->validate([
-        //     'name' => 'required',
-        //     'age' => 'required',
-        //     'sex' => 'required',
-        //     'birthdate' => 'required',
-        //     'civilStatus' => 'required',
-        //     'servicesAcquired' => 'required',
-        //     'nutritionalStatus' => 'required',
-        //     'employmentStatus' => 'required',
-        //     'pwdStatus' => 'required',
-
-        // ]);
-
+        $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'sex' => 'required',
+            'birthdate' => 'required',
+            'civil_status' => 'required',
+            'services_acquired' => 'required',
+            'nutritional_status' => 'required',
+            'employment_status' => 'required',
+            'pwd_status' => 'required',
+        ]);
+        // if($validate->fails()){
+        //     return back()->withErrors($validate->errors())->withInput();
+        //   }
         $resident = new Resident();
 
         $resident->name = $request->name;
@@ -65,7 +67,8 @@ class ResidentController extends Controller
        $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been added successfully');
-    }
+
+}
 
     /**
      * Display the specified resource.
@@ -99,18 +102,18 @@ class ResidentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $validation = $request->validate([
-        //     'name' => 'required',
-        //     'age' => 'required',
-        //     'sex' => 'required',
-        //     'birthdate' => 'required',
-        //     'civilStatus' => 'required',
-        //     'servicesAcquired' => 'required',
-        //     'nutritionalStatus' => 'required',
-        //     'employmentStatus' => 'required',
-        //     'pwdStatus' => 'required',
+        $validation = $request->validate([
+            'name' => 'required',
+            'age' => 'required',
+            'sex' => 'required',
+            'birthdate' => 'required',
+            'civil_status' => 'required',
+            'services_acquired' => 'required',
+            'nutritional_status' => 'required',
+            'employment_status' => 'required',
+            'pwd_status' => 'required',
 
-        // ]);
+        ]);
 
         $resident = Resident::find($id);
         $resident->name = $request->name;
@@ -125,7 +128,7 @@ class ResidentController extends Controller
 
         $resident->save();
 
-        return redirect()->route('residents.index')->with('status','Resident has been edited successfully');
+        return redirect()->route('residents.index')->with('status','Resident has been updated successfully');
     }
 
     /**
