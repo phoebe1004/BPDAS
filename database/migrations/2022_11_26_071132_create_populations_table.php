@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('populations', function (Blueprint $table) {
             $table->id();
-            $table->string('size');
-            $table->string('age');
-            $table->string('sex');
-            $table->string('birthrate');
-            $table->string('mortality');
+            // $table->string('size');
+            // $table->string('age');
+            // $table->string('sex');
+            // $table->string('birthrate');
+            // $table->string('mortality');
             $table->timestamps();
         });
     }

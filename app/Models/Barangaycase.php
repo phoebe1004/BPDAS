@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Barangaycase extends Model
 {
-    // use HasFactory;
-    protected $table = 'barangaycases';
+    // // use HasFactory;
+    // protected $table = 'barangaycases';
     // protected $fillable = [
     //     'pwd_rate',
     //     'immunization_rate',

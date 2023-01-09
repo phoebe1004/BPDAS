@@ -20,5 +20,7 @@ class Resident extends Model
         'nutritional_status',
         'employment_status',
         'pwd_status',
+
+
      ];
 }

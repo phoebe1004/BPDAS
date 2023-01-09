@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Employment extends Model
 {
     // use HasFactory;
-    protected $table = 'employments';
+    // protected $table = 'employments';
     // protected $fillable = [
     //     'pwd_rate',
     //     'immunization_rate',

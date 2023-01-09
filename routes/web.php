@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\EmploymentController;
 use App\Http\Controllers\Admin\HealthcaseController;
 use App\Http\Controllers\Admin\PopulationController;
 use App\Http\Controllers\Admin\BarangaycaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

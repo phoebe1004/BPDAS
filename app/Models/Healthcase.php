@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Healthcase extends Model
 {
-    // use HasFactory;
-    protected $table = 'healthcases';
+    // // use HasFactory;
+    // protected $table = 'healthcases';
     // protected $fillable = [
     //     'pwd_rate',
     //     'immunization_rate',

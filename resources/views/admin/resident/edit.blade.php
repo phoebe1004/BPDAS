@@ -23,14 +23,6 @@
                                 </div>
 
                                 <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                    <label class="form-group mb-4">Age</label required>
-                                    <input type="number" value="{{ $resident->age }}" class="form-control" name="age">
-                                    @error('age')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
                                     <label class="form-group mb-4" class="form-control">Sex</label required>
                                     <input type="radio" id="male" value="Male" name="sex" {{$resident->sex === 'Male' ? 'checked'  : '' }}> Male
                                     <input type="radio" id="female" value="Female" name="sex" {{$resident->sex === 'Female' ? 'checked'  : '' }}>

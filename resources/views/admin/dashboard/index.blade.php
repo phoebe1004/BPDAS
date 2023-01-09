@@ -27,7 +27,7 @@
                     <div class="inner">
                         <h4>6,463 <sup style="font-size: 20px">(36.68 %)</sup></h4>
 
-                        <p>GIDA Barangays<br><br></p>
+                        <p>BPDAS<br><br></p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-pin"></i>
@@ -82,7 +82,7 @@
                     <div class="inner">
                         <h4>11,024,317 </h4>
 
-                        <p>Total Population in GIDA Barangays<br><br></p>
+                        <p>Total Population in Barangay Cabantian Davao City<br><br></p>
                     </div>
                     <div class="icon">
                         <i class="ion-ios-people"></i>
@@ -101,7 +101,7 @@
                     <div class="card-header ui-sortable-handle" style="cursor: move;">
                         <h3 class="card-title">
                             <i class="fas fa-chart-graph mr-1"></i>
-                            No. of GIDA Barangays
+                            No. of Barangay in Cabantian
                         </h3>
                         <div class="card-tools">
                             <ul class="nav nav-pills ml-auto">

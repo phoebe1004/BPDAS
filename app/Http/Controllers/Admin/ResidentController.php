@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Resident;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
 
 class ResidentController extends Controller
 {
@@ -40,7 +40,6 @@ class ResidentController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'age' => 'required',
             'sex' => 'required',
             'birthdate' => 'required',
             'civil_status' => 'required',
@@ -55,7 +54,6 @@ class ResidentController extends Controller
         $resident = new Resident();
 
         $resident->name = $request->name;
-        $resident->age = $request->age;
         $resident->sex = $request->sex;
         $resident->birthdate = $request->birthdate;
         $resident->civil_status = $request->civil_status;
@@ -64,6 +62,9 @@ class ResidentController extends Controller
         $resident->employment_status = $request->employment_status;
         $resident->pwd_status = $request->pwd_status;
 
+        $age = Carbon::parse($resident->birthdate)->age;
+        $resident->age= $age;
+        // dd($age);
        $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been added successfully');
@@ -104,7 +105,6 @@ class ResidentController extends Controller
     {
         $validation = $request->validate([
             'name' => 'required',
-            'age' => 'required',
             'sex' => 'required',
             'birthdate' => 'required',
             'civil_status' => 'required',
@@ -116,8 +116,8 @@ class ResidentController extends Controller
         ]);
 
         $resident = Resident::find($id);
+
         $resident->name = $request->name;
-        $resident->age = $request->age;
         $resident->sex = $request->sex;
         $resident->birthdate = $request->birthdate;
         $resident->civil_status = $request->civil_status;
@@ -126,6 +126,8 @@ class ResidentController extends Controller
         $resident->employment_status = $request->employment_status;
         $resident->pwd_status = $request->pwd_status;
 
+            // $age = Carbon::parse($resident->birthdate)->age;
+            // $resident->age= $age;
         $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been updated successfully');

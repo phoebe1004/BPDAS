@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="card">
+    <div class="card ">
         <div class="card header">
-            <h4 class="ml-5 btn btn-success" style="width: 20rem"> Creating Resident Profile</h4>
+            <h4 class="btn btn-success" style="width: 20rem"> Creating Resident Profile</h4>
         </div>
         <form action="{{ route('residents.store') }}" method="post">
             @csrf
             @method('post')
-            <div class="col-md-7 offset-md-2 pt-5">
+            <div class="col-md-6 offset-md-1 pt-5">
                 <div class="container">
                     <div class="card bg-light" style="width: 80rem;">
                         <div class="card-body center">
@@ -18,15 +18,6 @@
                                 <input type="text" class="form-control" name="name" id="name"
                                     value="{{ old('name') }}">
                                 @error('name')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
-                                <label for="age" class="form-group mb-4"><b>Age</b></label>
-                                <input type="number" class="form-control" name="age" id="age"
-                                    value="{{ old('age') }}">
-                                @error('age')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
@@ -99,9 +90,9 @@
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
                                 <label for="employmentStatus" class="mb-4"><b>Employment Status: </b></label>
                                 <input class="form-check-input" type="radio" name="employment_status"
-                                    value="1">Employed
+                                    value="1">  Employed
                                 <input class="form-check-input" type="radio" name="employment_status"
-                                    value="0">Unemployed<br>
+                                    value="0">  Unemployed<br>
                                 @error('employmentStatus')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -109,8 +100,8 @@
 
                             <div class="col-md-7 offset-md-1 mt-3" style="width:18 rem">
                                 <label for="pwdStatus" class="mb-4"><b>Person with Disability: </b></label>
-                                <input class="form-check-input" type="radio" name="pwd_status" value="1">Yes
-                                <input class="form-check-input" type="radio" name="pwd_status" value="0">No<br>
+                                <input class="form-check-input" type="radio" name="pwd_status" value="1">   Yes
+                                <input class="form-check-input" type="radio" name="pwd_status" value="0">   No<br>
                                 @error('pwdStatus')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -124,7 +115,6 @@
                                         <div class=" col-md-5">
                                             <a href="{{ route('residents.index') }}" id="cancel" name="cancel"
                                                 class="btn btn-primary">Cancel</a>
-
                                         </div>
                                     </div>
                                 </div>

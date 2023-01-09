@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('home.view')
 
 @section('body')
 <body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse" style="height: auto;">
@@ -10,37 +10,6 @@
             height: 250;
         }
     </style>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Geographically Isolated and Disadvantaged Areas Information System</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link href="{{ asset('css/view/all.min.css') }}" rel="stylesheet">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <link href="{{ asset('css/view/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="{{ asset('css/view/icheck-bootstrap.min.css') }}" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="{{ asset('css/view/jqvmap.min.css') }}" rel="stylesheet">
-    <!-- Theme style -->
-    <link href="{{ asset('css/view/adminlte.min.css') }}" rel="stylesheet">
-    <!-- overlayScrollbars -->
-    <link href="{{ asset('css/view/OverlayScrollbars.min.css') }}" rel="stylesheet">
-    <!-- Daterange picker -->
-    <link href="{{ asset('css/view/daterangepicker.css') }}" rel="stylesheet">
-    <!-- summernote -->
-    <link href="{{ asset('css/view/summernote-bs4.css') }}" rel="stylesheet">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <!--    Font awesome icons  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <div class="wrapper">
 
         <!-- Navbar -->
@@ -61,10 +30,10 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar elevation-4 sidebar-dark-success">
             <!-- Brand Logo -->
-            <a href="dashboard3.php" class="brand-link navbar-secondary">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            <a href="#" class="brand-link navbar-secondary">
+                <img src="image/bpdaslogo.jpg" alt="BPDASLogo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">GIDA InfoSys</span>
+                <span class="brand-text font-weight-light">BPDAS InfoSys</span>
             </a>
 
             <!-- Sidebar -->
@@ -98,31 +67,31 @@
                                         </a>
                                         <ul class="nav nav-treeview" style="display: block;">
                                             <li class="nav-item">
-                                                <a href="./dashboard_main.php" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Responsive Dashboard</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="./dashboard.php" class="nav-link active">
+                                                <a href="#" class="nav-link active">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Part 1</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="./dashboard2.php" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Part 2</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="./dashboard3.php" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Part 3</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="./dashboard_profiling.php" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Profiling Status</p>
                                                 </a>
@@ -130,7 +99,7 @@
                                         </ul>
                                     </li>
                                     <li class="nav-item userloggedin" style="display: none;">
-                                        <a href="tbl_bgyprofilelist.php" target="_blank" class="nav-link">
+                                        <a href="#" target="_blank" class="nav-link">
                                             <i class="nav-icon far fa-list-alt"></i>
                                             <p>
                                                 Masterlist
@@ -138,10 +107,10 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="gidalist.php" class="nav-link">
+                                        <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-certificate"></i>
                                             <p>
-                                                GIDA Certification
+                                                BPDAS Certification
                                             </p>
                                         </a>
                                     </li>
@@ -155,31 +124,31 @@
                                         </a>
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
-                                                <a href="gnationalprofilelist.php" target="_blank" class="nav-link">
+                                                <a href="#" target="_blank" class="nav-link">
                                                     <i class="far fa-file-alt nav-icon"></i>
                                                     <p>National Profile</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="gregprofilelist.php" target="_blank" class="nav-link">
+                                                <a href="#" target="_blank" class="nav-link">
                                                     <i class="far fa-file-alt nav-icon"></i>
                                                     <p>Regional Profile</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="gprovprofilelist.php" target="_blank" class="nav-link">
+                                                <a href="#" target="_blank" class="nav-link">
                                                     <i class="far fa-file-alt nav-icon"></i>
                                                     <p>Provincial Profile</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="gmunprofilelist.php" target="_blank" class="nav-link">
+                                                <a href="#" target="_blank" class="nav-link">
                                                     <i class="far fa-file-alt nav-icon"></i>
                                                     <p>City/Municipal Profile</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="gbgyprofilelist.php" target="_blank" class="nav-link">
+                                                <a href="#" target="_blank" class="nav-link">
                                                     <i class="far fa-file-alt nav-icon"></i>
                                                     <p>Barangay Profile</p>
                                                 </a>
@@ -196,42 +165,42 @@
                                         </a>
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
-                                                <a href="downloads/GIDA_Profiling_Tool.docx" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-file-word nav-icon"></i>
-                                                    <p>GIDA Profiling Tool</p>
+                                                    <p>BPDAS Profiling Tool</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="downloads/Service_Request_Form.pdf" target="_blank"
+                                                <a href="#" target="_blank"
                                                     class="nav-link">
                                                     <i class="far fa-file-pdf nav-icon"></i>
                                                     <p>Service Request Form</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="downloads/Incident_Report.docx" class="nav-link">
+                                                <a href="#" class="nav-link">
                                                     <i class="far fa-file-word nav-icon"></i>
                                                     <p>Incident Report</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="downloads/ao2020-0023 GIDA.pdf" target="_blank"
+                                                <a href="#" target="_blank"
                                                     class="nav-link">
                                                     <i class="far fa-file-pdf nav-icon"></i>
-                                                    <p>AO2020-0023 GIDA</p>
+                                                    <p>AO2020-0023 BPDAS</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item has-treeview">
                                                 <a href="#" class="nav-link">
                                                     <i class="nav-icon fas fa-file"></i>
                                                     <p>
-                                                        GIDA List 2020
+                                                        BPDAS List 2020
                                                         <i class="right fas fa-angle-left"></i>
                                                     </p>
                                                 </a>
                                                 <ul class="nav nav-treeview">
                                                     <li class="nav-item">
-                                                        <a href="downloads/gidalist2020.xlsx" class="nav-link">
+                                                        <a href="#" class="nav-link">
                                                             <i class="far fa-file-excel nav-icon"></i>
                                                             <p>Excel Format</p>
                                                         </a>
@@ -249,7 +218,7 @@
                                                 <a href="#" class="nav-link">
                                                     <i class="nav-icon fas fa-file"></i>
                                                     <p>
-                                                        GIDA List 2021
+                                                        Barangay List 2021
                                                         <i class="right fas fa-angle-left"></i>
                                                     </p>
                                                 </a>
@@ -290,14 +259,6 @@
                                             </p>
                                         </a>
                                     </li>
-                                    <li class="nav-item public">
-                                        <a href="login.php" class="nav-link">
-                                            <i class="nav-icon fas fa-sign-in-alt"></i>
-                                            <p>
-                                                Login
-                                            </p>
-                                        </a>
-                                    </li>
 
                                 </ul>
                             </nav>
@@ -327,7 +288,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">General Information and Health Data</h1>
+                            <h1 class="m-0 text-dark">Barangay Profiling with Demographic Analysis</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -365,7 +326,7 @@
                                 <div class="inner">
                                     <h4>6,463 <sup style="font-size: 20px">(36.68 %)</sup></h4>
 
-                                    <p>GIDA Barangays<br><br></p>
+                                    <p>Barangays<br><br></p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-pin"></i>
@@ -378,7 +339,7 @@
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h4>1,209 <sup style="font-size: 20px">(18.70 %)</sup></h4>
-                                    <p>GIDA Barangays with Internally Displaced Population</p>
+                                    <p>Purok's with Internally Displaced Population</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion-android-walk"></i>
@@ -392,7 +353,7 @@
                                 <div class="inner">
                                     <h4>766 <sup style="font-size: 20px">(11.85 %)</sup></h4>
 
-                                    <p>GIDA Barangays Affected by Armed Conflict</p>
+                                    <p>Puroks Affected by Armed Conflict</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-android-alert"></i>
@@ -420,7 +381,7 @@
                                 <div class="inner">
                                     <h4>11,024,317 </h4>
 
-                                    <p>Total Population in GIDA Barangays<br><br></p>
+                                    <p>Total Population in Barangay Cabantian<br><br></p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion-ios-people"></i>
@@ -439,7 +400,7 @@
                                 <div class="card-header ui-sortable-handle" style="cursor: move;">
                                     <h3 class="card-title">
                                         <i class="fas fa-chart-graph mr-1"></i>
-                                        No. of GIDA Barangays
+                                        No. of Puroks in Cabantian Davao City
                                     </h3>
                                     <div class="card-tools">
                                         <ul class="nav nav-pills ml-auto">
@@ -4560,10 +4521,9 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright © 2019 <a href="https://doh.gov.ph">Department of Health</a></strong>
+            <strong>Copyright © 2023 <a href="#">Barangay Profiling with Demographic Analysis System</a></strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
-                <b>Version</b> 2.5
             </div>
         </footer>
 

@@ -1,5 +1,5 @@
 body {
-    background-image: -webkit-radial-gradient(center, circle cover, #84a3ef, #40b1e1 90%);
+    background-image: -webkit-radial-gradient(center, circle cover,);
     background-image: -moz-radial-gradient(center, circle cover, #194ddc, #7fa5eb 80%);
     background-image: -o-radial-gradient(center, circle cover, #256da1, #1645bb 80%);
     background-image: radial-gradient(center, circle cover, #3f5b8e, #1c278b 80%);

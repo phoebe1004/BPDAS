@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('healthcases', function (Blueprint $table) {
             $table->id();
-            $table->string('pwd_rate');
-            $table->string('immunization_rate');
-            $table->string('maternal_rate');
-            $table->string('nutritional_rate');
-            $table->string('familyplanning_rate');
+            // $table->string('pwd_rate');
+            // $table->string('immunization_rate');
+            // $table->string('maternal_rate');
+            // $table->string('nutritional_rate');
+            // $table->string('familyplanning_rate');
             $table->timestamps();
         });
     }

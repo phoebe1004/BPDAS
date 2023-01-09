@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Population extends Model
 {
-    // use HasFactory;
-    protected $table = 'populations';
+    // // use HasFactory;
+    // protected $table = 'populations';
     // protected $fillable = [
     //     'size',
     //     'age',
