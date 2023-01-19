@@ -55,9 +55,6 @@
                     <a href="{{ route('residents.index') }}"><span class="mt-4 fw-semibold"><i class="fa fa-users"
                                 aria-hidden="true"></i> Resident's Profile</span></a>
                 </div>
-                <div class="d-flex justify-content-between align-items-center">
-                    <span class="mt-2 fw-semibold text-white"><i class="fa-solid fa-user"></i> Log-in User</span>
-                </div>
             </ul>
             <!--Sidebar Footer
                                                         <div class="d-flex justify-content-center align-items-center border-top">

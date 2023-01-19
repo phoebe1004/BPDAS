@@ -10,9 +10,10 @@
     <div id="app-admin-login" class="wrapper d-flex align-items-center justify-content-center">
         <div class="content container d-flex flex-column align-items-center justify-content-center shadow">
             <a href="#" class="brand-link">
-                <img src="image/bpdaslogo.jpg" width="500px" height="300px"  class="brand-image img-circle elevation-15">
-                    <span class="header-text">  BPDAS Login</span>
+                <img src="image/bpdaslogo.jpg" width="200px" height="200px">
+
             </a>
+            <span class="header-text">BPDAS</span>
             <form class="d-flex flex-column" action="{{ route('admin-login.post') }}" method="POST">
                 @csrf
                 <div class="form-group pt-5">

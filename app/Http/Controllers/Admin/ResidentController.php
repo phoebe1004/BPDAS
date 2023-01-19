@@ -39,9 +39,16 @@ class ResidentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'sex' => 'required',
+            'lastname' => 'required',
+            'firstname' => 'required',
+            'middlename' => 'required',
+            'suffix' => 'required',
+            'purok' => 'required',
+            'address' => 'required',
+            'emailaddress' => 'required',
+            'contactnumber' => 'required',
             'birthdate' => 'required',
+            'sex' => 'required',
             'civil_status' => 'required',
             'services_acquired' => 'required',
             'nutritional_status' => 'required',
@@ -53,9 +60,16 @@ class ResidentController extends Controller
         //   }
         $resident = new Resident();
 
-        $resident->name = $request->name;
-        $resident->sex = $request->sex;
+        $resident->lastname = $request->lastname;
+        $resident->firstname = $request->firstname;
+        $resident->middlename = $request->middlename;
+        $resident->suffix = $request->suffix;
+        $resident->purok = $request->purok;
+        $resident->address = $request->address;
+        $resident->emailaddress = $request->emailaddress;
+        $resident->contactnumber = $request->contactnumber;
         $resident->birthdate = $request->birthdate;
+        $resident->sex = $request->sex;
         $resident->civil_status = $request->civil_status;
         $resident->services_acquired = $request->services_acquired;
         $resident->nutritional_status = $request->nutritional_status;
@@ -104,9 +118,16 @@ class ResidentController extends Controller
     public function update(Request $request, $id)
     {
         $validation = $request->validate([
-            'name' => 'required',
-            'sex' => 'required',
+            'lastname' => 'required',
+            'firstname' => 'required',
+            'middlename' => 'required',
+            'suffix' => 'required',
+            'purok' => 'required',
+            'address' => 'required',
+            'emailaddress' => 'required',
+            'contactnumber' => 'required',
             'birthdate' => 'required',
+            'sex' => 'required',
             'civil_status' => 'required',
             'services_acquired' => 'required',
             'nutritional_status' => 'required',
@@ -117,17 +138,22 @@ class ResidentController extends Controller
 
         $resident = Resident::find($id);
 
-        $resident->name = $request->name;
-        $resident->sex = $request->sex;
+        $resident->lastname = $request->lastname;
+        $resident->firstname = $request->firstname;
+        $resident->middlename = $request->middlename;
+        $resident->suffix = $request->suffix;
+        $resident->purok = $request->purok;
+        $resident->address = $request->address;
+        $resident->emailaddress = $request->emailaddress;
+        $resident->contactnumber = $request->contactnumber;
         $resident->birthdate = $request->birthdate;
+        $resident->sex = $request->sex;
         $resident->civil_status = $request->civil_status;
         $resident->services_acquired = $request->services_acquired;
         $resident->nutritional_status = $request->nutritional_status;
         $resident->employment_status = $request->employment_status;
         $resident->pwd_status = $request->pwd_status;
 
-            // $age = Carbon::parse($resident->birthdate)->age;
-            // $resident->age= $age;
         $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been updated successfully');

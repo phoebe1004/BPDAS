@@ -3,6 +3,23 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Barangay Profiling with Demographic Analysis</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Part 1</li>
+                </ol>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -27,7 +44,8 @@
                     <div class="inner">
                         <h4>6,463 <sup style="font-size: 20px">(36.68 %)</sup></h4>
 
-                        <p>BPDAS<br><br></p>
+
+                        <p>Population<br><br><br></p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-pin"></i>
@@ -40,7 +58,7 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h4>1,209 <sup style="font-size: 20px">(18.70 %)</sup></h4>
-                        <p>GIDA Barangays with Internally Displaced Population</p>
+                        <p>Health Cases<br><br><br></p>
                     </div>
                     <div class="icon">
                         <i class="ion-android-walk"></i>
@@ -54,7 +72,8 @@
                     <div class="inner">
                         <h4>766 <sup style="font-size: 20px">(11.85 %)</sup></h4>
 
-                        <p>GIDA Barangays Affected by Armed Conflict</p>
+                        <p>Barangay Cases<br><br><br></p>
+
                     </div>
                     <div class="icon">
                         <i class="ion ion-android-alert"></i>
@@ -66,9 +85,10 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h4>3,078,120 <sup style="font-size: 20px">(27.92) %</sup></h4>
+                        <h4>35,000<sup style="font-size: 20px">(27.92) %</sup></h4>
 
-                        <p>IP Population<br><br></p>
+                        <p>Employment Status<br><br><br></p>
+
                     </div>
                     <div class="icon">
                         <i class="ion-android-people"></i>
@@ -82,7 +102,8 @@
                     <div class="inner">
                         <h4>11,024,317 </h4>
 
-                        <p>Total Population in Barangay Cabantian Davao City<br><br></p>
+                        <p>Residents Profile<br><br><br></p>
+
                     </div>
                     <div class="icon">
                         <i class="ion-ios-people"></i>
@@ -101,7 +122,7 @@
                     <div class="card-header ui-sortable-handle" style="cursor: move;">
                         <h3 class="card-title">
                             <i class="fas fa-chart-graph mr-1"></i>
-                            No. of Barangay in Cabantian
+                            No. of Barangays in Cabantian
                         </h3>
                         <div class="card-tools">
                             <ul class="nav nav-pills ml-auto">

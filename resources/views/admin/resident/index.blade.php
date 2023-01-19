@@ -3,13 +3,13 @@
 @section('title', 'Resident')
 
 @section('content')
-    <div class="card">
-        <div class="card header">
-            <h4 class="ml-5 btn btn-success" style="width: 12rem">Resident Profile</h4>
+    <div class="wrapper">
+        <div class="card-header">
+            <h2 class=""><span class="text"> Barangay Cabantian Resident's Profile </span></h2>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
             <a class="btn btn-outline-info me-md-2" href="{{ route('residents.create') }}">Add Resident</a>
-            <a class="btn btn-outline-warning me-md-2" href="#">Completed Resident</a>
+            <a class="btn btn-outline-warning me-md-2" href="csv">Add CSV file</a>
         </div>
 
         <div class="card-body">
@@ -18,10 +18,17 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Suffix</th>
+                        <th>Name of Purok</th>
+                        <th>Address</th>
+                        <th>Email Address</th>
+                        <th>Contact Number</th>
+                        <th>Birthday</th>
                         <th>Age</th>
                         <th>Sex</th>
-                        <th>Birthday</th>
                         <th>Civil Status</th>
                         <th>Services Acquired</th>
                         <th>Nutritional Status</th>
@@ -34,10 +41,17 @@
                     @foreach ($resident as $residents)
                         <tr class="residents{{ $residents->id }}">
                             <td>{{ $residents->id }}</td>
-                            <td>{{ $residents->name }}</td>
+                            <td>{{ $residents->lastname }}</td>
+                            <td>{{ $residents->firstname }}</td>
+                            <td>{{ $residents->middlename }}</td>
+                            <td>{{ $residents->suffix }}</td>
+                            <td>{{ $residents->purok }}</td>
+                            <td>{{ $residents->address }}</td>
+                            <td>{{ $residents->emailaddress }}</td>
+                            <td>{{ $residents->contactnumber }}</td>
+                            <td>{{ $residents->birthdate }}</td>
                             <td>{{ $residents->age }}</td>
                             <td>{{ $residents->sex }}</td>
-                            <td>{{ $residents->birthdate }}</td>
                             <td>{{ $residents->civil_status }}</td>
                             <td>{{ $residents->services_acquired }}</td>
                             <td>{{ $residents->nutritional_status }}</td>

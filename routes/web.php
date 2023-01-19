@@ -40,6 +40,10 @@ Route::middleware(['ifLoggedOut'])->group(function () {
     Route::resource('residents', ResidentController::class);
     Route::resource('barangaycases', BarangaycaseController::class);
     Route::resource('employments', EmploymentController::class);
+    Route::get('/csv', function () {
+        return view ("admin.resident.csv");
+
+    });
 });
 
 Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');

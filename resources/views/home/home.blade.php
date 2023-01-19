@@ -1,5 +1,6 @@
 @extends('home.view')
 
+
 @section('body')
 <body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse" style="height: auto;">
     <div class="ewMessageDialog" style="display: none;"></div>
@@ -4840,48 +4841,6 @@
         <div id="sidebar-overlay"></div>
     </div>
     <!-- ./wrapper -->
-
-    <!-- jQuery -->
-    <script src="{{ asset('js/view/jquery.min.js') }}" ></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="{{ asset('js/view/jquery-ui.min.js') }}" ></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-        $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- amcharts -->
-    <script src="//cdn.amcharts.com/lib/4/core.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/charts.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/maps.js"></script>
-    <script src="{{ asset('js/view/philippinesHigh.js') }}" ></script>
-    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-    <!-- ChartJS -->
-    <script src="{{ asset('js/view/Chart.min.js') }}" ></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="{{ asset('js/view/jquery.vmap.min.js') }}" ></script>
-    <script src="{{ asset('js/view/jquery.vmap.usa.js') }}" ></script>
-    <!-- jQuery Knob Chart -->
-    <script src="{{ asset('js/view/jquery.knob.min.js') }}" ></script>
-    <!-- daterangepicker -->
-    <script src="{{ asset('js/view/moment.min.js') }}" ></script>
-    <script src="{{ asset('js/view/daterangepicker.js') }}" ></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{ asset('js/view/tempusdominus-bootstrap-4.min.js') }}"></script>
-    <!-- Summernote -->
-    <script src="{{ asset('js/view/summernote-bs4.min.js') }}"></script>
-    <!-- overlayScrollbars -->
-    <script src="{{ asset('js/view/jquery.overlayScrollbars.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ asset('js/view/adminlte.js') }}" ></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('js/view/dashboard.js') }}" ></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('js/view/demo.js') }}" ></script>
-
 
 
 
