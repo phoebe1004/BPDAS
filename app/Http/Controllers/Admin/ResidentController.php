@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\Resident;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Imports\ResidentImport;
+use Excel;
 
 class ResidentController extends Controller
 {
@@ -154,6 +156,10 @@ class ResidentController extends Controller
         $resident->employment_status = $request->employment_status;
         $resident->pwd_status = $request->pwd_status;
 
+
+        $age = Carbon::parse($resident->birthdate)->age;
+        $resident->age= $age;
+
         $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been updated successfully');
@@ -172,4 +178,14 @@ class ResidentController extends Controller
 
         return redirect()->route('residents.index');
     }
+    public function importForm(){
+        $resident = Resident::all();
+        return view('admin.resident.csv')->with('resident', $resident);
+
+    }
+    public function import(Request $request){
+        Excel::import(new ResidentImport, $request->file);
+        return redirect()->route('residents.index')->with('status','Resident imported Successfully');
+    }
 }
+

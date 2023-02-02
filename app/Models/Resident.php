@@ -11,7 +11,14 @@ class Resident extends Model
     use HasFactory;
     protected $table = 'residents';
     protected $fillable = [
-        'name',
+        'lastname',
+        'firstname',
+        'middlename',
+        'suffix',
+        'purok',
+        'address',
+        'emailaddress',
+        'contactnumber',
         'age',
         'sex',
         'birthdate',

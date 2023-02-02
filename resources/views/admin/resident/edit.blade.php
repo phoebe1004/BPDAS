@@ -42,7 +42,7 @@
                             <div class="col-md-2 mt-3">
                                 <label class="form-group">Suffix</label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" name="suffix">
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->suffix }}</option>
                                     <option value="Jr." name="suffix">Jr.</option>
                                     <option value="Sr" name="suffix">Sr.</option>
                                     <option value="III" name="suffix">III</option>
@@ -57,7 +57,7 @@
                             <div class="col-md-2 mt-4">
                                 <label for="purok" class="form-group">Name of Purok</label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" name="purok">
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->purok }}</option>
                                     <option value="Antonio Village" name="purok">Antonio Village</option>
                                     <option value="Bacahoa Village" name="purok">Bacahoa Village</option>
                                     <option value="Camelon Compound" name="purok">Camelon Compound</option>
@@ -166,7 +166,7 @@
                             <div class="col-md-2 mt-4">
                                 <label class="form-group">Sex</label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"  name="sex"x>
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->sex }}</option>
                                     <option value="Male" name="sex">Male</option>
                                     <option value="Female" name="sex">Female</option>
                                 </select>
@@ -214,7 +214,7 @@
                                 <label for="nutritionalStatus" class="form-group">Nutritional Status</label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
                                     name="nutritional_status">
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->nutritional_status }}</option>
                                     <option value="Underweight" name="nutritional_status">Underweight</option>
                                     <option value="Normal" name="nutritional_status">Normal</option>
                                     <option value="Overweight" name="nutritional_status">Overweight</option>
@@ -231,7 +231,7 @@
                                 <label for="employmentStatus" class="form-group">Employment Status </label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
                                     name="employment_status">
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->employment_status }}</option>
                                     <option value="Employed" name="employment_status">Employed</option>
                                     <option value="Unemployed" name="employment_status">Unemployed</option>
                                     <option value="None" name="employment_status">Prefer not to say</option>
@@ -246,7 +246,7 @@
                                 <label for="pwdStatus" class="form-group">Person with Disability</label>
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
                                     name="pwd_status">
-                                    <option>--Select--</option>
+                                    <option>{{ $resident->pwd_status }}</option>
                                     <option value="Yes" name="pwd_status">Yes</option>
                                     <option value="No" name="pwd_status">No</option>
                                 </select>

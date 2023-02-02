@@ -40,13 +40,12 @@ Route::middleware(['ifLoggedOut'])->group(function () {
     Route::resource('residents', ResidentController::class);
     Route::resource('barangaycases', BarangaycaseController::class);
     Route::resource('employments', EmploymentController::class);
-    Route::get('/csv', function () {
-        return view ("admin.resident.csv");
 
-    });
 });
 
 Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
 // Route::get('/admin/auth/login', [LoginController::class, 'showAdminLogin'])->name('admin-login');
 // Route::post('/admin/auth/login', [LoginController::class, 'adminLogin']);
 Route::get('/admin/auth/logout', [LoginController::class, 'adminLogout'])->name('admin-logout');
+Route::get('/csv', [ResidentController::class, 'importForm']);
+Route::post('/import', [ResidentController::class, 'import'])->name('resident.import');
