@@ -198,8 +198,9 @@
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
                                     name="services_acquired">
                                     <option>{{$resident->services_acquired}}</option>
-                                    <option value="Immunization">Immunization</option>
-                                    <option value="TB DOTS">TB DOTS</option>
+                                    <option value="Immunization Services">Immunization Services</option>
+                                    <option value="Maternal Check-up Services">Maternal Check-up Services</option>
+                                    <option value="TB DOTS Services">TB DOTS Services</option>
                                     <option value="Family Planning">Family Planning</option>
                                     <option value="Barangay Nutrition">Barangay Nutrition
                                     </option>

@@ -28,9 +28,9 @@
                     <div class="d-flex justify-content-between align-items-center " data-bs-toggle="collapse"
                         data-bs-target="#home-collapse" aria-expanded="true">
                         <a href="{{ route('dashboard.index') }}"><span class="text-white"><i class="fas fa-tachometer-alt"></i> Dashboard</span></a>
-                        <svg class="" width="6" height="12" fill="none">
+                        {{-- <svg class="" width="6" height="12" fill="none">
                             <use xlink:href="#drop-down-arrow" />
-                        </svg>
+                        </svg> --}}
                     </div>
                     <div class="collapse show sub-items text-white" id="home-collapse">
                         <a href="{{ route('populations.index') }}"><span><i class="fa-solid fa-users-rectangle"></i>
@@ -65,11 +65,11 @@
         <!-- Top Bar-->
         <div class=" content flex-fill d-flex flex-column bg-light">
             <div class="top-bar dropdown d-flex mb-3 list-unstyled">
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link mt-3" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
-                </li>
-                <button class="btn btn-secondary d-flex ms-auto p-2" href="#" role="button"
+                </li> --}}
+                <button class="btn btn-primary d-flex ms-auto p-2" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="mt-3">Super Admin  <i class="fa-solid fa-caret-down"></i></span>
                 </button>

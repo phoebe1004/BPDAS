@@ -18,6 +18,7 @@ class ResidentController extends Controller
      */
     public function index()
     {
+        $resident = Resident::where('completed', 0)->get();
         $resident = Resident::all();
         return view('admin.resident.index')->withResident($resident);
     }
@@ -81,6 +82,7 @@ class ResidentController extends Controller
         $age = Carbon::parse($resident->birthdate)->age;
         $resident->age= $age;
         // dd($age);
+        $resident->completed = 0;
        $resident->save();
 
         return redirect()->route('residents.index')->with('status','Resident has been added successfully');
@@ -95,7 +97,9 @@ class ResidentController extends Controller
      */
     public function show($id)
     {
-        //
+        $resident = Resident::where('id', $id)->first();
+
+        return view("admin.resident.show")->with("resident", $resident);
     }
 
     /**
@@ -186,6 +190,22 @@ class ResidentController extends Controller
     public function import(Request $request){
         Excel::import(new ResidentImport, $request->file);
         return redirect()->route('residents.index')->with('status','Resident imported Successfully');
+    }
+    public function done($id)
+    {
+        $resident = Resident::orderBy('created_at', 'asc')->get();
+
+        return view('resident', [
+            'resident' => $resident
+        ]);
+
+        return view('admin.resident.completed')->with("resident", $resident);
+    }
+    public function completed()
+    {
+        $residents = Resident::where('completed', 1)->get();
+
+        return view('admin.resident.completed')->with("residents", $residents);
     }
 }
 
