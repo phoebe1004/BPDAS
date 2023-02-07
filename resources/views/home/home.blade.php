@@ -76,53 +76,59 @@
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link active">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Part 1</p>
+                                                    <p>Population</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Part 2</p>
+                                                    <p>Health Cases</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Part 3</p>
+                                                    <p>Barangay Cases</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Employment Status</p>
+                                                </a>
+                                            </li>
+                                            {{-- <li class="nav-item">
                                                 <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
                                                     <p>Profiling Status</p>
                                                 </a>
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                     </li>
-                                    <li class="nav-item userloggedin" style="display: none;">
+                                    {{-- <li class="nav-item userloggedin" style="display: none;">
                                         <a href="#" target="_blank" class="nav-link">
                                             <i class="nav-icon far fa-list-alt"></i>
                                             <p>
                                                 Masterlist
                                             </p>
                                         </a>
-                                    </li>
-                                    <li class="nav-item">
+                                    </li> --}}
+                                    {{-- <li class="nav-item">
                                         <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-certificate"></i>
                                             <p>
                                                 BPDAS Certification
                                             </p>
                                         </a>
-                                    </li>
-                                    <li class="nav-item has-treeview">
+                                    </li> --}}
+                                    {{-- <li class="nav-item has-treeview">
                                         <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-paste"></i>
                                             <p>
                                                 Profiles
                                                 <i class="fas fa-angle-left right"></i>
                                             </p>
-                                        </a>
+                                        </a> --}}
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
                                                 <a href="#" target="_blank" class="nav-link">
@@ -156,14 +162,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item has-treeview">
-                                        <a href="#" class="nav-link">
-                                            <i class="nav-icon fas fa-download"></i>
-                                            <p>
-                                                Downloads
-                                                <i class="fas fa-angle-left right"></i>
-                                            </p>
-                                        </a>
+                                    {{-- <li class="nav-item has-treeview">
+
                                         <ul class="nav nav-treeview">
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
@@ -261,7 +261,7 @@
                                         </a>
                                     </li>
 
-                                </ul>
+                                </ul> --}}
                             </nav>
                             <!-- /.sidebar-menu -->
                         </div>

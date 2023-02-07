@@ -29,7 +29,6 @@
             <a class="btn btn-outline-warning me-md-2" href="csv">Add CSV file</a>
             <a class="btn btn-outline-danger me-md-2" href="#">Backup
                 Page</a>
-
         </div>
 
         <div class="card-body">

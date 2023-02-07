@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Resident;
+use App\Models\Barangaycase;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Excel;
 
 class BarangaycaseController extends Controller
 {
@@ -15,7 +16,8 @@ class BarangaycaseController extends Controller
      */
     public function index()
     {
-        return view('admin.barangaycase.index');
+        $barangaycase = Barangaycase::all();
+        return view('admin.barangaycase.index')->withBarangaycase($barangaycase);;
     }
 
     /**
@@ -25,7 +27,7 @@ class BarangaycaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.barangaycase.create');
     }
 
     /**
@@ -36,7 +38,20 @@ class BarangaycaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $barangaycase = new Barangaycase();
+
+        $barangaycase->age = $request->age;
+        $barangaycase->complainant = $request->complainant;
+        $barangaycase->type_case = $request->type_case;
+        $barangaycase->case_specification = $request->case_specification;
+        $barangaycase->date_filed = $request->date_filed;
+        $barangaycase->case_status = $request->case_status;
+
+        $barangaycase->save();
+
+        return redirect()->route('barangaycases.index')->with('status','Barangaycase has been added successfully');
     }
 
     /**
@@ -81,6 +96,9 @@ class BarangaycaseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $barangaycase = Barangaycase::find($id);
+        $barangaycase->delete();
+
+        return redirect()->route('barangaycases.index');
     }
 }

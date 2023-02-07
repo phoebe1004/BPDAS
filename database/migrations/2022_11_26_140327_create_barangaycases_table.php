@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('barangaycases', function (Blueprint $table) {
             $table->id();
-            $table->string('crimes_againts_person');
-            $table->string('crimes_againts_property');
-            $table->string('other_crimes');
+            $table->string('age');
+            $table->string('complainant');
+            $table->string('type_case');
+            $table->string('case_specification');
+            $table->date('date_filed');
+            $table->string('case_status');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        $resident = Resident::where('completed', 0)->get();
+        // $resident = Resident::where('completed', 0)->get();
         $resident = Resident::all();
         return view('admin.resident.index')->withResident($resident);
     }
