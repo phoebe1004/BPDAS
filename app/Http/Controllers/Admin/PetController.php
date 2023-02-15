@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class EmploymentController extends Controller
+class PetController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class EmploymentController extends Controller
      */
     public function index()
     {
-        return view('admin.employment.index');
+        return view('admin.pet.index');
     }
 
     /**

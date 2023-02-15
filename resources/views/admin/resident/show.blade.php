@@ -8,38 +8,16 @@
 
     }
 </style>
-    <div class="wrapper">
-        <div class="card-header">
-            <h2 class=""><span class="text"> Barangay Cabantian Resident's Profile </span></h2>
-        </div>
+<form>
+        <fieldset>
+            <legend>Barangay Cabantian Resident's Profile</legend>
 
-        <div class="wrapper">
-            <div class="card">
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="text-transform:uppercase">Full name: {{ $resident->lastname }} {{ $resident->firstname }} {{ $resident->middlename }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Suffix: {{ $resident->suffix }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Name of Purok: {{ $resident->purok }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Address: {{ $resident->address }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Email address: {{ $resident->emailaddress }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Contact number: {{ $resident->contactnumber }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Birthday: {{ $resident->birthdate }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Age: {{ $resident->age }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Sex: {{ $resident->sex }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Civil Status: {{ $resident->civil_status }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Services Acquired: {{ $resident->services_acquired }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Nutritional Status: {{ $resident->nutritional_status }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">Employment Status: {{ $resident->employment_status }}</li>
-                        <li class="list-group-item" style="text-transform:uppercase">PWD: {{ $resident->pwd_status }}</li>
-                      </ul>
-                </div>
-            </div>
             <div class="d-grid gap-2 col-3 mx-auto">
                 <a href="{{ route('residents.index') }}" id="cancel" name="cancel"
                     class="btn btn-danger btn-md mt-3">Back to homepage</a>
             </div>
-
-        </div>
+        </fieldset>
+    </form>
 {{--
         <div class="card-body">
             <table class="table table-bordered">

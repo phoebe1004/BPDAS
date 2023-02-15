@@ -41,9 +41,8 @@
                         <th>First Name</th>
                         <th>Middle Name</th>
                         <th>Suffix</th>
-                        <th>Name of Purok</th>
-                        <th>Address</th>
-                        <th>Email Address</th>
+                        <th>Relationship to HH Head</th>
+                        <th>Sitio/Purok</th>
                         <th>View more</th>
                         {{-- <th>Contact Number</th>
                         <th>Birthday</th>
@@ -65,9 +64,8 @@
                             <td>{{ $residents->firstname }}</td>
                             <td>{{ $residents->middlename }}</td>
                             <td>{{ $residents->suffix }}</td>
+                            <td>{{ $residents->relationship }}</td>
                             <td>{{ $residents->purok }}</td>
-                            <td>{{ $residents->address }}</td>
-                            <td>{{ $residents->emailaddress }}</td>
                             <td><a class="d-flex justify-content-center btn btn-success me-md-2 edit-modal btn-sm glyphicon glyphicon-eye-open"
                                     href="{{ route('residents.show', $residents->id) }}"></a></td>
                             {{-- <td>{{ $residents->contactnumber }}</td>

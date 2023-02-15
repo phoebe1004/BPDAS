@@ -21,7 +21,7 @@
         <div class="sidebar overflow-auto m-0 p-0 flex-shrink-0 d-flex flex-column align-items-stretch ">
             <div class="logo d-flex justify-content-center align-items-center border-bottom ">
                 <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-                <span class="fw-semibold text-white">BPDAS Admin</span>
+                <span class="fw-semibold text-white">RPDAS Admin</span>
             </div>
             <ul class="main-list list-unstyled flex-fill mt-2">
                 <li class="user-select-none">
@@ -34,21 +34,32 @@
                     </div>
                     <div class="collapse show sub-items text-white" id="home-collapse">
                         <a href="{{ route('populations.index') }}"><span><i class="fa-solid fa-users-rectangle"></i>
-                                Population</span></a>
+                                Residents Population</span></a>
 
                     </div>
 
                     <div class="collapse show sub-items" id="home-collapse">
-                        <a href="{{ route('healthcases.index') }}"><span><i class="fa-solid fa-kit-medical"></i> Health
+                        <a href="{{ route('specifications.index') }}"><span><i class="fa-sharp fa-solid fa-pump-soap"></i> Specification Type</span></a>
+                    </div>
+                    <div class="collapse show sub-items" id="home-collapse">
+                        <a href="{{ route('barangaycases.index') }}"><span><i class="fa-solid fa-kit-medical"></i> Health
                                 Cases</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
-                        <a href="{{ route('barangaycases.index') }}"><span><i class="fa-solid fa-folder-open"></i> Barangay
-                                Cases</span></a>
+                        <a href="{{ route('educationoccupations.index') }}"><span><i class="fa-sharp fa-solid fa-school"></i>
+                                Education and Occupation</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
-                        <a href="{{ route('employments.index') }}"><span><i class="fa fa-briefcase" aria-hidden="true"></i>
-                                Employment Status</span></a>
+                        <a href="{{ route('facilitystructures.index') }}"><i class="fa-solid fa-house-user"></i>
+                                Facility Structure</span></a>
+                    </div>
+                    <div class="collapse show sub-items" id="home-collapse">
+                        <a href="{{ route('pets.index') }}"><span><i class="fa-solid fa-paw"></i>
+                                Pets/Animals</span></a>
+                    </div>
+                    <div class="collapse show sub-items" id="home-collapse">
+                        <a href="{{ route('groups.index') }}"><span><i class="fa-solid fa-people-group"></i>
+                                Community group</span></a>
                     </div>
                 </li>
                 <div class="d-flex justify-content-between align-items-center">

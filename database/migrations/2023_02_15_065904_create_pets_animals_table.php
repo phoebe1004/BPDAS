@@ -13,13 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('healthcases', function (Blueprint $table) {
+        Schema::create('pets_animals', function (Blueprint $table) {
             $table->id();
-            // $table->string('pwd_rate');
-            // $table->string('immunization_rate');
-            // $table->string('maternal_rate');
-            // $table->string('nutritional_rate');
-            // $table->string('familyplanning_rate');
+            $table->foreignId('resident_id')->constrained()->unique();
+            $table->string('type');
+            $table->integer('number');
+            $table->string('male');
+            $table->string('female');
+            $table->string('vaccinated');
             $table->timestamps();
         });
     }
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('healthcases');
+        Schema::dropIfExists('pets_animals');
     }
 };

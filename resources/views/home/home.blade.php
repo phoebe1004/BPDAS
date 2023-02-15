@@ -34,7 +34,7 @@
             <a href="#" class="brand-link navbar-secondary">
                 <img src="image/bpdaslogo.jpg" alt="BPDASLogo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
-                <span class="brand-text font-weight-light">BPDAS InfoSys</span>
+                <span class="brand-text font-weight-light">RPDAS InfoSys</span>
             </a>
 
             <!-- Sidebar -->
@@ -76,7 +76,13 @@
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link active">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Population</p>
+                                                    <p>Population of Residents</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Specification Type</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
@@ -88,13 +94,25 @@
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Barangay Cases</p>
+                                                    <p>Education and Employment Status</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#" class="nav-link">
                                                     <i class="far fa-circle nav-icon"></i>
-                                                    <p>Employment Status</p>
+                                                    <p>Household Facility Structure</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Household Pets/Animals</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#" class="nav-link">
+                                                    <i class="far fa-circle nav-icon"></i>
+                                                    <p>Household Barangay Community Groups</p>
                                                 </a>
                                             </li>
                                             {{-- <li class="nav-item">

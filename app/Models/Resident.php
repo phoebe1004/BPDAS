@@ -15,19 +15,17 @@ class Resident extends Model
         'firstname',
         'middlename',
         'suffix',
-        'purok',
-        'address',
-        'emailaddress',
-        'contactnumber',
-        'age',
+        'relationship',
         'sex',
         'birthdate',
+        'age',
         'civil_status',
-        'services_acquired',
-        'nutritional_status',
-        'employment_status',
-        'pwd_status',
-
-
+        'membership_type',
+        'contact_number',
+        'purok',
+        'group_community',
+        'remark'
      ];
+
+
 }

@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('barangaycases', function (Blueprint $table) {
+        Schema::create('womens_reproductive_age', function (Blueprint $table) {
             $table->id();
-            $table->string('age');
-            $table->string('complainant');
-            $table->string('type_case');
-            $table->string('case_specification');
-            $table->date('date_filed');
-            $table->string('case_status');
+            $table->foreignId('resident_id')->constrained()->unique();
+            $table->date('last_menstual_period');
+            $table->string('family_planning_use');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barangaycases');
+        Schema::dropIfExists('womens_reproductive_age');
     }
 };

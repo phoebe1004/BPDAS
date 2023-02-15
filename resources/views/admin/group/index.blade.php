@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
-@section('title', 'Employment')
+@section('title', 'Community Group')
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="">Employment Page</h3>
+            <h3 class="">Community Group Page</h3>
         </div>
         </div>
 
-    @endsection
+@endsection
 
 

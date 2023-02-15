@@ -54,6 +54,7 @@
 
             });
         </script>
+
         @if (session('status'))
             <script>
                 swal("{{ session('status') }}");

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HealthcaseController extends Controller
+class SpecificationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class HealthcaseController extends Controller
      */
     public function index()
     {
-        return view('admin.healthcase.index');
+        return view('admin.specification.index');
     }
 
     /**

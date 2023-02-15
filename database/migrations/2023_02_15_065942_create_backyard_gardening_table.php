@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('populations', function (Blueprint $table) {
+        Schema::create('backyard_gardening', function (Blueprint $table) {
             $table->id();
-            // $table->string('size');
-            // $table->string('age');
-            // $table->string('sex');
-            // $table->string('birthrate');
-            // $table->string('mortality');
+            $table->foreignId('resident_id')->constrained()->unique();
+            $table->string('gardening_indication');
+            $table->string('type_of_vegetables');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('populations');
+        Schema::dropIfExists('backyard_gardening');
     }
 };
