@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('hpv_indication');
-            $table->date('when');
+            $table->date('hpv_when');
             $table->timestamps();
         });
     }

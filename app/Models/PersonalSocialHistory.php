@@ -13,6 +13,6 @@ class PersonalSocialHistory extends Model
         'resident_id',
         'smoker',
         'alcohol_beverages_drinker',
-        'sexually_active'
+        'sexually_active',
     ];
 }

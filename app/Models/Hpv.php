@@ -12,6 +12,6 @@ class Hpv extends Model
     protected $fillable = [
         'resident_id',
         'hpv_indication',
-        'when'
+        'hpv_when'
     ];
 }

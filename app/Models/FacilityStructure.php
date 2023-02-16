@@ -14,7 +14,6 @@ class FacilityStructure extends Model
         'type_of_water_source',
         'type_of_toilet_facility',
         'type_of_waste_management',
-        'name',
      ];
 
 

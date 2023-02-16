@@ -12,8 +12,8 @@ class CovidVaccine extends Model
     protected $fillable = [
         'resident_id',
         'c_vac_indication',
-        'when',
-        'where'
+        'c_vac_when',
+        'c_vac_where'
      ];
 
 }

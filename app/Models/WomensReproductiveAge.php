@@ -11,7 +11,7 @@ class WomensReproductiveAge extends Model
     protected $table = 'womens_reproductive_age';
     protected $fillable = [
         'resident_id',
-        'last_menstual_period',
-        'family_planning_use'
+        'last_menstrual_period',
+        'family_planning_use',
     ];
 }

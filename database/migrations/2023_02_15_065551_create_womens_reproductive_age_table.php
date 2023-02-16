@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('womens_reproductive_age', function (Blueprint $table) {
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
-            $table->date('last_menstual_period');
+            $table->date('last_menstrual_period');
             $table->string('family_planning_use');
             $table->timestamps();
         });

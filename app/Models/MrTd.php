@@ -14,7 +14,7 @@ class MrTd extends Model
         'mr_indication',
         'mr_when',
         'td_indication',
-        'td_when'
+        'td_when',
      ];
 
 }

@@ -12,6 +12,6 @@ class TypeOfOccupancy extends Model
     protected $fillable = [
         'resident_id',
         'renter',
-        'month'
+        'months'
     ];
 }

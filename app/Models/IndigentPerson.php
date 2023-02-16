@@ -12,6 +12,6 @@ class IndigentPerson extends Model
     protected $fillable = [
         'resident_id',
         'ip_indication',
-        'tribe'
+        'tribe',
     ];
 }

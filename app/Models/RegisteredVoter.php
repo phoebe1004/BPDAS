@@ -13,6 +13,6 @@ class RegisteredVoter extends Model
     protected $fillable = [
         'resident_id',
         'reg_vot_indication',
-        'where'
+        'reg_vot_where',
     ];
 }

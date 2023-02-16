@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('epi_indication');
-            $table->date('when');
             $table->timestamps();
         });
     }

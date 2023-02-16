@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charts\PopulationOfResidentsBySexChart;
+use App\Charts\PopulationOfResidentsChart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +14,9 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PopulationOfResidentsChart $chart, PopulationOfResidentsBySexChart $chart2)
     {
-        return view('admin.dashboard.index');
+        return view('admin.dashboard.index', ['chart' => $chart->build(), 'chart2' => $chart2->build()]);
     }
 
     /**

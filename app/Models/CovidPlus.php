@@ -12,7 +12,7 @@ class CovidPlus extends Model
     protected $fillable = [
         'resident_id',
         'c_plus_indication',
-        'when',
-        'where'
+        'c_plus_when',
+        'c_plus_where'
      ];
 }

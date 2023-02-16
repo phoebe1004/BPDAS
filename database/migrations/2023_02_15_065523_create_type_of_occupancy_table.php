@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('renter');
-            $table->string('month');
+            $table->string('months');
             $table->timestamps();
         });
     }

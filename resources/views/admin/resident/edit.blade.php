@@ -305,7 +305,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Suffix</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="suffix">
                                         <option disabled selected>--Suffix--</option>
@@ -319,7 +319,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Relationship to HH Head</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="relationship">
                                         <option disabled selected>--Select Relationship--</option>
@@ -333,7 +333,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Sex</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="sex">
                                         <option disabled selected>--Select Sex--</option>
@@ -344,14 +344,14 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4 ">
                                 <span>Birthday</span>
                                 <input type="date" class="form-control" name="birthdate" id="birthdate">
                                 @error('birthdate')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Civil Status</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="civil_status">
                                         <option disabled selected>--Select Civil Status--</option>
@@ -364,7 +364,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Membership Type</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="membership_type">
                                         <option disabled selected>--Select Membership Type--</option>
@@ -375,7 +375,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Contact Number</span>
                                 <input type="number" class="form-control" name="contact_number" id="contact_number"
                                     placeholder="contact number" value="{{ old('contact_number') }}">
@@ -383,7 +383,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Purok</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="purok">
                                         <option disabled selected>--Select Purok--</option>
@@ -473,7 +473,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Type of community group</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                         name="group_community">
@@ -484,11 +484,11 @@
                                         <option value="youth">Youth</option>
                                         <option value="pwd/s">PWD's</option>
                                     </select></p>
-                                @error('registered_voter')
+                                @error('com_grp_type')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 mt-4">
                                 <span>Classification By Age</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                         name="classification_by_age">
@@ -517,6 +517,7 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
+                            
                         </div>
 
                         <div class="col-12 mt-5">

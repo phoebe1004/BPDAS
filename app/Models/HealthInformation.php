@@ -13,6 +13,6 @@ class HealthInformation extends Model
         'resident_id',
         'philhealth_number',
         'medical_history',
-        'remark'
+        'remark',
     ];
 }

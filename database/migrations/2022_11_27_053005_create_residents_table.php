@@ -15,21 +15,19 @@ return new class extends Migration
     {
         Schema::create('residents', function (Blueprint $table) {
             $table->id();
-
             $table->string('lastname');
             $table->string('firstname');
             $table->string('middlename');
             $table->string('suffix');
             $table->string('relationship');
+            $table->string('sex');
             $table->date('birthdate');
             $table->integer('age');
-            $table->string('classification_by_age');
-            $table->string('sex');
-            $table->integer('contact_number', 12);
             $table->string('civil_status');
             $table->string('membership_type');
+            $table->integer('contact_number');
             $table->string('purok');
-            $table->string('group_community');
+            $table->string('classification_by_age');
             $table->string('remark');
             $table->timestamps();
 

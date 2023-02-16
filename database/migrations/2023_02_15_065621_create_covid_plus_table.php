@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('c_plus_indication');
-            $table->date('when');
-            $table->string('where');
+            $table->date('c_plus_when');
+            $table->string('c_plus_where');
             $table->timestamps();
         });
     }

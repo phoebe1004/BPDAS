@@ -12,7 +12,7 @@ class CovidBooster extends Model
     protected $fillable = [
         'resident_id',
         'c_boost_indication',
-        'when',
-        'where',
+        'c_boost_when',
+        'c_boost_where',
      ];
 }

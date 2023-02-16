@@ -12,6 +12,6 @@ class BackyardGardening extends Model
     protected $fillable = [
         'resident_id',
         'gardening_indication',
-        'type_of_vegetables'
+        'type_of_vegetables',
     ];
 }

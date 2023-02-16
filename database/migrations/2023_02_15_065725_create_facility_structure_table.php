@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('type_of_water_source');
             $table->string('type_of_toilet_facility');
             $table->string('type_of_waste_management');
-            $table->string('name');
             $table->timestamps();
         });
     }

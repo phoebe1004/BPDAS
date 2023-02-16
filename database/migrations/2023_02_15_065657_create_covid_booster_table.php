@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('c_boost_indication');
-            $table->date('when');
-            $table->string('where');
+            $table->date('c_boost_when');
+            $table->string('c_boost_where');
             $table->timestamps();
         });
     }

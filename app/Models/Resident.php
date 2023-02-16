@@ -18,12 +18,11 @@ class Resident extends Model
         'relationship',
         'sex',
         'birthdate',
-        'age',
         'civil_status',
         'membership_type',
         'contact_number',
         'purok',
-        'group_community',
+        'classification_by_age',
         'remark'
      ];
 

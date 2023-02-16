@@ -11,6 +11,6 @@ class Dengue extends Model
     protected $table = 'dengue';
     protected $fillable = [
         'dengue_indication',
-        'when'
+        'dengue_when'
     ];
 }

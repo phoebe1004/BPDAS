@@ -11,6 +11,6 @@ class EpiCard extends Model
     protected $table = 'epi_card';
     protected $fillable = [
         'epi_indication',
-        'when',
+        // 'epi_when',
     ];
 }

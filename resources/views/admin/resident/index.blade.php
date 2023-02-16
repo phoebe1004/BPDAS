@@ -41,7 +41,7 @@
                         <th>First Name</th>
                         <th>Middle Name</th>
                         <th>Suffix</th>
-                        <th>Relationship to HH Head</th>
+                        <th>Relationship to HH</th>
                         <th>Sitio/Purok</th>
                         <th>View more</th>
                         {{-- <th>Contact Number</th>

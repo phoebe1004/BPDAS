@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('resident_id')->constrained()->unique();
             $table->string('reg_vot_indication');
-            $table->string('where');
+            $table->string('reg_vot_where');
             $table->timestamps();
         });
     }
