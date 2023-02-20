@@ -123,6 +123,9 @@ class ResidentController extends Controller
             "type_of_waste_management" => 'required',
             "gardening_indication" => 'required',
             "type_of_vegetables" => 'required',
+            "type" => 'required',
+            "number" => 'required',
+            "vaccinated" => 'required',
         ]);
 
         $resident = new Resident();
@@ -297,12 +300,16 @@ class ResidentController extends Controller
 
         $backyard->save();
 
-        // $pets = new PetsAnimals();
-        // $pets->resident_id = $resident->id;
-        // $pets->c_vac_indication = $request->c_vac_indication;
+        $pets = new PetsAnimals();
+        $pets->resident_id = $resident->id;
+        $pets->type = $request->type;
+        $pets->number = $request->number;
+        $pets->male = $request->male;
+        $pets->female = $request->female;
+        $pets->vaccinated = $request->vaccinated;
 
 
-        // $pets->save();
+        $pets->save();
 
 
         return redirect()->route('residents.index')->with('status', 'Resident has been added successfully');
@@ -335,8 +342,9 @@ class ResidentController extends Controller
         $epiCard = EpiCard::where('resident_id', $resident->id)->first();
         $facility = FacilityStructure::where('resident_id', $resident->id)->first();
         $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
+        $pets = PetsAnimals::where('resident_id', $resident->id)->first();
 
-        return view('admin.resident.show', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard'));
+        return view('admin.resident.show', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard', 'pets'));
     }
 
     /**
@@ -366,8 +374,9 @@ class ResidentController extends Controller
         $epiCard = EpiCard::where('resident_id', $resident->id)->first();
         $facility = FacilityStructure::where('resident_id', $resident->id)->first();
         $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
+        $pets = PetsAnimals::where('resident_id', $resident->id)->first();
 
-        return view('admin.resident.edit', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard'));
+        return view('admin.resident.edit', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard', 'pets'));
     }
 
     /**
@@ -438,6 +447,9 @@ class ResidentController extends Controller
             "type_of_waste_management" => 'required',
             "gardening_indication" => 'required',
             "type_of_vegetables" => 'required',
+            "type" => 'required',
+            "number" => 'required',
+            "vaccinated" => 'required',
         ]);
 
         $resident = Resident::find($id);
@@ -574,6 +586,15 @@ class ResidentController extends Controller
         $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
         $backyard->gardening_indication = $request->gardening_indication;
         $backyard->type_of_vegetables = $request->type_of_vegetables;
+
+        $backyard->save();
+
+        $pets = PetsAnimals::where('resident_id', $resident->id)->first();
+        $pets->type = $request->type;
+        $pets->number = $request->number;
+        $pets->male = $request->male;
+        $pets->female = $request->female;
+        $pets->vaccinated = $request->vaccinated;
 
         $backyard->save();
 

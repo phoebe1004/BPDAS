@@ -5,7 +5,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h3 class="">Barangay Cases Page</h3>
+            <h4 class="">Resident's Profiling Page</h4>
         </div>
 
         <style>
@@ -842,6 +842,58 @@
                 </div>
             </div>
 
+            <div class="tab">
+                <h4>Pets Animals Form</h4>
+                <div class="form-row mt-2">
+                    <div class="col-md-6 mb-2">
+                        <span>Type of pets/animals: </span>
+                        <input type="text" class="form-control" name="type" id="type"
+                            placeholder="type of pets/animals" value="{{ old('type') }}">
+                        @error('type')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                        <div class="col-md-6 mb-2">
+                            <span>Number of pets/animals: </span>
+                            <input type="number" class="form-control" name="number" id="number"
+                                placeholder="number of pets/animals" value="{{ old('number') }}">
+                            @error('number')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <span>Number of male pets/animals: </span>
+                            <input type="number" class="form-control" name="male" id="male"
+                                placeholder="number of male" value="{{ old('male') }}">
+                            @error('male')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <span>Number of female pets/animals: </span>
+                            <input type="number" class="form-control" name="female" id="female"
+                                placeholder="number of female" value="{{ old('female') }}">
+                            @error('female')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+                    <div class="col-md-9 mb-2 mt-2">
+                        <span>Vaccinated</span>
+                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                name="vaccinated" id="vaccinated">
+                                <option disabled selected>--Select--</option>
+                                <option value="yes" name="vaccinated">Yes, all the pets and animals</option>
+                                <option value="some" name="vaccinated">Some, of my pets and animals</option>
+                                <option value="no" name="vaccinated">None of my pets and animals</option>
+                                <option value="prefer not to say" name="vaccinated">Prefer not to say</option>
+                            </select></p>
+                        @error('vaccinated')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
             {{-- <div class="tab">
                 <h4>Resident's Pets & Animals:</h4>
                 <div class="form-row mt-2">
@@ -862,7 +914,7 @@
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
-                {{-- <span class="step"></span> --}}
+                <span class="step"></span>
             </div>
 
             <div class="p-3 d-flex">

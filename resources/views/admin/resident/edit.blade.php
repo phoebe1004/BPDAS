@@ -803,6 +803,49 @@
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
+                            <h3 class="mt-6"><b>Pets / Animals</b></h3>
+                            <div class="col-md-5 mb-2 mt-3">
+                                <span>Type of Pets/Animals</span>
+                                <input type="text" class="form-control" name="type" id="type" value="{{  $pets->type }}">
+                                @error('type')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 mb-2 mt-3">
+                                <span>Number Pets/Animals</span>
+                                <input type="number" class="form-control" name="number" id="number" value="{{  $pets->number }}">
+                                @error('number')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 mb-2 mt-3">
+                                <span>Number of Male Pets/Animals</span>
+                                <input type="number" class="form-control" name="male" id="male" value="{{  $pets->male }}">
+                                @error('male')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 mb-2 mt-3">
+                                <span>Number of female Pets/Animals</span>
+                                <input type="number" class="form-control" name="female" id="female" value="{{  $pets->female }}">
+                                @error('female')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-9 mb-2 mt-2">
+                                <span>Vaccinated</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="vaccinated" id="vaccinated">
+                                        <option disabled selected>{{ $pets->vaccinated }}</option>
+                                        <option value="yes" name="vaccinated">Yes, all the pets and animals</option>
+                                        <option value="some" name="vaccinated">Some, of my pets and animals</option>
+                                        <option value="no" name="vaccinated">None of my pets and animals</option>
+                                        <option value="prefer not to say" name="vaccinated">Prefer not to say</option>
+                                    </select></p>
+                                @error('vaccinated')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
                         </div>
                 </div>
 

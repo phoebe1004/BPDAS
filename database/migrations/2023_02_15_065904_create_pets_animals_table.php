@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('type');
             $table->integer('number');
-            $table->string('male');
-            $table->string('female');
+            $table->integer('male');
+            $table->integer('female');
             $table->string('vaccinated');
             $table->timestamps();
         });
