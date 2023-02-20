@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('backyard_gardening', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('gardening_indication');
             $table->string('type_of_vegetables');
             $table->timestamps();

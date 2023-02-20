@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class RegisteredVoter extends Model
 {
@@ -15,4 +16,8 @@ class RegisteredVoter extends Model
         'reg_vot_indication',
         'reg_vot_where',
     ];
+    public function resident()
+    {
+        return $this->belongsTo(Resident::class, 'resident_id','id');
+    }
 }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('pets_animals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('type');
             $table->integer('number');
             $table->string('male');

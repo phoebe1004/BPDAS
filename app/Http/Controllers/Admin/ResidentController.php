@@ -41,7 +41,7 @@ class ResidentController extends Controller
     {
         // $resident = Resident::where('completed', 0)->get();
         $resident = Resident::all();
-        return view('admin.resident.index')->withResident($resident);
+        return view('admin.resident.index')->with("resident", $resident);
     }
 
     /**
@@ -77,6 +77,7 @@ class ResidentController extends Controller
             "contact_number" => 'required',
             "purok" => 'required',
             "classification_by_age" => 'required',
+            "remarks" => 'required',
             "nhts_4ps" => 'required',
             "nhts_non_4ps" => 'required',
             "non_nhts" => 'required',
@@ -86,35 +87,36 @@ class ResidentController extends Controller
             "education" => 'required',
             "occupation" => 'required',
             "renter" => 'required',
-            "months" => 'required',
+            // "months" => 'required',
             "reg_vot_indication" => 'required',
-            "reg_vot_where" => 'required',
+            // "reg_vot_where" => 'required',
             "com_grp_indication" => 'required',
-            "philheath_number" => 'required',
+            "com_grp_type" => 'required',
+            // "philhealth_number" => 'required',
             "medical_history" => 'required',
             "remark" => 'required',
             "smoker" => 'required',
             "alcohol_beverages_drinker" => 'required',
             "sexually_active" => 'required',
-            "last_menstrual_period" => 'required',
-            "family_planning_use" => 'required',
+            // "last_menstrual_period" => 'required',
+            // "family_planning_use" => 'required',
             "hpv_indication" => 'required',
-            "hpv_when" => 'required',
+            // "hpv_when" => 'required',
             "c_plus_indication" => 'required',
-            "c_plus_when" => 'required',
-            "c_plus_where" => 'required',
+            // "c_plus_when" => 'required',
+            // "c_plus_where" => 'required',
             "c_vac_indication" => 'required',
-            "c_vac_when" => 'required',
-            "c_vac_where" => 'required',
+            // "c_vac_when" => 'required',
+            // "c_vac_where" => 'required',
             "c_boost_indication" => 'required',
-            "c_boost_when" => 'required',
-            "c_boost_where" => 'required',
+            // "c_boost_when" => 'required',
+            // "c_boost_where" => 'required',
             "mr_indication" => 'required',
-            "mr_when" => 'required',
+            // "mr_when" => 'required',
             "td_indication" => 'required',
-            "td_when" => 'required',
+            // "td_when" => 'required',
             "dengue_indication" => 'required',
-            "dengue_when" => 'required',
+            // "dengue_when" => 'required',
             "epi_indication" => 'required',
             "type_of_water_source" => 'required',
             "type_of_toilet_facility" => 'required',
@@ -138,7 +140,7 @@ class ResidentController extends Controller
         $resident->contact_number = $request->contact_number;
         $resident->purok = $request->purok;
         $resident->classification_by_age = $request->classification_by_age;
-        $resident->remark = $request->remark;
+        $resident->remarks = $request->remarks;
 
         $resident->save();
 
@@ -315,8 +317,26 @@ class ResidentController extends Controller
     public function show($id)
     {
         $resident = Resident::where('id', $id)->first();
+        $social = SocialEconomicStatus::where('resident_id', $resident->id)->first();
+        $indigent = IndigentPerson::where('resident_id', $resident->id)->first();
+        $educ = EducOccupation::where('resident_id', $resident->id)->first();
+        $typeOccupancy = TypeOfOccupancy::where('resident_id', $resident->id)->first();
+        $regVoter = RegisteredVoter::where('resident_id', $resident->id)->first();
+        $grpInd = CommunityGroup::where('resident_id', $resident->id)->first();
+        $healthInfo = HealthInformation::where('resident_id', $resident->id)->first();
+        $perSocHis = PersonalSocialHistory::where('resident_id', $resident->id)->first();
+        $womens = WomensReproductiveAge::where('resident_id', $resident->id)->first();
+        $hpv = Hpv::where('resident_id', $resident->id)->first();
+        $covidPlus = CovidPlus::where('resident_id', $resident->id)->first();
+        $covidVac = CovidVaccine::where('resident_id', $resident->id)->first();
+        $covidBoost = CovidBooster::where('resident_id', $resident->id)->first();
+        $mrtd = MrTd::where('resident_id', $resident->id)->first();
+        $dengue = Dengue::where('resident_id', $resident->id)->first();
+        $epiCard = EpiCard::where('resident_id', $resident->id)->first();
+        $facility = FacilityStructure::where('resident_id', $resident->id)->first();
+        $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
 
-        return view("admin.resident.show")->with("resident", $resident);
+        return view('admin.resident.show', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard'));
     }
 
     /**
@@ -328,7 +348,26 @@ class ResidentController extends Controller
     public function edit($id)
     {
         $resident = Resident::find($id);
-        return view('admin.resident.edit')->with("resident", $resident);
+        $social = SocialEconomicStatus::where('resident_id', $resident->id)->first();
+        $indigent = IndigentPerson::where('resident_id', $resident->id)->first();
+        $educ = EducOccupation::where('resident_id', $resident->id)->first();
+        $typeOccupancy = TypeOfOccupancy::where('resident_id', $resident->id)->first();
+        $regVoter = RegisteredVoter::where('resident_id', $resident->id)->first();
+        $grpInd = CommunityGroup::where('resident_id', $resident->id)->first();
+        $healthInfo = HealthInformation::where('resident_id', $resident->id)->first();
+        $perSocHis = PersonalSocialHistory::where('resident_id', $resident->id)->first();
+        $womens = WomensReproductiveAge::where('resident_id', $resident->id)->first();
+        $hpv = Hpv::where('resident_id', $resident->id)->first();
+        $covidPlus = CovidPlus::where('resident_id', $resident->id)->first();
+        $covidVac = CovidVaccine::where('resident_id', $resident->id)->first();
+        $covidBoost = CovidBooster::where('resident_id', $resident->id)->first();
+        $mrtd = MrTd::where('resident_id', $resident->id)->first();
+        $dengue = Dengue::where('resident_id', $resident->id)->first();
+        $epiCard = EpiCard::where('resident_id', $resident->id)->first();
+        $facility = FacilityStructure::where('resident_id', $resident->id)->first();
+        $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
+
+        return view('admin.resident.edit', compact('resident', 'social', 'indigent', 'educ', 'typeOccupancy', 'regVoter', 'grpInd', 'healthInfo', 'perSocHis', 'womens', 'hpv', 'covidPlus', 'covidVac', 'covidBoost', 'mrtd', 'dengue', 'epiCard', 'facility', 'backyard'));
     }
 
     /**
@@ -353,6 +392,7 @@ class ResidentController extends Controller
             "contact_number" => 'required',
             "purok" => 'required',
             "classification_by_age" => 'required',
+            "remarks" => 'required',
             "nhts_4ps" => 'required',
             "nhts_non_4ps" => 'required',
             "non_nhts" => 'required',
@@ -362,35 +402,36 @@ class ResidentController extends Controller
             "education" => 'required',
             "occupation" => 'required',
             "renter" => 'required',
-            "months" => 'required',
+            // "months" => 'required',
             "reg_vot_indication" => 'required',
-            "reg_vot_where" => 'required',
+            // "reg_vot_where" => 'required',
             "com_grp_indication" => 'required',
-            "philheath_number" => 'required',
+            "com_grp_type" => 'required',
+            // "philhealth_number" => 'required',
             "medical_history" => 'required',
             "remark" => 'required',
             "smoker" => 'required',
             "alcohol_beverages_drinker" => 'required',
             "sexually_active" => 'required',
-            "last_menstrual_period" => 'required',
-            "family_planning_use" => 'required',
+            // "last_menstrual_period" => 'required',
+            // "family_planning_use" => 'required',
             "hpv_indication" => 'required',
-            "hpv_when" => 'required',
+            // "hpv_when" => 'required',
             "c_plus_indication" => 'required',
-            "c_plus_when" => 'required',
-            "c_plus_where" => 'required',
+            // "c_plus_when" => 'required',
+            // "c_plus_where" => 'required',
             "c_vac_indication" => 'required',
-            "c_vac_when" => 'required',
-            "c_vac_where" => 'required',
+            // "c_vac_when" => 'required',
+            // "c_vac_where" => 'required',
             "c_boost_indication" => 'required',
-            "c_boost_when" => 'required',
-            "c_boost_where" => 'required',
+            // "c_boost_when" => 'required',
+            // "c_boost_where" => 'required',
             "mr_indication" => 'required',
-            "mr_when" => 'required',
+            // "mr_when" => 'required',
             "td_indication" => 'required',
-            "td_when" => 'required',
+            // "td_when" => 'required',
             "dengue_indication" => 'required',
-            "dengue_when" => 'required',
+            // "dengue_when" => 'required',
             "epi_indication" => 'required',
             "type_of_water_source" => 'required',
             "type_of_toilet_facility" => 'required',
@@ -413,75 +454,128 @@ class ResidentController extends Controller
         $resident->membership_type = $request->membership_type;
         $resident->contact_number = $request->contact_number;
         $resident->purok = $request->purok;
-        $resident->remark = $request->remark;
         $resident->classification_by_age = $request->classification_by_age;
+        $resident->remarks = $request->remarks;
 
         $resident->save();
+        // dd($request);
 
-        $social = SocialEconomicStatus::where('resident_id', $resident->id);
+        $social = SocialEconomicStatus::where('resident_id', $resident->id)->first();
         $social->nhts_4ps = $request->nhts_4ps;
         $social->nhts_non_4ps = $request->nhts_non_4ps;
         $social->non_nhts = $request->non_nhts;
         $social->non_ip = $request->non_ip;
 
-        $indigent = IndigentPerson::where('resident_id', $resident->id);
+        $social->save();
+
+        $indigent = IndigentPerson::where('resident_id', $resident->id)->first();
         $indigent->ip_indication = $request->ip_indication;
         $indigent->tribe = $request->tribe;
 
-        $educ = EducOccupation::where('resident_id', $resident->id);
+        $indigent->save();
+
+        $educ = EducOccupation::where('resident_id', $resident->id)->first();
         $educ->education = $request->education;
         $educ->occupation = $request->occupation;
 
-        $typeOccupancy = TypeOfOccupancy::where('resident_id', $resident->id);
+        $educ->save();
+
+        $typeOccupancy = TypeOfOccupancy::where('resident_id', $resident->id)->first();
         $typeOccupancy->renter = $request->renter;
-        $typeOccupancy->month = $request->month;
+        $typeOccupancy->months = $request->months;
 
-        $regVoter = RegisteredVoter::where('resident_id', $resident->id);
+        $typeOccupancy->save();
+
+        $regVoter = RegisteredVoter::where('resident_id', $resident->id)->first();
         $regVoter->reg_vot_indication = $request->reg_vot_indication;
-        $regVoter->where = $request->reg_where;
+        $regVoter->reg_vot_where = $request->reg_vot_where;
 
-        $grpInd = CommunityGroup::where('resident_id', $resident->id);
+        $regVoter->save();
+
+        $grpInd = CommunityGroup::where('resident_id', $resident->id)->first();
         $grpInd->com_grp_indication = $request->com_grp_indication;
         $grpInd->com_grp_type = $request->com_grp_type;
 
-        $healthInfo = HealthInformation::where('resident_id', $resident->id);
+        $grpInd->save();
+
+        $healthInfo = HealthInformation::where('resident_id', $resident->id)->first();
         $healthInfo->philhealth_number = $request->philhealth_number;
         $healthInfo->medical_history = $request->medical_history; //TODO: array
-        $healthInfo->remark = $request->remarks;
+        $healthInfo->remark = $request->remark;
 
-        $perSocHis = PersonalSocialHistory::where('resident_id', $resident->id);
+        $healthInfo->save();
+
+        $perSocHis = PersonalSocialHistory::where('resident_id', $resident->id)->first();
         $perSocHis->smoker = $request->smoker; // Todo: find bug
         $perSocHis->alcohol_beverages_drinker = $request->alcohol_beverages_drinker;
         $perSocHis->sexually_active = $request->sexually_active;
 
-        $womens = WomensReproductiveAge::where('resident_id', $resident->id);
-        $womens->last_menstual_period = $request->last_menstual_period;
+        $perSocHis->save();
+
+        $womens = WomensReproductiveAge::where('resident_id', $resident->id)->first();
+        $womens->last_menstrual_period = $request->last_menstrual_period;
         $womens->family_planning_use = $request->family_planning_use;
 
-        $covidPlus = CovidPlus::where('resident_id', $resident->id);
+        $womens->save();
+
+        $hpv = Hpv::where('resident_id', $resident->id)->first();
+        $hpv->hpv_indication = $request->hpv_indication;
+        $hpv->hpv_when = $request->hpv_when;
+
+        $hpv->save();
+
+        $covidPlus = CovidPlus::where('resident_id', $resident->id)->first();
         $covidPlus->c_plus_indication = $request->c_plus_indication;
         $covidPlus->c_plus_when = $request->c_plus_when;
         $covidPlus->c_plus_where = $request->c_plus_where;
 
-        $covidVac = CovidVaccine::where('resident_id', $resident->id);
+        $covidPlus->save();
+
+        $covidVac = CovidVaccine::where('resident_id', $resident->id)->first();
         $covidVac->c_vac_indication = $request->c_vac_indication;
         $covidVac->c_vac_when = $request->c_vac_when;
         $covidVac->c_vac_where = $request->c_vac_where;
 
-        // $age = Carbon::parse($resident->birthdate)->age;
-        // $resident->age= $age;
-        // dd($age);
-        $social->save();
-        $indigent->save();
-        $educ->save();
-        $typeOccupancy->save();
-        $regVoter->save();
-        $grpInd->save();
-        $healthInfo->save();
-        $perSocHis->save();
-        $womens->save();
-        $covidPlus->save();
         $covidVac->save();
+
+        $covidBoost = CovidBooster::where('resident_id', $resident->id)->first();
+        $covidBoost->c_boost_indication = $request->c_boost_indication;
+        $covidBoost->c_boost_when = $request->c_boost_when;
+        $covidBoost->c_boost_where = $request->c_boost_where;
+
+        $covidBoost->save();
+
+        $mrtd = MrTd::where('resident_id', $resident->id)->first();
+        $mrtd->mr_indication = $request->mr_indication;
+        $mrtd->mr_when = $request->mr_when;
+        $mrtd->td_indication = $request->td_indication;
+        $mrtd->td_when = $request->td_when;
+
+        $mrtd->save();
+
+        $dengue = Dengue::where('resident_id', $resident->id)->first();
+        $dengue->dengue_indication = $request->dengue_indication;
+        $dengue->dengue_when = $request->dengue_when;
+
+        $dengue->save();
+
+        $epiCard = EpiCard::where('resident_id', $resident->id)->first();
+        $epiCard->epi_indication = $request->epi_indication;
+
+        $epiCard->save();
+
+        $facility = FacilityStructure::where('resident_id', $resident->id)->first();
+        $facility->type_of_water_source = $request->type_of_water_source;
+        $facility->type_of_toilet_facility = $request->type_of_toilet_facility;
+        $facility->type_of_waste_management = $request->type_of_waste_management;
+
+        $facility->save();
+
+        $backyard = BackyardGardening::where('resident_id', $resident->id)->first();
+        $backyard->gardening_indication = $request->gardening_indication;
+        $backyard->type_of_vegetables = $request->type_of_vegetables;
+
+        $backyard->save();
 
         return redirect()->route('residents.index')->with('status', 'Resident has been updated successfully');
     }
@@ -497,7 +591,7 @@ class ResidentController extends Controller
         $resident = Resident::find($id);
         $resident->delete();
 
-        return redirect()->route('residents.index');
+        return redirect()->route('residents.index')->with('status', 'Resident deleted Successfully');
     }
     public function importForm()
     {
@@ -506,7 +600,7 @@ class ResidentController extends Controller
     }
     public function import(Request $request)
     {
-        Excel::import(new ResidentImport, $request->file);
+        //Excel::import(new ResidentImport, $request->file);
         return redirect()->route('residents.index')->with('status', 'Resident imported Successfully');
     }
     public function done($id)

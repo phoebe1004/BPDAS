@@ -8,291 +8,38 @@
         <div class="card-body">
             <div class="container">
                 <div class="bg-light">
-                    {{-- <div class="mt-3">
-                        <div class="col-md-4 mt-3">
-                            <label class="form-group mb-4">Lastname</label>
-                            <input type="text" name="lastname" value="{{ $resident->lastname }}"
-                                class="form-control">
-                            @error('lastname')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-4 mt-3">
-                            <label class="form-group">Firstname</label>
-                            <input type="text" class="form-control" name="firstname"
-                                value="{{ $resident->firstname }}">
-                            @error('firstname')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-3">
-                            <label class="form-group">Middle name</label>
-                            <input type="text" class="form-control" name="middlename"
-                                value="{{ $resident->middlename }}">
-                            @error('middlename')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-3">
-                            <label class="form-group">Suffix</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" name="suffix">
-                                <option>{{ $resident->suffix }}</option>
-                                <option value="Jr." name="suffix">Jr.</option>
-                                <option value="Sr" name="suffix">Sr.</option>
-                                <option value="III" name="suffix">III</option>
-                                <option value="IV" name="suffix">IV</option>
-                                <option value="None" name="suffix">None</option>
-                            </select>
-                            @error('suffix')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-4">
-                            <label for="purok" class="form-group">Name of Purok</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" name="purok">
-                                <option>{{ $resident->purok }}</option>
-                                <option value="Antonio Village" name="purok">Antonio Village</option>
-                                <option value="Bacahoa Village" name="purok">Bacahoa Village</option>
-                                <option value="Camelon Compound" name="purok">Camelon Compound</option>
-                                <option value="CDE Phase 4" name="purok">CDE Phase 4</option>
-                                <option value="CDE Phase 3" name="purok">CDE Phase 3</option>
-                                <option value="CDE Phase 2" name="purok">CDE Phase 2</option>
-                                <option value="CDE Phase 1" name="purok">CDE Phase 1</option>
-                                <option value="Cecilia 1&2" name="purok">Cecilia 1&2</option>
-                                <option value="Celerina Heights" name="purok">Celerina Heights</option>
-                                <option value="Country Homes (Zone 11)" name="purok">Country Homes (Zone 11)</option>
-                                <option value="Country Homes B1-B19" name="purok">Country Homes B1-B19</option>
-                                <option value="CHS #15 (B55-B47)" name="purok">CHS #15 (B55-B47)</option>
-                                <option value="CHS Purok (14 B36-B46)" name="purok">CHS Purok (14 B36-B46)</option>
-                                <option value="Country Homes Sagingan" name="purok">Country Homes Sagingan</option>
-                                <option value="CHS #16 B56-62" name="purok">CHS #16 B56-62</option>
-                                <option value="Country Ville Village" name="purok">Country Ville Village</option>
-                                <option value="Chula Vista" name="purok">Chula Vista</option>
-                                <option value="D'Achievers" name="purok">D'Achievers</option>
-                                <option value="Dacudao/Binoling (Amsay)" name="purok">Dacudao/Binoling (Amsay)</option>
-                                <option value="Deca Homes Phase 1-A (B14-20)" name="purok">Deca Homes Phase 1-A (B14-20)</option>
-                                <option value="Deca Homes Phase 2-A (B21-32)" name="purok">Deca Homes Phase 2-A (B21-32)</option>
-                                <option value="Deca Homes Phase 2-B (B2 33-41)" name="purok">Deca Homes Phase 2-B (B2 33-41)</option>
-                                <option value="Deca Homes Phase 1-B (B1-13)" name="purok">Deca Homes Phase 1-B (B1-13)</option>
-                                <option value="Dela Peña Village" name="purok">Dela Peña Village</option>
-                                <option value="Diho Phase 2" name="purok">Diho Phase 2</option>
-                                <option value="Diho Phase 1" name="purok">Diho Phase 1</option>
-                                <option value="Dragon Compound Purok 5" name="purok">Dragon Compound Purok 5</option>
-                                <option value="Emilia Homes (Victors)" name="purok">Emilia Homes (Victors)</option>
-                                <option value="Emilia Homes Phase 1A" name="purok">Emilia Homes Phase 1A</option>
-                                <option value="Emilia Homes Beside Emily" name="purok">Emilia Homes Beside Emily</option>
-                                <option value="Emilia Homes Phase 1B" name="purok">Emilia Homes Phase 1B</option>
-                                <option value="Emilia Homes Phase 2B" name="purok">Emilia Homes Phase 2B</option>
-                                <option value="Emilia Homes Phase 2A" name="purok">Emilia Homes Phase 2A</option>
-                                <option value="Emilia Homes Phase 3B" name="purok">Emilia Homes Phase 3B</option>
-                                <option value="Emilia Homes Phase 3A" name="purok">Emilia Homes Phase 3A</option>
-                                <option value="Green Orchard Village" name="purok">Green Orchard Village</option>
-                                <option value="Greenland Phase 1" name="purok">Greenland Phase 1</option>
-                                <option value="Greenland Phase 2" name="purok">Greenland Phase 2</option>
-                                <option value="Holy Trinity Village" name="purok">Holy Trinity Village</option>
-                                <option value="Laverna Hills Phase 3" name="purok">Laverna Hills Phase 3</option>
-                                <option value="Laverna Hills Phase 1" name="purok">Laverna Hills Phase 1</option>
-                                <option value="Pag-ibig Subdivision" name="purok">Pag-ibig Subdivision</option>
-                                <option value="Pareñas Compound" name="purok">Pareñas Compound</option>
-                                <option value="Precilla 1/2" name="purok">Precilla 1/2</option>
-                                <option value="Pretige" name="purok">Pretige</option>
-                                <option value="Purok 32 Mountain View Village" name="purok">Purok 32 Mountain View Village</option>
-                                <option value="Purok 33 KM 11, San Roque" name="purok">Purok 33 KM 11, San Roque</option>
-                                <option value="Purok 34 Amakan" name="purok">Purok 34 Amakan</option>
-                                <option value="Purok 36 Arendain Compound" name="purok">Purok 36 Arendain Compound</option>
-                                <option value="Purok 36 Forestal" name="purok">Purok 36 Forestal</option>
-                                <option value="Purok 37 Forestal" name="purok">Purok 37 Forestal</option>
-                                <option value="Purok 39 Daitic Compound" name="purok">Purok 39 Daitic Compound</option>
-                                <option value="Ramonena 2" name="purok">Ramonena 2</option>
-                                <option value="Remedios Eights" name="purok">Remedios Eights</option>
-                                <option value="Sialza Compound" name="purok">Sialza Compound</option>
-                                <option value="Sta. Teresita Purok 1" name="purok">Sta. Teresita Purok 1</option>
-                                <option value="Suraya Cab Elem. School" name="purok">Suraya Cab Elem. School</option>
-                                <option value="Suraya Homes Phase 1" name="purok">Suraya Homes Phase 1</option>
-                                <option value="Suraya Homes Phase 2A" name="purok">Suraya Homes Phase 2A</option>
-                                <option value="Suraya Homes Phase 2B" name="purok">Suraya Homes Phase 2B</option>
-                                <option value="The Harmony Subdivision" name="purok">The Harmony Subdivision</option>
-                                <option value="Villa Park Subdivision" name="purok">Villa Park Subdivision</option>
-                            </select>
-
-                            @error('purok')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-4 mt-3">
-                            <label class="form-group mb-4">Home Address</label>
-                            <input type="text" class="form-control" name="address"
-                                value="{{ $resident->address }}">
-                            @error('address')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-4 mt-3">
-                            <label class="form-group mb-4">Email Adress</label>
-                            <input type="text" class="form-control" name="emailaddress"
-                                value="{{ $resident->emailaddress }}">
-                            @error('emailaddress')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-4 mt-3">
-                            <label class="form-group mb-4">Contact Number</label>
-                            <input type="number" class="form-control" name="contactnumber"
-                                value="{{ $resident->contactnumber }}">
-                            @error('contactnumber')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-4 mt-4">
-                            <label class="form-label fw-bold">Birthday</label>
-                            <input type="date" class="form-control" name="birthdate" value="{{ $resident->birthdate }}">
-
-                            @error('birthdate')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-4">
-                            <label class="form-group">Sex</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"  name="sex"x>
-                                <option>{{ $resident->sex }}</option>
-                                <option value="Male" name="sex">Male</option>
-                                <option value="Female" name="sex">Female</option>
-                            </select>
-
-                            @error('sex')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-3 mt-4">
-                            <label for="civilStatus" class="form-group">Civil Status</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
-                                name="civil_status">
-                                <option>{{ $resident->civil_status}}</option>
-                                <option value="Single">Single</option>
-                                <option value="Married">Married</option>
-                                <option value="Widowed">Widowed</option>
-                                <option value="Separated">Separated</option>
-                                <option value="Divorced">Divorced</option>
-                                <option value="Others">Others</option>
-                            </select>
-                            @error('civil_status')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-3 mt-4">
-                            <label for="servicesAcquired" class="form-group">Services Acquired</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
-                                name="services_acquired">
-                                <option>{{$resident->services_acquired}}</option>
-                                <option value="Immunization Services">Immunization Services</option>
-                                <option value="Maternal Check-up Services">Maternal Check-up Services</option>
-                                <option value="TB DOTS Services">TB DOTS Services</option>
-                                <option value="Family Planning">Family Planning</option>
-                                <option value="Barangay Nutrition">Barangay Nutrition
-                                </option>
-                                <option value="Others">Others</option>
-                            </select>
-                            @error('services_acquired')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-3 mt-3">
-                            <label for="nutritionalStatus" class="form-group">Nutritional Status</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
-                                name="nutritional_status">
-                                <option>{{ $resident->nutritional_status }}</option>
-                                <option value="Underweight" name="nutritional_status">Underweight</option>
-                                <option value="Normal" name="nutritional_status">Normal</option>
-                                <option value="Overweight" name="nutritional_status">Overweight</option>
-                                <option value="Obese1" name="nutritional_status">Obese 1</option>
-                                <option value="Obese2" name="nutritional_status">Obese 2</option>
-                                <option value="None" name="nutritional_status">Prefer not to say</option>
-                            </select>
-                            @error('nutritional_status')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-4">
-                            <label for="employmentStatus" class="form-group">Employment Status </label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
-                                name="employment_status">
-                                <option>{{ $resident->employment_status }}</option>
-                                <option value="Employed" name="employment_status">Employed</option>
-                                <option value="Unemployed" name="employment_status">Unemployed</option>
-                                <option value="None" name="employment_status">Prefer not to say</option>
-                            </select>
-
-                            @error('employment_status')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                        <div class="col-md-2 mt-4">
-                            <label for="pwdStatus" class="form-group">Person with Disability</label>
-                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg"
-                                name="pwd_status">
-                                <option>{{ $resident->pwd_status }}</option>
-                                <option value="Yes" name="pwd_status">Yes</option>
-                                <option value="No" name="pwd_status">No</option>
-                            </select>
-
-                            @error('pwd_status')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-
-                    </div>
-                    </div>
-                    </div>
-                    <div class="mt-5">
-                        <div class="d-grid gap-2 col-3 mx-auto">
-                            <input class="btn btn-success" type="submit" value="Create">
-                        </div>
-                        <div class="d-grid gap-2 col-3 mx-auto">
-                            <a href="{{ route('residents.index') }}" id="cancel" name="cancel"
-                                class="btn btn-danger btn-md mt-3">Cancel</a>
-                        </div>
-                    </div>
-                    <div class="pt-5"></div> --}}
-                    <form action="{{ route('residents.update', $resident->id) }}" method="post" class="row gx-3 gy-2 align-items-center">
+                    <form action="{{ route('residents.update', $resident->id) }}" method="post"
+                        class="row gx-3 gy-2 align-items-center">
                         @csrf
                         @method('PUT')
 
-                        <div class="col-12">
-                            <div class="d-flex">
+                        <div class="">
+                            <div class="col-md-2 offset-md-9 d-flex">
                                 <button type="submit" class="btn btn-success btn-lg ms-auto px-5">Save</button>
+                            </div>
+                            <div class="col-md-1 d-flex">
+                                <a href="{{ route('residents.index') }}" id="cancel" name="cancel"
+                                        class="btn btn-danger btn-lg ">Cancel</a>
                             </div>
                         </div>
 
+
                         <div class="mb-4 row gx-3 gy-2 align-items-center">
                             <div class="col-12">
-                                <h4>Resident's Information:</h4>
+                                <h3><b>Resident's Information:</b></h3>
                             </div>
                             <div class="col-md-4">
                                 <span>Lastname</span>
-                                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname"
-                                    value="{{ old('lastname') }}">
+                                <input type="text" class="form-control" name="lastname" id="lastname"
+                                    placeholder="lastname" value="{{ $resident->lastname }}">
                                 @error('lastname')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4">
                                 <span>Firstname</span>
-                                <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname"
-                                    value="{{ old('firstname') }}">
+                                <input type="text" class="form-control" name="firstname" id="firstname"
+                                    placeholder="firstname" value="{{ $resident->firstname }}">
                                 @error('firstname')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -300,7 +47,7 @@
                             <div class="col-md-4">
                                 <span>Middlename</span>
                                 <input type="text" class="form-control" name="middlename" id="middlename"
-                                    placeholder="middlename" value="{{ old('middlename') }}">
+                                    placeholder="middlename" value="{{ $resident->middlename }}">
                                 @error('middlename')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -308,12 +55,12 @@
                             <div class="col-md-4 mt-4">
                                 <span>Suffix</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="suffix">
-                                        <option disabled selected>--Suffix--</option>
-                                        <option value="Sr.">Sr.</option>
-                                        <option value="Jr.">Jr.</option>
-                                        <option value="III">III</option>
-                                        <option value="IV">IV</option>
-                                        <option value="None">None</option>
+                                        <option selected>{{ $resident->suffix }}</option>
+                                        <option value="Sr." name="suffix">Sr.</option>
+                                        <option value="Jr." name="suffix">Jr.</option>
+                                        <option value="III" name="suffix">III</option>
+                                        <option value="IV" name="suffix">IV</option>
+                                        <option value="None" name="suffix">None</option>
                                     </select>
                                     @error('suffix')
                                         <span class="text-danger">{{ $message }}</span>
@@ -321,13 +68,14 @@
                             </div>
                             <div class="col-md-4 mt-4">
                                 <span>Relationship to HH Head</span>
-                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="relationship">
-                                        <option disabled selected>--Select Relationship--</option>
-                                        <option value="Head">Head</option>
-                                        <option value="Spouse">Spouse</option>
-                                        <option value="Son">Son</option>
-                                        <option value="Daughter">Daughter</option>
-                                        <option value="Others">Others</option>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="relationship">
+                                        <option selected>{{ $resident->relationship }}</option>
+                                        <option value="Head" name="relationship">Head</option>
+                                        <option value="Spouse" name="relationship">Spouse</option>
+                                        <option value="Son" name="relationship">Son</option>
+                                        <option value="Daughter" name="relationship">Daughter</option>
+                                        <option value="Others" name="relationship">Others</option>
                                     </select>
                                     @error('relationship')
                                         <span class="text-danger">{{ $message }}</span>
@@ -336,9 +84,9 @@
                             <div class="col-md-4 mt-4">
                                 <span>Sex</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="sex">
-                                        <option disabled selected>--Select Sex--</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
+                                        <option selected>{{ $resident->sex }}</option>
+                                        <option value="Male" name="sex">Male</option>
+                                        <option value="Female" name="sex">Female</option>
                                     </select>
                                     @error('sex')
                                         <span class="text-danger">{{ $message }}</span>
@@ -346,19 +94,21 @@
                             </div>
                             <div class="col-md-4 mt-4 ">
                                 <span>Birthday</span>
-                                <input type="date" class="form-control" name="birthdate" id="birthdate">
+                                <input type="date" class="form-control" name="birthdate" id="birthdate"
+                                    value="{{ $resident->birthdate }}">
                                 @error('birthdate')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             <div class="col-md-4 mt-4">
                                 <span>Civil Status</span>
-                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="civil_status">
-                                        <option disabled selected>--Select Civil Status--</option>
-                                        <option value="single">Single</option>
-                                        <option value="married">Married</option>
-                                        <option value="widowed">Widowed</option>
-                                        <option value="live in">Live in</option>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="civil_status">
+                                        <option selected>{{ $resident->civil_status }}</option>
+                                        <option value="single"  name="civil_status">Single</option>
+                                        <option value="married" name="civil_status">Married</option>
+                                        <option value="widowed" name="civil_status">Widowed</option>
+                                        <option value="live in" name="civil_status">Live in</option>
                                     </select>
                                     @error('civil_status')
                                         <span class="text-danger">{{ $message }}</span>
@@ -366,19 +116,20 @@
                             </div>
                             <div class="col-md-4 mt-4">
                                 <span>Membership Type</span>
-                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="membership_type">
-                                        <option disabled selected>--Select Membership Type--</option>
-                                        <option value="member">Member</option>
-                                        <option value="dependent">Dependent</option>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="membership_type">
+                                        <option selected>{{ $resident->membership_type }}</option>
+                                        <option value="member"  name="membership_type" >Member</option>
+                                        <option value="dependent"  name="membership_type" >Dependent</option>
                                     </select>
-                                    @error('memebership_type')
+                                    @error('membership_type')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                             </div>
                             <div class="col-md-4 mt-4">
                                 <span>Contact Number</span>
                                 <input type="number" class="form-control" name="contact_number" id="contact_number"
-                                    placeholder="contact number" value="{{ old('contact_number') }}">
+                                    placeholder="contact number" value="{{ $resident->contact_number }}">
                                 @error('contact_number')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
@@ -386,7 +137,7 @@
                             <div class="col-md-4 mt-4">
                                 <span>Purok</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="purok">
-                                        <option disabled selected>--Select Purok--</option>
+                                        <option selected>{{ $resident->purok }}</option>
                                         <option value="Antonio Village" name="purok">Antonio Village</option>
                                         <option value="Bacahoa Village" name="purok">Bacahoa Village</option>
                                         <option value="Camelon Compound" name="purok">Camelon Compound</option>
@@ -400,10 +151,13 @@
                                         </option>
                                         <option value="Country Homes B1-B19" name="purok">Country Homes B1-B19</option>
                                         <option value="CHS #15 (B55-B47)" name="purok">CHS #15 (B55-B47)</option>
-                                        <option value="CHS Purok (14 B36-B46)" name="purok">CHS Purok (14 B36-B46)</option>
-                                        <option value="Country Homes Sagingan" name="purok">Country Homes Sagingan</option>
+                                        <option value="CHS Purok (14 B36-B46)" name="purok">CHS Purok (14 B36-B46)
+                                        </option>
+                                        <option value="Country Homes Sagingan" name="purok">Country Homes Sagingan
+                                        </option>
                                         <option value="CHS #16 B56-62" name="purok">CHS #16 B56-62</option>
-                                        <option value="Country Ville Village" name="purok">Country Ville Village</option>
+                                        <option value="Country Ville Village" name="purok">Country Ville Village
+                                        </option>
                                         <option value="Chula Vista" name="purok">Chula Vista</option>
                                         <option value="D'Achievers" name="purok">D'Achievers</option>
                                         <option value="Dacudao/Binoling (Amsay)" name="purok">Dacudao/Binoling (Amsay)
@@ -414,7 +168,8 @@
                                         <option value="Deca Homes Phase 2-A (B21-32)" name="purok">Deca Homes Phase 2-A
                                             (B21-32)
                                         </option>
-                                        <option value="Deca Homes Phase 2-B (B2 33-41)" name="purok">Deca Homes Phase 2-B
+                                        <option value="Deca Homes Phase 2-B (B2 33-41)" name="purok">Deca Homes Phase
+                                            2-B
                                             (B2
                                             33-41)</option>
                                         <option value="Deca Homes Phase 1-B (B1-13)" name="purok">Deca Homes Phase 1-B
@@ -425,31 +180,43 @@
                                         <option value="Diho Phase 1" name="purok">Diho Phase 1</option>
                                         <option value="Dragon Compound Purok 5" name="purok">Dragon Compound Purok 5
                                         </option>
-                                        <option value="Emilia Homes (Victors)" name="purok">Emilia Homes (Victors)</option>
-                                        <option value="Emilia Homes Phase 1A" name="purok">Emilia Homes Phase 1A</option>
+                                        <option value="Emilia Homes (Victors)" name="purok">Emilia Homes (Victors)
+                                        </option>
+                                        <option value="Emilia Homes Phase 1A" name="purok">Emilia Homes Phase 1A
+                                        </option>
                                         <option value="Emilia Homes Beside Emily" name="purok">Emilia Homes Beside Emily
                                         </option>
-                                        <option value="Emilia Homes Phase 1B" name="purok">Emilia Homes Phase 1B</option>
-                                        <option value="Emilia Homes Phase 2B" name="purok">Emilia Homes Phase 2B</option>
-                                        <option value="Emilia Homes Phase 2A" name="purok">Emilia Homes Phase 2A</option>
-                                        <option value="Emilia Homes Phase 3B" name="purok">Emilia Homes Phase 3B</option>
-                                        <option value="Emilia Homes Phase 3A" name="purok">Emilia Homes Phase 3A</option>
-                                        <option value="Green Orchard Village" name="purok">Green Orchard Village</option>
+                                        <option value="Emilia Homes Phase 1B" name="purok">Emilia Homes Phase 1B
+                                        </option>
+                                        <option value="Emilia Homes Phase 2B" name="purok">Emilia Homes Phase 2B
+                                        </option>
+                                        <option value="Emilia Homes Phase 2A" name="purok">Emilia Homes Phase 2A
+                                        </option>
+                                        <option value="Emilia Homes Phase 3B" name="purok">Emilia Homes Phase 3B
+                                        </option>
+                                        <option value="Emilia Homes Phase 3A" name="purok">Emilia Homes Phase 3A
+                                        </option>
+                                        <option value="Green Orchard Village" name="purok">Green Orchard Village
+                                        </option>
                                         <option value="Greenland Phase 1" name="purok">Greenland Phase 1</option>
                                         <option value="Greenland Phase 2" name="purok">Greenland Phase 2</option>
                                         <option value="Holy Trinity Village" name="purok">Holy Trinity Village</option>
-                                        <option value="Laverna Hills Phase 3" name="purok">Laverna Hills Phase 3</option>
-                                        <option value="Laverna Hills Phase 1" name="purok">Laverna Hills Phase 1</option>
+                                        <option value="Laverna Hills Phase 3" name="purok">Laverna Hills Phase 3
+                                        </option>
+                                        <option value="Laverna Hills Phase 1" name="purok">Laverna Hills Phase 1
+                                        </option>
                                         <option value="Pag-ibig Subdivision" name="purok">Pag-ibig Subdivision</option>
                                         <option value="Pareñas Compound" name="purok">Pareñas Compound</option>
                                         <option value="Precilla 1/2" name="purok">Precilla 1/2</option>
                                         <option value="Pretige" name="purok">Pretige</option>
-                                        <option value="Purok 32 Mountain View Village" name="purok">Purok 32 Mountain View
+                                        <option value="Purok 32 Mountain View Village" name="purok">Purok 32 Mountain
+                                            View
                                             Village</option>
                                         <option value="Purok 33 KM 11, San Roque" name="purok">Purok 33 KM 11, San Roque
                                         </option>
                                         <option value="Purok 34 Amakan" name="purok">Purok 34 Amakan</option>
-                                        <option value="Purok 36 Arendain Compound" name="purok">Purok 36 Arendain Compound
+                                        <option value="Purok 36 Arendain Compound" name="purok">Purok 36 Arendain
+                                            Compound
                                         </option>
                                         <option value="Purok 36 Forestal" name="purok">Purok 36 Forestal</option>
                                         <option value="Purok 37 Forestal" name="purok">Purok 37 Forestal</option>
@@ -458,80 +225,613 @@
                                         <option value="Ramonena 2" name="purok">Ramonena 2</option>
                                         <option value="Remedios Eights" name="purok">Remedios Eights</option>
                                         <option value="Sialza Compound" name="purok">Sialza Compound</option>
-                                        <option value="Sta. Teresita Purok 1" name="purok">Sta. Teresita Purok 1</option>
+                                        <option value="Sta. Teresita Purok 1" name="purok">Sta. Teresita Purok 1
+                                        </option>
                                         <option value="Suraya Cab Elem. School" name="purok">Suraya Cab Elem. School
                                         </option>
                                         <option value="Suraya Homes Phase 1" name="purok">Suraya Homes Phase 1</option>
-                                        <option value="Suraya Homes Phase 2A" name="purok">Suraya Homes Phase 2A</option>
-                                        <option value="Suraya Homes Phase 2B" name="purok">Suraya Homes Phase 2B</option>
+                                        <option value="Suraya Homes Phase 2A" name="purok">Suraya Homes Phase 2A
+                                        </option>
+                                        <option value="Suraya Homes Phase 2B" name="purok">Suraya Homes Phase 2B
+                                        </option>
                                         <option value="The Harmony Subdivision" name="purok">The Harmony Subdivision
                                         </option>
-                                        <option value="Villa Park Subdivision" name="purok">Villa Park Subdivision</option>
+                                        <option value="Villa Park Subdivision" name="purok">Villa Park Subdivision
+                                        </option>
                                     </select></p>
 
                                 @error('purok')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-md-4 mt-4">
-                                <span>Type of community group</span>
-                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
-                                        name="group_community">
-                                        <option disabled selected>--Type of Group Community--</option>
-                                        <option value="none">None</option>
-                                        <option value="women">Womens</option>
-                                        <option value="Senior citizens">Senior Citizens</option>
-                                        <option value="youth">Youth</option>
-                                        <option value="pwd/s">PWD's</option>
-                                    </select></p>
-                                @error('com_grp_type')
-                                    <span class="text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
+
                             <div class="col-md-4 mt-4">
                                 <span>Classification By Age</span>
                                 <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                         name="classification_by_age">
-                                        <option disabled selected>--classification by age--</option>
-                                        <option value="none">None</option>
-                                        <option value="Newborn">Newborn</option>
-                                        <option value="Senior citizens">Senior Citizens</option>
-                                        <option value="Adolescent">Adolescent</option>
-                                        <option value="Adult (20-59 yrs old)">Adult (20-59 yrs old</option>
-                                        <option value="15-49 y.o., not pregnant & non-PP">15-49 y.o., not pregnant & non-PP</option>
-                                        <option value="Pregnant">Pregnant</option>
-                                        <option value="Adolescent Pregnant">Adolescent Pregnant</option>
-                                        <option value="Post Partum">Post Partum</option>
-                                        <option value="Infant (29 days - 11 month old)">Infant (29 days - 11 month old</option>
-                                        <option value="Under 5 (0-59 months)">Under 5 (0-59 months</option>
-                                        <option value="PWD">PWD</option>
+                                        <option selected>{{ $resident->classification_by_age }}</option>
+                                        <option value="none" name="classification_by_age" >None</option>
+                                        <option value="Newborn" name="classification_by_age" >Newborn</option>
+                                        <option value="Senior citizens" name="classification_by_age" >Senior Citizens</option>
+                                        <option value="Adolescent" name="classification_by_age" >Adolescent</option>
+                                        <option value="Adult (20-59 yrs old)" name="classification_by_age" >Adult (20-59 yrs old</option>
+                                        <option value="15-49 y.o., not pregnant & non-PP" name="classification_by_age" >15-49 y.o., not pregnant & non-PP
+                                        </option>
+                                        <option value="Pregnant" name="classification_by_age" >Pregnant</option>
+                                        <option value="Adolescent Pregnant" name="classification_by_age" >Adolescent Pregnant</option>
+                                        <option value="Post Partum" name="classification_by_age" >Post Partum</option>
+                                        <option value="Infant (29 days - 11 month old)" name="classification_by_age" >Infant (29 days - 11 month old
+                                        </option>
+                                        <option value="Under 5 (0-59 months)" name="classification_by_age" >Under 5 (0-59 months</option>
+                                        <option value="PWD" name="classification_by_age" >PWD</option>
                                     </select></p>
                                 @error('classification_by_age')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-12 mb-2 mt-3">
                                 <span>Remarks</span>
-                                <textarea rows="5" class="form-control" name="remark" id="remark"></textarea>
+                                <input rows="5" class="form-control" name="remarks" id="remarks"  value="{{ $resident->remarks }}">
+                                @error('remarks')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <h4 class="mt-5">Social Economic Status</h4>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>NHTS 4Ps</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="nhts_4ps">
+                                        <option selected>{{ $social->nhts_4ps }} </option>
+                                        <option value="yes" name="nhts_4ps">Yes</option>
+                                        <option value="no" name="nhts_4ps">No</option>
+                                    </select>
+                                    @error('nhts_4ps')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>NHTS Non 4Ps</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="nhts_non_4ps" id="nhts_non_4ps">
+                                        <option selected>{{ $social->nhts_non_4ps }}</option>
+                                        <option value="yes" name="nhts_non_4ps">Yes</option>
+                                        <option value="no" name="nhts_non_4ps">No</option>
+                                    </select>
+                                    @error('nhts_non_4ps')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Non NHTS</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="non_nhts" id="non_nhts">
+                                        <option selected>{{ $social->non_nhts }}</option>
+                                        <option value="yes" name="non_nhts">Yes</option>
+                                        <option value="no" name="non_nhts">No</option>
+                                    </select>
+                                    @error('non_nhts')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Non IP</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="non_ip"
+                                        id="non_ip">
+                                        <option selected>{{ $social->non_ip }} </option>
+                                        <option value="yes" name="non_ip">Yes</option>
+                                        <option value="no" name="non_ip">No</option>
+                                    </select>
+                                    @error('non_ip')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <span>IP Indication</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="ip_indication" id="ip_indication">
+                                        <option selected>{{ $indigent->ip_indication }}</option>
+                                        <option value="yes" name="ip_indication">Yes</option>
+                                        <option value="no" name="ip_indication">No</option>
+                                    </select>
+                                    @error('ip_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <span>Tribe</span>
+                                <input type="text" class="form-control" name="tribe" id="tribe"
+                                    placeholder="tribe" value="{{ $indigent->tribe }}">
+                                @error('tribe')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">Educational Attainment and Occupation</h4>
+                            <div class="col-md-6 mt-3">
+                                <span>Educational Attainment</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="education" id="education">
+                                        <option selected>{{$educ->education}}</option>
+                                        <option value="None" name="education">None</option>
+                                        <option value="EL" name="education">Elementary Level</option>
+                                        <option value="EG" name="education">Elementary Graduate</option>
+                                        <option value="JHSL" name="education">Junior High School Level</option>
+                                        <option value="SHSL" name="education">Senior High School Level</option>
+                                        <option value="V" name="education">Vocational</option>
+                                        <option value="CL" name="education">College Level</option>
+                                        <option value="CG" name="education">College Graduate</option>
+                                        <option value="PG" name="education">Post Graduate</option>
+                                    </select></p>
+                                @error('education')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <span>Occupation</span>
+                                <input type="text" class="form-control" name="occupation" id="occupation"
+                                    placeholder="occupation" value="{{$educ->occupation}}">
+                                @error('occupation')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">Occupancy / Group Community and Voter Registration Information</h4>
+                            <div class="col-md-3 mt-3">
+                                <span>Type of Occupancy (Renter)</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="renter"
+                                        id="renter">
+                                        <option selected>{{$typeOccupancy->renter}}</option>
+                                        <option value="yes" name="renter">Yes</option>
+                                        <option value="no" name="renter">No</option>
+                                    </select>
+                                    @error('renter')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3  mt-3">
+                                <span>Number of Months</span>
+                                <input type="number" class="form-control" name="months" id="months"
+                                    placeholder="months" value="{{ $typeOccupancy->months }}">
+                                @error('months')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <span>Registered Voter</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="reg_vot_indication" id="reg_vot_indication">
+                                        <option selected>{{ $regVoter->reg_vot_indication}}</option>
+                                        <option value="yes" name="reg_vot_indication">Yes</option>
+                                        <option value="no" name="reg_vot_indication">No</option>
+                                    </select>
+                                    @error('reg_vot_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <span>Where</span>
+                                <input type="text" class="form-control" name="reg_vot_where" id="reg_vot_where"
+                                    placeholder="reg_vot_where" value="{{ $regVoter->reg_vot_where }}">
+                                @error('reg_vot_where')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-2 mt-3">
+                                <span>Community Group</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="com_grp_indication" id="com_grp_indication">
+                                        <option selected>{{ $grpInd->com_grp_indication }}</option>
+                                        <option value="yes" name="com_grp_indication">Yes</option>
+                                        <option value="no" name="com_grp_indication">No</option>
+                                    </select>
+                                    @error('com_grp_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mt-3">
+                                <span>Type of Community Group</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="com_grp_type" id="com_grp_type">
+                                        <option selected>{{ $grpInd->com_grp_type }}</option>
+                                        <option value="none" name="com_grp_type">None</option>
+                                        <option value="women" name="com_grp_type">Women</option>
+                                        <option value="senior citizens" name="com_grp_type">Senior Citizens</option>
+                                        <option value="youth" name="com_grp_type">Youth</option>
+                                        <option value="pwd's" name="com_grp_type">PWD's</option>
+                                    </select>
+                                    @error('com_grp_type')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <h3 class="mt-5"><b>Resident's Health Information:</b></h3>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>PhilHealth Number</span>
+                                <input type="text" class="form-control" name="philhealth_number"
+                                    id="philhealth_number" placeholder="philhealth number"
+                                    value="{{ $healthInfo->philhealth_number }}">
+                                @error('philhealth_number')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Medical History</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="medical_history" id="medical_history">
+                                        <option selected>{{ $healthInfo->medical_history }}</option>
+                                        <option value="Hypertension" name="medical_history">Hypertension</option>
+                                        <option value="Diabetes" name="medical_history">Diabetes</option>
+                                        <option value="Tuberculosis" name="medical_history">Tuberculosis</option>
+                                        <option value="Surgery" name="medical_history">Surgery</option>
+                                        <option value="None" name="medical_history">None</option>
+                                    </select></p>
+                                @error('medical_history')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Remarks</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="remark"
+                                        id="remark">
+                                        <option selected>{{ $healthInfo->remark }}</option>
+                                        <option value="Transfer of Residence" name="remark">Transfer of Residence
+                                        </option>
+                                        <option value="Severe Acute Malnutrition" name="remark">Severe Acute Malnutrition</option>
+                                        <option value="Moderate Acute Malnutrition" name="remark">Moderate Acute Malnutrition</option>
+                                        <option value="Stunted" name="remark">Stunted</option>
+                                        <option value="For Updating" name="remark">For Updating</option>
+                                        <option value="None" name="remark">None</option>
+                                    </select></p>
                                 @error('remark')
                                     <span class="text-danger">{{ $message }}</span>
                                 @enderror
                             </div>
-                            
-                        </div>
-
-                        <div class="col-12 mt-5">
-                            <div class="d-flex">
-                                <button type="submit" class="btn btn-success btn-lg ms-auto px-5">Save</button>
+                            <h4 class="mt-5">Personal and Social </h4>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Smoker</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="smoker"
+                                        id="smoker">
+                                        <option selected>{{$perSocHis->smoker}}</option>
+                                        <option value="yes" name="smoker">Yes</option>
+                                        <option value="no" name="smoker">No</option>
+                                    </select></p>
+                                @error('smoker')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Alcohol Beverages Drinker</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="alcohol_beverages_drinker" id="alcohol_beverages_drinker">
+                                        <option selected>{{$perSocHis->alcohol_beverages_drinker}}</option>
+                                        <option value="yes" name="alcohol_beverages_drinker">Yes</option>
+                                        <option value="no" name="alcohol_beverages_drinker">No</option>
+                                    </select></p>
+                                @error('alcohol_beverages_drinker')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Sexually Active</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="sexually_active" id="sexually_active">
+                                        <option selected>{{$perSocHis->sexually_active}}</option>
+                                        <option value="yes" name="sexually_active">Yes</option>
+                                        <option value="no" name="sexually_active">No</option>
+                                    </select></p>
+                                @error('sexually_active')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">Women of Reproductive Age (WRA) (Leave input if Male) </h4>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Last Menstrual Period</span>
+                                <input type="date" class="form-control" name="last_menstrual_period" value="{{ $womens->last_menstrual_period }}"
+                                    id="last_menstrual_period">
+                                @error('last_menstrual_period')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Family Planning Used</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="family_planning_use" id="family_planning_use">
+                                        <option selected>{{ $womens->family_planning_use }}</option>
+                                        <option value="yes" name="family_planning_use">Yes</option>
+                                        <option value="no" name="family_planning_use">No</option>
+                                        <option value="not applicable" name="family_planning_use">Not Apllicable</option>
+                                    </select></p>
+                                @error('family_planning_use')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Human Papillomavirus Vaccines (HPV)</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="hpv_indication" id="hpv_indication">
+                                        <option selected>{{$hpv->hpv_indication}}</option>
+                                        <option value="yes" name="hpv_indication">Yes</option>
+                                        <option value="no" name="hpv_indication">No</option>
+                                    </select></p>
+                                @error('hpv_indication')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>HPV When</span>
+                                <input type="date" class="form-control" name="hpv_when" id="hpv_when" value="{{$hpv->hpv_when}}">
+                                @error('hpv_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">COVID 19 Health Information and Vaccines</h4>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Covid Plus</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="c_plus_indication" id="c_plus_indication">
+                                        <option selected>{{  $covidPlus->c_plus_indication }}</option>
+                                        <option value="yes" name="c_plus_indication">Yes</option>
+                                        <option value="no" name="c_plus_indication">No</option>
+                                    </select>
+                                    @error('c_plus_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>When did you got COVID 19?</span>
+                                <input type="date" class="form-control" name="c_plus_when" id="c_plus_when" value="{{  $covidPlus->c_plus_when }}">
+                                @error('c_plus_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Where did you got the COVID 19?</span>
+                                <input type="text" class="form-control" name="c_plus_where" id="c_plus_where"
+                                    placeholder="place got the covid 19" value="{{  $covidPlus->c_plus_where }}">
+                                @error('c_plus_where')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Covid Vaccine</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="c_vac_indication" id="c_vac_indication">
+                                        <option selected>{{ $covidVac->c_vac_indication}}</option>
+                                        <option value="yes" name="c_vac_indication">Yes</option>
+                                        <option value="no" name="c_vac_indication">No</option>
+                                    </select>
+                                    @error('c_vac_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>When did you got COVID 19 Vaccine?</span>
+                                <input type="date" class="form-control" name="c_vac_when" id="c_vac_when" value="{{ $covidVac->c_vac_when}}">
+                                @error('c_vac_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Where did you got the COVID 19 Vaccine?</span>
+                                <input type="text" class="form-control" name="c_vac_where" id="c_vac_where"
+                                    placeholder="place got the covid 19 vaccine" value="{{ $covidVac->c_vac_where}}">
+                                @error('c_vac_where')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Covid Booster</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="c_boost_indication" id="c_boost_indication">
+                                        <option selected>{{$covidBoost->c_boost_indication}}</option>
+                                        <option value="yes" name="c_boost_indication">Yes</option>
+                                        <option value="no" name="c_boost_indication">No</option>
+                                    </select>
+                                    @error('c_boost_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>When did you got COVID 19 Booster?</span>
+                                <input type="date" class="form-control" name="c_boost_when" id="c_boost_when" value="{{$covidBoost->c_boost_when}}">
+                                @error('c_boost_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-3">
+                                <span>Where did you got the COVID 19 Booster?</span>
+                                <input type="text" class="form-control" name="c_boost_where" id="c_boost_where"
+                                    placeholder="place got the covid 19 booster vaccine"
+                                    value="{{$covidBoost->c_boost_where}}">
+                                @error('c_boost_where')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">Measles-Rubella (MR) / Tetanus-Diphtheria (TD) Vaccines</h4>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span> Measles-Rubella(MR)</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="mr_indication" id="mr_indication">
+                                        <option selected>{{  $mrtd->mr_indication }}</option>
+                                        <option value="yes" name="mr_indication">Yes</option>
+                                        <option value="no" name="mr_indication">No</option>
+                                        <option value="not applicable" name="mr_indication">Not Applicable</option>
+                                    </select>
+                                    @error('mr_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Measles and Rubella Date of Vaccine</span>
+                                <input type="date" class="form-control" name="mr_when" id="mr_when" value="{{  $mrtd->mr_when }}">
+                                @error('mr_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Tetanus-Diphtheria (TD)</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="td_indication" id="td_indication">
+                                        <option selected>{{  $mrtd->td_indication }}</option>
+                                        <option value="yes" name="td_indication">Yes</option>
+                                        <option value="no" name="td_indication">No</option>
+                                        <option value="not applicable" name="td_indication">Not Applicable</option>
+                                    </select>
+                                    @error('td_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Tetanus and Diphtheria Date of Vaccine</span>
+                                <input type="date" class="form-control" name="td_when" id="td_when" value="{{ $mrtd->td_when }}" >
+                                @error('td_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <h4 class="mt-5">Dengue Vaccine</h4>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Dengue</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="dengue_indication" id="dengue_indication">
+                                        <option selected>{{$dengue->dengue_indication}}</option>
+                                        <option value="yes" name="dengue_indication">Yes</option>
+                                        <option value="no" name="dengue_indication">No</option>
+                                        <option value="no" name="dengue_indication">No</option>
+                                    </select>
+                                    @error('dengue_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>When did you got a dengue vaccine?</span>
+                                <input type="date" class="form-control" name="dengue_when" id="dengue_when" value="{{ $dengue->dengue_when }}">
+                                @error('dengue_when')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-3">
+                                <span>Expanded Program on Immunization (EPI) Card (for 0-5 y.o)</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="epi_indication" id="epi_indication">
+                                        <option selected>{{ $epiCard->epi_indication}}</option>
+                                        <option value="yes" name="epi_indication">Yes</option>
+                                        <option value="no" name="epi_indication">No</option>
+                                        <option value="not applicable" name="epi_indication">Not Applicable</option>
+                                    </select>
+                                    @error('epi_indication')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <h3 class="mt-5"><b>Facility Structure</b></h3>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Type of Water Source</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="type_of_water_source" id="type_of_water_source">
+                                        <option selected>{{ $facility->type_of_water_source }}</option>
+                                        <option value="Level I (Point Source)" name="type_of_water_source">Level I (Point
+                                            Source)</option>
+                                        <option value="Level II (Communal Faucet)" name="type_of_water_source">Level II
+                                            (Communal Faucet)</option>
+                                        <option value="Level III (Individual Connection)" name="type_of_water_source">
+                                            Level III (Individual Connection</option>
+                                        <option value="Others (For Doubtful Sources,open dug, well, etc.)"
+                                            name="type_of_water_source">Others (For Doubtful
+                                            Sources,open dug, well, etc.)</option>
+                                    </select></p>
+                                @error('type_of_water_source')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Type of Toilet Facility</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="type_of_toilet_facility" id="type_of_toilet_facility">
+                                        <option selected>{{$facility->type_of_toilet_facility}}</option>
+                                        <option value="A" name="type_of_toilet_facility">A. Pour/Flush type connected
+                                            to septic tank</option>
+                                        <option value="B" name="type_of_toilet_facility">B. Pour/Flush connected to
+                                            septic tank and sewerage system</option>
+                                        <option value="C" name="type_of_toilet_facility">C. Ventilated Pit (VIP)
+                                            Latrine</option>
+                                        <option value="D" name="type_of_toilet_facility">D. Water-Sealed Toilet
+                                        </option>
+                                        <option value="E" name="type_of_toilet_facility">E. Over Hung Lantrine
+                                        </option>
+                                        <option value="F" name="type_of_toilet_facility">F. Open Pit Lantrine
+                                        </option>
+                                        <option value="G" name="type_of_toilet_facility">G. Without Toilet</option>
+                                    </select></p>
+                                @error('type_of_toilet_facility')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4 mb-2 mt-2">
+                                <span>Type of Waste Management</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="type_of_waste_management" id="type_of_waste_management">
+                                        <option selected>{{$facility->type_of_waste_management}}</option>
+                                        <option value="A" name="type_of_waste_management">A. Waste Segration</option>
+                                        <option value="B" name="type_of_waste_management">B. Backyard Composting
+                                        </option>
+                                        <option value="C" name="type_of_waste_management">C. Recycling/ReUse</option>
+                                        <option value="D" name="type_of_waste_management">D. Collected by
+                                            City/Municipality Collection and Disposal System
+                                        </option>
+                                        <option value="E" name="type_of_waste_management">E. Others (Burning /
+                                            Burying)</option>
+                                    </select></p>
+                                @error('type_of_waste_management')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-3 mb-2 mt-2">
+                                <span>Backyard Gardening</span>
+                                <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
+                                        name="gardening_indication" id="gardening_indication">
+                                        <option selected>{{ $backyard->gardening_indication }}</option>
+                                        <option value="yes" name="gardening_indication">Yes</option>
+                                        <option value="no" name="gardening_indication">No</option>
+                                    </select></p>
+                                @error('gardening_indication')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="col-md-9 mb-2">
+                                <span>Type of Vegetables Planted</span>
+                                <input type="text" class="form-control" name="type_of_vegetables"
+                                    id="type_of_vegetables" placeholder="vegetables planted"
+                                    value="{{ $backyard->type_of_vegetables }}">
+                                @error('type_of_vegetables')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
-                    </form>
                 </div>
+
+
+
+                <div class="">
+                    <div class="col-md-2 offset-md-9 d-flex">
+                        <button type="submit" class="btn btn-success btn-lg ms-auto px-5">Save</button>
+                    </div>
+                    <div class="col-md-1 d-flex">
+                        <a href="{{ route('residents.index') }}" id="cancel" name="cancel"
+                                class="btn btn-danger btn-lg ">Cancel</a>
+                    </div>
+                </div>
+
+
+
+
             </div>
         </div>
+
+
+        </form>
+    </div>
+    </div>
+    </div>
     </div>
 
-                            {{--
+    {{--
                 <div class="col-md-7 offset-md-2 pt-5">
                     <div class="container">
                         <div class="card bg-light" style="width: 80rem;">
@@ -646,4 +946,4 @@
             <div class="pt-5"></div>
         </div>
     </div> --}}
-                        @endsection
+@endsection

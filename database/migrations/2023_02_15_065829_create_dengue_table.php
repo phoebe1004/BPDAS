@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('dengue', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('dengue_indication');
-            $table->date('dengue_when');
+            $table->date('dengue_when')->nullable();
             $table->timestamps();
         });
     }

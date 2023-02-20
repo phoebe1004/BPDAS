@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CommunityGroup extends Model
 {
@@ -14,4 +15,8 @@ class CommunityGroup extends Model
         'com_grp_indication',
         'com_grp_type'
     ];
+    public function resident()
+    {
+        return $this->belongsTo(Resident::class, 'resident_id','id');
+    }
 }

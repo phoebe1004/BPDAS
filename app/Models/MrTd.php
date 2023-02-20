@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class MrTd extends Model
 {
@@ -16,5 +17,8 @@ class MrTd extends Model
         'td_indication',
         'td_when',
      ];
-
+     public function resident()
+     {
+         return $this->belongsTo(Resident::class, 'resident_id','id');
+     }
 }

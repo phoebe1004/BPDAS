@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('covid_plus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('c_plus_indication');
-            $table->date('c_plus_when');
-            $table->string('c_plus_where');
+            $table->date('c_plus_when')->nullable();
+            $table->string('c_plus_where')->nullable();
             $table->timestamps();
         });
     }

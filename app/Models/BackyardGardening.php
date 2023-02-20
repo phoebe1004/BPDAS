@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BackyardGardening extends Model
 {
@@ -14,4 +15,9 @@ class BackyardGardening extends Model
         'gardening_indication',
         'type_of_vegetables',
     ];
+
+    // public function resident()
+    // {
+    //     return $this->belongsTo(Resident::class, 'resident_id','id');
+    // }
 }

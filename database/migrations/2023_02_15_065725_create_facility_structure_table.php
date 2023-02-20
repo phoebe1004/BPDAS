@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('facility_structure', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('type_of_water_source');
             $table->string('type_of_toilet_facility');
             $table->string('type_of_waste_management');

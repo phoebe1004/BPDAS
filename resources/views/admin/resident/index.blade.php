@@ -27,8 +27,8 @@
         <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-3">
             <a class="btn btn-outline-info me-md-2" href="{{ route('residents.create') }}">Add Resident</a>
             <a class="btn btn-outline-warning me-md-2" href="csv">Add CSV file</a>
-            <a class="btn btn-outline-danger me-md-2" href="#">Backup
-                Page</a>
+            {{-- <a class="btn btn-outline-danger me-md-2" href="#">Backup
+                Page</a> --}}
         </div>
 
         <div class="card-body">

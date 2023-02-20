@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('indigent_person', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('ip_indication');
             $table->string('tribe');
             $table->timestamps();

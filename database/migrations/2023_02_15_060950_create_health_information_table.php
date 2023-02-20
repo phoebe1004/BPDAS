@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('health_information', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
-            $table->string('philhealth_number');
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');
+            $table->string('philhealth_number')->nullable();
             $table->string('medical_history');
             $table->string('remark');
             $table->timestamps();

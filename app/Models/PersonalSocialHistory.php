@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class PersonalSocialHistory extends Model
 {
@@ -15,4 +16,8 @@ class PersonalSocialHistory extends Model
         'alcohol_beverages_drinker',
         'sexually_active',
     ];
+    public function resident()
+    {
+        return $this->belongsTo(Resident::class, 'resident_id','id');
+    }
 }

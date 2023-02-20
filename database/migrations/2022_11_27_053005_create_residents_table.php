@@ -25,10 +25,10 @@ return new class extends Migration
             $table->integer('age');
             $table->string('civil_status');
             $table->string('membership_type');
-            $table->integer('contact_number');
+            $table->integer('contact_number')->lenght(12);
             $table->string('purok');
             $table->string('classification_by_age');
-            $table->string('remark');
+            $table->string('remarks');
             $table->timestamps();
 
         });

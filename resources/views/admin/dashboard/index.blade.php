@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 
 <!-- Content Header (Page header) -->
 <div class="content-header">
@@ -28,12 +28,12 @@
         <div class="row">
             <div class="col-12">
                 <!-- small box -->
-                {!! $chart->container() !!}
+                {{-- {!! $chart->container() !!} --}}
             </div>
 
             <div class="col-12">
-                <!-- small box -->
-                {!! $chart2->container() !!}
+                {{-- <!-- small box -->
+                {!! $chart2->container() !!} --}}
             </div>
 
             <div class="col-lg-2 col-6" style="display:none">
@@ -2742,9 +2742,9 @@
         <!-- /.row (main row) -->
     </div><!-- /.container-fluid -->
 </section>
-
+{{--
 <script src="{{ $chart->cdn() }}"></script>
 <script src="{{ $chart2->cdn() }}"></script>
 {{ $chart->script() }}
-{{ $chart2->script() }}
+{{ $chart2->script() }} --}}
 @endsection

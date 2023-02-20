@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-
 use App\Models\Population;
 use Illuminate\Http\Request;
+use App\Charts\ClassifiedBySex;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use App\Charts\SocialEconomicStatusChart;
+use App\Charts\PopulationOfResidentsChart;
+use App\Charts\PopulationOfResidentsBySexChart;
 
 class PopulationController extends Controller
 {
@@ -15,9 +18,9 @@ class PopulationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PopulationOfResidentsChart $chart,PopulationOfResidentsBySexChart $chart2,ClassifiedBySex $chart3, SocialEconomicStatusChart $chart4)
     {
-        return view('admin.population.index');
+        return view('admin.population.index', ['chart' => $chart->build(), 'chart2' => $chart2->build(), 'chart3' => $chart3->build(), 'chart4' => $chart4->build()]);
 
     }
 

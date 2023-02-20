@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('hpv', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('hpv_indication');
-            $table->date('hpv_when');
+            $table->date('hpv_when')->nullable();
             $table->timestamps();
         });
     }

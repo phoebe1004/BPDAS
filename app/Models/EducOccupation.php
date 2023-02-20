@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class EducOccupation extends Model
 {
@@ -14,4 +15,8 @@ class EducOccupation extends Model
         'education',
         'occupation'
     ];
+    public function resident()
+    {
+        return $this->belongsTo(Resident::class, 'resident_id','id');
+    }
 }

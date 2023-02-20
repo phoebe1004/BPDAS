@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('epi_card', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('epi_indication');
             $table->timestamps();
         });

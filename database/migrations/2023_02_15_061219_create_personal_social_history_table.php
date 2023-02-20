@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('personal_social_history', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('smoker')->nullable(); // TODO: to be removed
             $table->string('alcohol_beverages_drinker');
             $table->string('sexually_active');

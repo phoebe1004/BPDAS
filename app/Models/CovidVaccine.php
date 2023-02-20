@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Resident;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class CovidVaccine extends Model
 {
@@ -15,5 +16,8 @@ class CovidVaccine extends Model
         'c_vac_when',
         'c_vac_where'
      ];
-
+     public function resident()
+     {
+         return $this->belongsTo(Resident::class, 'resident_id','id');
+     }
 }

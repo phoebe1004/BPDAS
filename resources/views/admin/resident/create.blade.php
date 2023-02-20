@@ -174,6 +174,7 @@
                                 <option value="married" name="civil_status">Married</option>
                                 <option value="widowed" name="civil_status">Widowed</option>
                                 <option value="live in" name="civil_status">Live in</option>
+                                <option value="separated" name="civil_status">Separated</option>
                             </select>
                             @error('civil_status')
                                 <span class="text-danger">{{ $message }}</span>
@@ -320,8 +321,8 @@
                     </div>
                     <div class="col-md-12 mb-2 mt-3">
                         <span>Remarks</span>
-                        <textarea rows="5" class="form-control" name="remark" id="remark"></textarea>
-                        @error('remark')
+                        <input rows="5" class="form-control" name="remarks" id="remarks">
+                        @error('remarks')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
@@ -510,10 +511,10 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                 name="medical_history" id="medical_history">
                                 <option disabled selected>--Select--</option>
-                                <option value="HPN" name="medical_history">Hypertension</option>
-                                <option value="DM" name="medical_history">Diabetes</option>
-                                <option value="TB" name="medical_history">Tuberculosis</option>
-                                <option value="S" name="medical_history">Surgery</option>
+                                <option value="Hypertension" name="medical_history">Hypertension</option>
+                                <option value="Diabetes" name="medical_history">Diabetes</option>
+                                <option value="Tuberculosis" name="medical_history">Tuberculosis</option>
+                                <option value="Surgery" name="medical_history">Surgery</option>
                                 <option value="None" name="medical_history">None</option>
                             </select></p>
                         @error('medical_history')
@@ -522,13 +523,13 @@
                     </div>
                     <div class="col-md-4 mb-2 mt-2">
                         <span>Remarks</span>
-                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="remark" id="medical_history">
+                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="remark" id="remark">
                                 <option disabled selected>--Select--</option>
                                 <option value="Transfer of Residence" name="remark">Transfer of Residence</option>
-                                <option value="SAM" name="remark">Severe Acute Malnutrition</option>
-                                <option value="MAM" name="remark">Moderate Acute Malnutrition</option>
-                                <option value="ST" name="remark">Stunted</option>
-                                <option value="Up" name="remark">For Updating</option>
+                                <option value="Severe Acute Malnutrition" name="remark">Severe Acute Malnutrition</option>
+                                <option value="Moderate Acute Malnutrition" name="remark">Moderate Acute Malnutrition</option>
+                                <option value="Stunted" name="remark">Stunted</option>
+                                <option value="For Updating" name="remark">For Updating</option>
                                 <option value="None" name="remark">None</option>
                             </select></p>
                         @error('remark')
@@ -585,6 +586,7 @@
                                 <option disabled selected>--Select--</option>
                                 <option value="yes" name="family_planning_use">Yes</option>
                                 <option value="no" name="family_planning_use">No</option>
+                                <option value="Not Applicable" name="family_planning_use">Not Applicable</option>
                             </select></p>
                         @error('family_planning_use')
                             <span class="text-danger">{{ $message }}</span>
@@ -616,12 +618,12 @@
                 <div class="form-row mt-2">
                     <div class="col-md-4 mb-2 mt-3">
                         <span>Covid Plus</span>
-                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="c_vac_when" id="c_vac_when">
+                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="c_plus_indication" id="c_plus_indication">
                                 <option disabled selected>--Select--</option>
-                                <option value="yes" name="c_vac_when">Yes</option>
-                                <option value="no" name="c_vac_when">No</option>
+                                <option value="yes" name="c_plus_indication">Yes</option>
+                                <option value="no" name="c_plus_indication">No</option>
                             </select>
-                            @error('c_vac_when')
+                            @error('c_plus_indication')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                     </div>
@@ -700,6 +702,7 @@
                                 <option disabled selected>--Select--</option>
                                 <option value="yes" name="mr_indication">Yes</option>
                                 <option value="no" name="mr_indication">No</option>
+                                <option value="not applicable" name="mr_indication">Not Applicable</option>
                             </select>
                             @error('mr_indication')
                                 <span class="text-danger">{{ $message }}</span>
@@ -718,6 +721,7 @@
                                 <option disabled selected>--Select--</option>
                                 <option value="yes" name="td_indication">Yes</option>
                                 <option value="no" name="td_indication">No</option>
+                                <option value="not applicable" name="td_indication">Not Applicable</option>
                             </select>
                             @error('td_indication')
                                 <span class="text-danger">{{ $message }}</span>
@@ -755,6 +759,7 @@
                                 <option disabled selected>--Select--</option>
                                 <option value="yes" name="epi_indication">Yes</option>
                                 <option value="no" name="epi_indication">No</option>
+                                <option value="not applicable" name="epi_indication">Not Applicable</option>
                             </select>
                             @error('epi_indication')
                                 <span class="text-danger">{{ $message }}</span>
@@ -863,7 +868,7 @@
             <div class="p-3 d-flex">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
+
 
 
         <script>
@@ -914,15 +919,15 @@
                 x = document.getElementsByClassName("tab");
                 y = x[currentTab].getElementsByTagName("input");
                 // A loop that checks every input field in the current tab:
-                for (i = 0; i < y.length; i++) {
-                    // If a field is empty...
-                    if (y[i].value == "") {
-                        // add an "invalid" class to the field:
-                        y[i].className += " invalid";
-                        // and set the current valid status to false
-                        valid = false;
-                    }
-                }
+                // for (i = 0; i < y.length; i++) {
+                //     // If a field is empty...
+                //     if (y[i].value == "") {
+                //         // add an "invalid" class to the field:
+                //         y[i].className += " invalid";
+                //         // and set the current valid status to false
+                //         valid = false;
+                //     }
+                // }
                 // If the valid status is true, mark the step as finished and valid:
                 if (valid) {
                     document.getElementsByClassName("step")[currentTab].className += " finish";
@@ -940,23 +945,7 @@
                 x[n].className += " active";
             }
         </script>
-        {{-- <tbody>
-                        @foreach ($healthcase as $healthcases)
-                            <tr>
-                                <td>{{ $healthcases>id }}</td>
-                                <td>{{ $healthcases->name }}</td>
-                                <td>{{ $healthcases->description }}</td>
-                                <td>
-                                    <img src="{{ asset('assets/uploads/category/'.$healthcases->image) }}" class="cate-image" alt="Image here">
-                                </td>
-                                <td>
-                                    <a href="{{ url('edit-category/'.$healthcases->id) }}" class="btn btn-primary">Edit</a>
-                                    <a href="{{ url('delete-category/'.$healthcases->id) }}" class="btn btn-danger">Delete</a>
-                                </td>
-
-                            </tr>
-                        @endforeach
-                    </tbody> --}}
+</form>
     </div>
 
 @endsection

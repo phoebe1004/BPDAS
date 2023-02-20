@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('mr_td', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('mr_indication');
-            $table->date('mr_when');
+            $table->date('mr_when')->nullable();
             $table->string('td_indication');
-            $table->date('td_when');
+            $table->date('td_when')->nullable();
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('registered_voter', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('reg_vot_indication');
-            $table->string('reg_vot_where');
+            $table->string('reg_vot_where')->nullable();
             $table->timestamps();
         });
     }

@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('type_of_occupancy', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('renter');
-            $table->string('months');
+            $table->string('months')->nullable();
             $table->timestamps();
         });
     }

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('community_group', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
             $table->string('com_grp_indication');
             $table->string('com_grp_type');
             $table->timestamps();

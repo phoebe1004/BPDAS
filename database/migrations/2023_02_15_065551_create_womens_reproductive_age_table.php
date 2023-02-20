@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('womens_reproductive_age', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->unique();
-            $table->date('last_menstrual_period');
-            $table->string('family_planning_use');
+            $table->foreignId('resident_id')->constrained()->unique()->onDelete('cascade');;
+            $table->date('last_menstrual_period')->nullable();
+            $table->string('family_planning_use')->nullable();
             $table->timestamps();
         });
     }
