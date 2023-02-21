@@ -24,7 +24,7 @@ class ClassifiedBySex
         return $this->chart3->pieChart()
             ->setTitle('Cabantian Residents Sex Count')
             ->setSubtitle('Barangay Cabantian Davao City')
-            ->addData([40,50])
+            ->addData(['total', $residentSex->map(fn($row) => $row->total)->toArray()])
             ->setLabels(['Male', 'Female']);
     }
 }

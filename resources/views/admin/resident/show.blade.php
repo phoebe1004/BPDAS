@@ -62,7 +62,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Social Economic Status</b></center></h3>
+        <h3 class="text-center"><b>Social Economic Status</b></h3>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Health Information</b></center></h3>
+        <h3 class="text-center"><b>Health Information</b></h3>
       </div>
     </div>
   </div>
@@ -127,7 +127,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Personal Social History</b></center></h3>
+        <h3 class="text-center"><b>Personal Social History</b></h3>
       </div>
     </div>
   </div>
@@ -147,7 +147,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Woman of Reproductive Age</b></center></h3>
+        <h3 class="text-center"><b>Woman of Reproductive Age</b></h3>
       </div>
     </div>
   </div>
@@ -164,7 +164,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Human papillomavirus (HPV) / Dengue / Expanded Program on Immunization (EPI)</b></center></h3>
+        <h3 class="text-center"><b>Human papillomavirus (HPV) / Dengue / Expanded Program on Immunization (EPI)</b></h3>
       </div>
     </div>
   </div>
@@ -186,7 +186,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>COVID-19 Health Information</b></center></h3>
+        <h3 class="text-center"><b>COVID-19 Health Information</b></h3>
       </div>
     </div>
   </div>
@@ -212,19 +212,90 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <h3><center><b>Measles-Rubella (MR)-Tetanus- Diphtheria(TD)</b></center></h3>
+        <h3><b>Measles-Rubella (MR)-Tetanus- Diphtheria(TD)</b></h3>
       </div>
     </div>
   </div>
   <div class="container bg-dark bg-gradient">
     <div class="row">
       <div class="col-md-6">
-        <h4>Measles-Rubella (MR): <b>{{  $mrtd->mr_indication }}</b></h4>
+        <h4 class="text-center">Measles-Rubella (MR): <b>{{  $mrtd->mr_indication }}</b></h4>
         <h4>When: <b>{{ $mrtd->mr_when }}</b></h4>
       </div>
       <div class="col-md-6">
         <h4>Tetanus- Diphtheria(TD): <b>{{ $mrtd->td_indication }}</b></h4>
         <h4>When: <b>{{  $mrtd->td_when }}</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center"><b>Dengue Information</b></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container bg-dark bg-gradient">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Dengue indication: <b>{{  $dengue->dengue_indication }}</b></h4>
+        <h4>When: <b>{{ $dengue->dengue_when }}</b></h4>
+      </div>
+      <div class="col-md-6">
+        <h4>EPI Card: <b>{{ $epiCard->epi_indication }}</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center"><b>Facility Information</b></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container bg-dark bg-gradient">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Water source: <b>{{  $facility->type_of_water_source }}</b></h4>
+        <h4>Toilet Facility: <b>{{ $facility->type_of_toilet_facility }}</b></h4>
+      </div>
+      <div class="col-md-6">
+        <h4>Type of waste management: <b>{{ $facility->type_of_waste_management }}</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center"><b>Backyard Information</b></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container bg-dark bg-gradient">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Gardening: <b>{{  $backyard->gardening_indication }}</b></h4>
+        <h4>Type of vegetables: <b>{{ $backyard->type_of_vegetables }}</b></h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-center"><b>Pets/Animals Information</b></h3>
+      </div>
+    </div>
+  </div>
+  <div class="container bg-dark bg-gradient">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Type of pets/animals: <b>{{  $pets->type }}</b></h4>
+        <h4>Number of pets/animals: <b>{{ $pets->number }}</b></h4>
+        <h4>Vaccinated: <b>{{ $pets->vaccinated }}</b></h4>
+      </div>
+      <div class="col-md-6">
+        <h4>Number of Male(Pets/Animals): <b>{{ $pets->male }}</b></h4>
+        <h4>Number of Female(Pets/Animals): <b>{{ $pets->female }}</b></h4>
       </div>
     </div>
   </div>

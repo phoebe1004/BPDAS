@@ -22,9 +22,11 @@ use App\Models\Resident;
 use App\Models\SocialEconomicStatus;
 use App\Models\TypeOfOccupancy;
 use App\Models\WomensReproductiveAge;
+
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
+
 use Carbon\Carbon;
 
 class ResidentImport implements ToModel, WithHeadingRow,WithCalculatedFormulas
@@ -40,6 +42,7 @@ class ResidentImport implements ToModel, WithHeadingRow,WithCalculatedFormulas
             'lastname' => $row['lastname'],
             'firstname' => $row['firstname'],
             'middlename' => $row['middlename'],
+            'suffix' => $row['suffix'],
             'relationship' => $row['relationship'],
             'sex' => $row['sex'],
             // 'birthdate' => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['birthdate']),
@@ -139,7 +142,7 @@ class ResidentImport implements ToModel, WithHeadingRow,WithCalculatedFormulas
         ]);
 
         return new EpiCard([
-            'c_plus_indication' => $row['c_plus_indication'],
+            'epi_indication' => $row['epi_indication'],
         ]);
 
         return new FacilityStructure([

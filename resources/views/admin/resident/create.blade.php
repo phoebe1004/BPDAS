@@ -791,13 +791,13 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                 name="type_of_toilet_facility" id="type_of_toilet_facility">
                                 <option disabled selected>--Select--</option>
-                                <option value="A" name="type_of_toilet_facility">A. Pour/Flush type connected to septic tank</option>
-                                <option value="B" name="type_of_toilet_facility">B. Pour/Flush connected to septic tank and sewerage system</option>
-                                <option value="C" name="type_of_toilet_facility">C. Ventilated Pit (VIP) Latrine</option>
-                                <option value="D" name="type_of_toilet_facility">D. Water-Sealed Toilet</option>
-                                <option value="E" name="type_of_toilet_facility">E. Over Hung Lantrine</option>
-                                <option value="F" name="type_of_toilet_facility">F. Open Pit Lantrine</option>
-                                <option value="G" name="type_of_toilet_facility">G. Without Toilet</option>
+                                <option value="A. Pour/Flush type connected to septic tank" name="type_of_toilet_facility">A. Pour/Flush type connected to septic tank</option>
+                                <option value="B. Pour/Flush connected to septic tank and sewerage system" name="type_of_toilet_facility">B. Pour/Flush connected to septic tank and sewerage system</option>
+                                <option value="C. Ventilated Pit (VIP) Latrine" name="type_of_toilet_facility">C. Ventilated Pit (VIP) Latrine</option>
+                                <option value="D. Water-Sealed Toilet" name="type_of_toilet_facility">D. Water-Sealed Toilet</option>
+                                <option value="E. Over Hung Lantrine" name="type_of_toilet_facility">E. Over Hung Lantrine</option>
+                                <option value="F. Open Pit Lantrine" name="type_of_toilet_facility">F. Open Pit Lantrine</option>
+                                <option value="G. Without Toilet" name="type_of_toilet_facility">G. Without Toilet</option>
                             </select></p>
                         @error('type_of_toilet_facility')
                             <span class="text-danger">{{ $message }}</span>
@@ -808,12 +808,12 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                 name="type_of_waste_management" id="type_of_waste_management">
                                 <option disabled selected>--Select--</option>
-                                <option value="A" name="type_of_waste_management">A. Waste Segration</option>
-                                <option value="B" name="type_of_waste_management">B. Backyard Composting</option>
-                                <option value="C" name="type_of_waste_management">C. Recycling/ReUse</option>
-                                <option value="D" name="type_of_waste_management">D. Collected by City/Municipality Collection and Disposal System
+                                <option value="A. Waste Segration" name="type_of_waste_management">A. Waste Segration</option>
+                                <option value="B. Backyard Composting" name="type_of_waste_management">B. Backyard Composting</option>
+                                <option value="C. Recycling/ReUse" name="type_of_waste_management">C. Recycling/ReUse</option>
+                                <option value="D. Collected by City/Municipality Collection and Disposal System" name="type_of_waste_management">D. Collected by City/Municipality Collection and Disposal System
                                 </option>
-                                <option value="E" name="type_of_waste_management">E. Others (Burning / Burying)</option>
+                                <option value="E. Others (Burning / Burying)" name="type_of_waste_management">E. Others (Burning / Burying)</option>
                             </select></p>
                         @error('type_of_waste_management')
                             <span class="text-danger">{{ $message }}</span>
