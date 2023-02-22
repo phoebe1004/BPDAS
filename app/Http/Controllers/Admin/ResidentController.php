@@ -619,11 +619,13 @@ class ResidentController extends Controller
     public function importForm()
     {
         $resident = Resident::all();
+
         return view('admin.resident.csv')->with('resident', $resident);
     }
     public function import(Request $request)
     {
         //Excel::import(new ResidentImport, $request->file);
+        dd($request);
         return redirect()->route('residents.index')->with('status', 'Resident imported Successfully');
     }
     public function done($id)

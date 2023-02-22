@@ -22,9 +22,11 @@ use App\Models\Resident;
 use App\Models\SocialEconomicStatus;
 use App\Models\TypeOfOccupancy;
 use App\Models\WomensReproductiveAge;
+
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithCalculatedFormulas;
+
 use Carbon\Carbon;
 
 class ResidentImport implements ToModel, WithHeadingRow,WithCalculatedFormulas
