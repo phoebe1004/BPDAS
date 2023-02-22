@@ -17,14 +17,17 @@ class ClassifiedBySex
 
     public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
-        $residentSex = Resident::groupBy('sex')
-        ->selectRaw('count(*) as total, sex')
-        ->get();
+        // $residentSex = Resident::groupBy('sex')
+        // ->selectRaw('count(*) as total, sex')
+        // ->get();
+
+        $maleCount = Resident::get()->where('sex', 'Male')->count();
+        $femaleCount = Resident::get()->where('sex', 'Female')->count();
 
         return $this->chart3->pieChart()
             ->setTitle('Cabantian Residents Sex Count')
             ->setSubtitle('Barangay Cabantian Davao City')
-            ->addData([40,50])
+            ->addData([$maleCount, $femaleCount])
             ->setLabels(['Male', 'Female']);
     }
 }

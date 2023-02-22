@@ -51,7 +51,9 @@ class ResidentController extends Controller
      */
     public function create()
     {
-        return view('admin.resident.create');
+        $resident = Resident::all();
+
+        return view('admin.resident.create', compact('resident'));
     }
 
     /**

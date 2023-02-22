@@ -98,7 +98,7 @@
                 <div class="form-row mt-2">
                     <div class="col-md-3 mb-2">
                         <span>Lastname</span>
-                        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname"
+                        <input oninput="validateInformation()" type="text" class="form-control" name="lastname" id="lastname" placeholder="lastname"
                             value="{{ old('lastname') }}">
                         @error('lastname')
                             <span class="text-danger">{{ $message }}</span>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="col-md-3 mb-2">
                         <span>Firstname</span>
-                        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname"
+                        <input oninput="validateInformation()" type="text" class="form-control" name="firstname" id="firstname" placeholder="firstname"
                             value="{{ old('firstname') }}">
                         @error('firstname')
                             <span class="text-danger">{{ $message }}</span>
@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-md-3 mb-2">
                         <span>Middlename</span>
-                        <input type="text" class="form-control" name="middlename" id="middlename"
+                        <input oninput="validateInformation()" type="text" class="form-control" name="middlename" id="middlename"
                             placeholder="middlename" value="{{ old('middlename') }}">
                         @error('middlename')
                             <span class="text-danger">{{ $message }}</span>
@@ -791,13 +791,13 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                 name="type_of_toilet_facility" id="type_of_toilet_facility">
                                 <option disabled selected>--Select--</option>
-                                <option value="A" name="type_of_toilet_facility">A. Pour/Flush type connected to septic tank</option>
-                                <option value="B" name="type_of_toilet_facility">B. Pour/Flush connected to septic tank and sewerage system</option>
-                                <option value="C" name="type_of_toilet_facility">C. Ventilated Pit (VIP) Latrine</option>
-                                <option value="D" name="type_of_toilet_facility">D. Water-Sealed Toilet</option>
-                                <option value="E" name="type_of_toilet_facility">E. Over Hung Lantrine</option>
-                                <option value="F" name="type_of_toilet_facility">F. Open Pit Lantrine</option>
-                                <option value="G" name="type_of_toilet_facility">G. Without Toilet</option>
+                                <option value="A. Pour/Flush type connected to septic tank" name="type_of_toilet_facility">A. Pour/Flush type connected to septic tank</option>
+                                <option value="B. Pour/Flush connected to septic tank and sewerage system" name="type_of_toilet_facility">B. Pour/Flush connected to septic tank and sewerage system</option>
+                                <option value="C. Ventilated Pit (VIP) Latrine" name="type_of_toilet_facility">C. Ventilated Pit (VIP) Latrine</option>
+                                <option value="D. Water-Sealed Toilet" name="type_of_toilet_facility">D. Water-Sealed Toilet</option>
+                                <option value="E. Over Hung Lantrine" name="type_of_toilet_facility">E. Over Hung Lantrine</option>
+                                <option value="F. Open Pit Lantrine" name="type_of_toilet_facility">F. Open Pit Lantrine</option>
+                                <option value="G. Without Toilet" name="type_of_toilet_facility">G. Without Toilet</option>
                             </select></p>
                         @error('type_of_toilet_facility')
                             <span class="text-danger">{{ $message }}</span>
@@ -808,12 +808,12 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg"
                                 name="type_of_waste_management" id="type_of_waste_management">
                                 <option disabled selected>--Select--</option>
-                                <option value="A" name="type_of_waste_management">A. Waste Segration</option>
-                                <option value="B" name="type_of_waste_management">B. Backyard Composting</option>
-                                <option value="C" name="type_of_waste_management">C. Recycling/ReUse</option>
-                                <option value="D" name="type_of_waste_management">D. Collected by City/Municipality Collection and Disposal System
+                                <option value="A. Waste Segration" name="type_of_waste_management">A. Waste Segration</option>
+                                <option value="B. Backyard Composting" name="type_of_waste_management">B. Backyard Composting</option>
+                                <option value="C. Recycling/ReUse" name="type_of_waste_management">C. Recycling/ReUse</option>
+                                <option value="D. Collected by City/Municipality Collection and Disposal System" name="type_of_waste_management">D. Collected by City/Municipality Collection and Disposal System
                                 </option>
-                                <option value="E" name="type_of_waste_management">E. Others (Burning / Burying)</option>
+                                <option value="E. Others (Burning / Burying)" name="type_of_waste_management">E. Others (Burning / Burying)</option>
                             </select></p>
                         @error('type_of_waste_management')
                             <span class="text-danger">{{ $message }}</span>
@@ -892,6 +892,10 @@
                         @enderror
                     </div>
                 </div>
+
+                <div class="p-3 d-flex">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </div>
 
             {{-- <div class="tab">
@@ -904,7 +908,8 @@
             <div style="overflow:auto;" class=>
                 <div style="float:right;">
                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)" disabled>Next</button>
+                    <a style="color: red; display: none;" id="error-msg">information exist</a>
                 </div>
             </div>
             <!-- Circles which indicates the steps of the form: -->
@@ -915,10 +920,6 @@
                 <span class="step"></span>
                 <span class="step"></span>
                 <span class="step"></span>
-            </div>
-
-            <div class="p-3 d-flex">
-                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
 
 
@@ -943,10 +944,11 @@
                     document.getElementById("nextBtn").innerHTML = "Next";
                 }
                 //... and run a function that will display the correct step indicator:
-                fixStepIndicator(n)
+
             }
 
             function nextPrev(n) {
+
                 // This function will figure out which tab to display
                 var x = document.getElementsByClassName("tab");
                 // Exit the function if any field in the current tab is invalid:
@@ -955,6 +957,7 @@
                 x[currentTab].style.display = "none";
                 // Increase or decrease the current tab by 1:
                 currentTab = currentTab + n;
+                validateTab();
                 // if you have reached the end of the form...
                 if (currentTab >= x.length) {
                     // ... the form gets submitted:
@@ -963,6 +966,14 @@
                 }
                 // Otherwise, display the correct tab:
                 showTab(currentTab);
+            }
+
+            function validateTab() {
+                if (currentTab == 6) {
+                    document.getElementById('nextBtn').style = 'display: none;';
+                } else {
+                    document.getElementById('nextBtn').style = 'display: inline;';
+                }
             }
 
             function validateForm() {
@@ -996,6 +1007,33 @@
                 //... and adds the "active" class on the current step:
                 x[n].className += " active";
             }
+        </script>
+
+        <script>
+            var residents = <?php echo $resident ?>;
+            var ids = new Set();
+
+            for (var i = 0; i < residents.length; i++) {
+                var id = residents[i].firstname + '@' + residents[i].middlename + '@' + residents[i].lastname;
+
+                ids.add(id);
+            }
+
+            function validateInformation() {
+                let firstname = document.getElementById('firstname').value;
+                let lastname = document.getElementById('lastname').value;
+                let middlename = document.getElementById('middlename').value;
+                let id = firstname + '@' + middlename + '@' + lastname;
+
+                if (ids.has(id)) {
+                    document.getElementById('nextBtn').disabled = true;
+                    document.getElementById('error-msg').style = 'color: red; display: block';
+                } else {
+                    document.getElementById('nextBtn').disabled = false;
+                    document.getElementById('error-msg').style = 'color: red; display: none';
+                }
+            }
+
         </script>
 </form>
     </div>

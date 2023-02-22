@@ -47,12 +47,17 @@ Route::middleware(['ifLoggedOut'])->group(function () {
     Route::resource('facilitystructures', FacilitystructureController::class);
     Route::resource('pets', PetController::class);
     Route::resource('groups', GroupController::class);
+
     Route::get('/csv', [ResidentController::class, 'importForm']);
     Route::post('/import', [ResidentController::class, 'import'])->name('resident.import');
+
     Route::post('/ajax/resident/done', [AjaxController::class, "markResidentDone"]);
+    Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
+    Route::get('/admin/auth/logout', [LoginController::class, 'adminLogout'])->name('admin-logout');
+
 });
 
-Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
-// Route::get('/admin/auth/login', [LoginController::class, 'showAdminLogin'])->name('admin-login');
-// Route::post('/admin/auth/login', [LoginController::class, 'adminLogin']);
-Route::get('/admin/auth/logout', [LoginController::class, 'adminLogout'])->name('admin-logout');
+// Route::get('/admin', [AdminController::class, 'home'])->name('admin-home')->middleware('auth');
+// // Route::get('/admin/auth/login', [LoginController::class, 'showAdminLogin'])->name('admin-login');
+// // Route::post('/admin/auth/login', [LoginController::class, 'adminLogin']);
+// Route::get('/admin/auth/logout', [LoginController::class, 'adminLogout'])->name('admin-logout');
