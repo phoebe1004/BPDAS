@@ -38,6 +38,7 @@ class ResidentImport implements ToCollection, WithCalculatedFormulas, WithHeadin
     /* Reminders:
         * Only 1 sheet
         * Values in the sample excel file are not accurate
+        * Headings sa column kay dili masabtan
         * There are no validations for the fields
     */
     public function collection(Collection $rows)
@@ -67,7 +68,6 @@ class ResidentImport implements ToCollection, WithCalculatedFormulas, WithHeadin
             $row = $row->all();
 
             $birthdate = Date::excelToDateTimeObject($row['birthdate']);
-            // dd(Carbon::parse($birthdate)->age);
             $resident = Resident::create([
                 'lastname' => $row['lastname'],
                 'firstname' => $row['firstname'],
