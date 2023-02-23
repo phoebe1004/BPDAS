@@ -28,7 +28,7 @@ use App\Models\RegisteredVoter;
 use App\Models\SocialEconomicStatus;
 use App\Models\TypeOfOccupancy;
 use App\Models\WomensReproductiveAge;
-use Excel;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ResidentController extends Controller
 {
@@ -624,8 +624,8 @@ class ResidentController extends Controller
     }
     public function import(Request $request)
     {
-        //Excel::import(new ResidentImport, $request->file);
-        dd($request);
+        Excel::import(new ResidentImport, $request->file);
+
         return redirect()->route('residents.index')->with('status', 'Resident imported Successfully');
     }
     public function done($id)

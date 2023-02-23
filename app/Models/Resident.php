@@ -23,7 +23,8 @@ class Resident extends Model
         'contact_number',
         'purok',
         'classification_by_age',
-        'remarks'
+        'remarks',
+        'age'
      ];
 
 

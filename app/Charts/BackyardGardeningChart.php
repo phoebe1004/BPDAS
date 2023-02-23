@@ -2,7 +2,9 @@
 
 namespace App\Charts;
 
+use App\Models\BackyardGardening;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
+use Illuminate\Support\Facades\DB;
 
 class BackyardGardeningChart
 {
@@ -15,10 +17,17 @@ class BackyardGardeningChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
+        $backyardGardening = BackyardGardening::select(DB::raw('COUNT("gardening_indication") AS gardening_indication_count'), 'gardening_indication')
+        ->groupBy('gardening_indication')
+        ->get();
+
         return $this->chart3->pieChart()
             ->setTitle('Residents Backyard Gardening')
             ->setSubtitle('Baranagay Cabantian Davao City')
-            ->addData([40, 50,])
+            ->addData([
+                $backyardGardening->firstWhere('gardening_indication', 'yes')->gardening_indication_count ?? 0,
+                $backyardGardening->firstWhere('gardening_indication', 'no')->gardening_indication_count ?? 0
+            ])
             ->setLabels(['Yes', 'No']);
     }
 }
