@@ -14,16 +14,19 @@ class VotersChart
         $this->chart4 = $chart4;
     }
 
-    public function build(): \ArielMejiaDev\LarapexCharts\HorizontalBar
+    public function build(): \ArielMejiaDev\LarapexCharts\PieChart
     {
-        $residentVoters = RegisteredVoter::groupBy('reg_vot_indication')
-        ->selectRaw('count(*) as total, reg_vot_indication')
-        ->get();
+        // $residentVoters = RegisteredVoter::groupBy('reg_vot_indication')
+        // ->selectRaw('count(*) as total, reg_vot_indication')
+        // ->get();
+        $voteyesCount = RegisteredVoter::get()->where('reg_vot_indication', 'yes')->count();
+        $votenoCount = RegisteredVoter::get()->where('reg_vot_indication', 'no')->count();
 
-        return $this->chart4->horizontalBarChart()
-            ->setTitle('Count Of Registered Voter in Cabantian Davao City')
-            ->setColors(['#FFC107', '#D32F2F'])
-            ->addData('Voters',['total', $residentVoters->map(fn($row) => $row->total)->toArray()])
-            ->setXAxis($residentVoters->map(fn($row) => $row->residentVoters)->toArray());
+        return $this->chart4->pieChart()
+            ->setTitle('Cabantian Registered Voters')
+            ->setSubtitle('Barangay Cabantian Davao City')
+            ->addData([ $voteyesCount,  $votenoCount])
+            ->setColors(['#16FF00', '#ff455f'])
+            ->setLabels(['Voters', 'Non-Voters', $voteyesCount,  $votenoCount]);
     }
 }

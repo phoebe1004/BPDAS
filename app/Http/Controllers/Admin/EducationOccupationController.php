@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charts\AttainmentChart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,13 @@ class EducationOccupationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(
+        AttainmentChart $chart
+    )
     {
-        return view('admin.education_occupation.index');
+        return view('admin.education_occupation.index',[
+            'chart' => $chart->build(),
+        ]);
     }
 
     /**

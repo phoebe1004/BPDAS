@@ -24,6 +24,7 @@ class PopulationOfResidentsBySexChart
         return $this->chart2->lineChart()
         ->setTitle('Cabantian Civil Status')
         ->setSubtitle('Barangay Cabantian Davao City')
+        ->setColors(['#feb019'])
         ->addData('total', $residentCivilstatus->map(fn($row) => $row->total)->toArray())
         ->setXAxis($residentCivilstatus->map(fn($row) => $row->civil_status)->toArray());
 

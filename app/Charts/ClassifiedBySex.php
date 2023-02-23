@@ -25,9 +25,10 @@ class ClassifiedBySex
         $femaleCount = Resident::get()->where('sex', 'Female')->count();
 
         return $this->chart3->pieChart()
-            ->setTitle('Cabantian Residents Sex Count')
+            ->setTitle('Cabantian Sex Count')
             ->setSubtitle('Barangay Cabantian Davao City')
             ->addData([$maleCount, $femaleCount])
-            ->setLabels(['Male', 'Female']);
+            ->setColors(['#775dd0', '#80effe'])
+            ->setLabels(['Male','Female', $maleCount,$femaleCount]);
     }
 }

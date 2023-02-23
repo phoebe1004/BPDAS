@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charts\CommunityGroupChart;
+use App\Charts\CommunityIndication;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +14,13 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(CommunityGroupChart $chart3,
+                         CommunityIndication $chart8)
     {
-        return view('admin.group.index');
+        return view('admin.group.index', [
+            'chart3' => $chart3->build(),
+            'chart8' => $chart8->build(),
+        ]);
     }
 
     /**

@@ -23,7 +23,7 @@ class PopulationOfResidentsChart
         return $this->chart->barChart()
         ->setTitle('Population of Residents By Age & Health Risk Classification')
         ->setSubtitle('Barangay Cabantian Davao City')
-        ->setColors(['#D32F2F'])
+        ->setColors(['#0057ff'])
         ->addData('total', $residentClassification->map(fn($row) => $row->total)->toArray())
         ->setXAxis($residentClassification->map(fn($row) => $row->classification_by_age)->toArray());
 

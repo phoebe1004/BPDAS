@@ -9,7 +9,7 @@ use App\Http\Controllers\Admin\GroupController;
 use App\Http\Controllers\Admin\ResidentController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PopulationController;
-use App\Http\Controllers\Admin\BarangaycaseController;
+use App\Http\Controllers\Admin\HealthcaseController;
 use App\Http\Controllers\Admin\SpecificationController;
 use App\Http\Controllers\Admin\FacilitystructureController;
 use App\Http\Controllers\Admin\EducationOccupationController;
@@ -42,7 +42,7 @@ Route::middleware(['ifLoggedOut'])->group(function () {
     Route::resource('dashboard', DashboardController::class);
     Route::resource('specifications', SpecificationController::class);
     Route::resource('residents', ResidentController::class);
-    Route::resource('barangaycases', BarangaycaseController::class);
+    Route::resource('healthcases', HealthcaseController::class);
     Route::resource('educationoccupations', EducationOccupationController::class);
     Route::resource('facilitystructures', FacilitystructureController::class);
     Route::resource('pets', PetController::class);

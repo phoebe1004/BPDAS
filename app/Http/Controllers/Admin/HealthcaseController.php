@@ -2,22 +2,45 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Barangaycase;
-use Illuminate\Http\Request;
+use App\Charts\COVIDChart;
+use App\Charts\DengueCharts;
+use App\Charts\EPIChart;
+use App\Charts\HPVChart;
+use App\Charts\MedicalHistoryByPurokChart;
+use App\Charts\MRTDChart;
+use App\Charts\PersonalSocialHistoryChart;
+use App\Charts\WomenReproductiveAgeChart;
 use App\Http\Controllers\Controller;
-use Excel;
+use Illuminate\Http\Request;
 
-class BarangaycaseController extends Controller
+class HealthcaseController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(
+        MedicalHistoryByPurokChart $chart,
+        PersonalSocialHistoryChart $chart2,
+        WomenReproductiveAgeChart $chart3,
+        HPVChart $chart4,
+        MRTDChart $chart5,
+        COVIDChart $chart6,
+        DengueCharts $chart7,
+        EPIChart $chart8,
+    )
     {
-        $barangaycase = Barangaycase::all();
-        return view('admin.barangaycase.index')->withBarangaycase($barangaycase);;
+        return view('admin.healthcase.index',[
+            'chart' => $chart->build(),
+            'chart2' => $chart2->build(),
+            'chart3' => $chart3->build(),
+            'chart4' => $chart4->build(),
+            'chart5' => $chart5->build(),
+            'chart6' => $chart6->build(),
+            'chart7' => $chart7->build(),
+            'chart8' => $chart8->build(),
+        ]);
     }
 
     /**
@@ -27,7 +50,7 @@ class BarangaycaseController extends Controller
      */
     public function create()
     {
-        return view('admin.barangaycase.create');
+        //
     }
 
     /**
@@ -38,20 +61,7 @@ class BarangaycaseController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $barangaycase = new Barangaycase();
-
-        $barangaycase->age = $request->age;
-        $barangaycase->complainant = $request->complainant;
-        $barangaycase->type_case = $request->type_case;
-        $barangaycase->case_specification = $request->case_specification;
-        $barangaycase->date_filed = $request->date_filed;
-        $barangaycase->case_status = $request->case_status;
-
-        $barangaycase->save();
-
-        return redirect()->route('barangaycases.index')->with('status','Barangaycase has been added successfully');
+        //
     }
 
     /**
@@ -96,9 +106,6 @@ class BarangaycaseController extends Controller
      */
     public function destroy($id)
     {
-        $barangaycase = Barangaycase::find($id);
-        $barangaycase->delete();
-
-        return redirect()->route('barangaycases.index');
+        //
     }
 }

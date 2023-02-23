@@ -2,108 +2,128 @@
 
 @section('title', 'Population')
 @section('content')
+    <h3 class="">Population Page</h3>
 
-    <div class="card">
-        <div class="card-header">
-            <h3 class="">Population of Residents Page</h3>
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="card bg-primary text-white mb-4">
-                        <div class="card-body">Specification Type</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('depart')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card bg-warning text-white mb-4">
-                        <div class="card-body">Health Cases</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('employee')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card bg-secondary text-white mb-4">
-                        <div class="card-body">Attainment</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('depart')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card bg-danger text-white mb-4">
-                        <div class="card-body">Facility Structure</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('employee')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card bg-success text-white mb-4">
-                        <div class="card-body">Pets/Animals</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('depart')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="card bg-info text-white mb-4">
-                        <div class="card-body">Community Group</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link" href="{{url('employee')}}">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                        </div>
-                    </div>
+    <div class="pt-5">
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-5">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart->container() !!}
                 </div>
             </div>
-
-            <body class="h-screen bg-gray-100">
-                <div class="container px-4 mx-auto col-md-5">
-                    <div class="p-6 m-20 bg-white rounded shadow">
-                        {!! $chart->container() !!}
-                    </div>
-                </div>
-                <script src="{{ $chart->cdn() }}"></script>
-                {{ $chart->script() }}
-            </body>
-
-            <body class="h-screen bg-gray-100">
-                <div class="container px-4 mx-auto col-md-4">
-                    <div class="p-6 m-20 bg-white rounded shadow">
-                        {!! $chart2->container() !!}
-                    </div>
-                </div>
-                <script src="{{ $chart2->cdn() }}"></script>
-                {{ $chart2->script() }}
-            </body>
-
-            <body class="h-screen bg-gray-100 pt-5">
-                <div class="container px-4 mx-auto col-md-3">
-                    <div class="p-6 m-20 bg-white rounded shadow">
-                        {!! $chart3->container() !!}
-                    </div>
-                </div>
-                <script src="{{ $chart3->cdn() }}"></script>
-                {{ $chart3->script() }}
-
-        </div>
+            <script src="{{ $chart->cdn() }}"></script>
+            {{ $chart->script() }}
+        </body>
     </div>
 
-    <body class="h-screen bg-gray-100 pt-5">
-        <div class="container px-4 mx-auto col-md-6">
-            <div class="p-6 m-20 bg-white rounded shadow">
-                {!! $chart4->container() !!}
+    <div>
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-4">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart2->container() !!}
+                </div>
             </div>
-        </div>
-        <script src="{{ $chart4->cdn() }}"></script>
-        {{ $chart4->script() }}
-    </body>
+            <script src="{{ $chart2->cdn() }}"></script>
+            {{ $chart2->script() }}
+        </body>
+    </div>
+
+    <div class="">
+
+        <body class="h-screen bg-gray-100 pt-5">
+            <div class="container col-md-3 mb-5">
+                <div class="p-6 bg-white rounded shadow mb-5">
+                    <div class="mb-6">
+                    <div class="mb-6">
+                    <span>{!! $chart3->container() !!} </span>
+                </div>
+                </div>
+                </div>
+            </div>
+            <script src="{{ $chart3->cdn() }}"></script>
+            {{ $chart3->script() }}
+
+            <div class="mt-1">
+                <div class="container col-md-3 mt-5 px-1">
+                    <div class="p-6 bg-white rounded shadow mt-5">
+                        <div class="mt-5">
+                            <div class="mt-5">
+                                {!! $chart4->container() !!}
+                            </div>
+                        </div>
+                        <script src="{{ $chart4->cdn() }}"></script>
+                        {{ $chart4->script() }}
+        </body>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div>
+        <h1 class="text-center"><b>Social Economic Status (National Household Targeting System)</b></h1>
+    </div>
+    <div class="pt-5">
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-3">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart6->container() !!}
+                </div>
+            </div>
+            <script src="{{ $chart6->cdn() }}"></script>
+            {{ $chart6->script() }}
+        </body>
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-3">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart7->container() !!}
+                </div>
+            </div>
+            <script src="{{ $chart7->cdn() }}"></script>
+            {{ $chart7->script() }}
+        </body>
+        </body>
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-3">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart8->container() !!}
+                </div>
+            </div>
+            <script src="{{ $chart8->cdn() }}"></script>
+            {{ $chart8->script() }}
+        </body>
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-3">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart9->container() !!}
+                </div>
+            </div>
+            <script src="{{ $chart9->cdn() }}"></script>
+            {{ $chart9->script() }}
+        </body>
+    </div>
+    <div class="pt-5">
+
+        <body class="h-screen bg-gray-100">
+            <div class="container px-4 mx-auto col-md-12">
+                <div class="p-6 m-20 bg-white rounded shadow">
+                    {!! $chart5->container() !!}
+                </div>
+            </div>
+            <script src="{{ $chart5->cdn() }}"></script>
+            {{ $chart5->script() }}
+        </body>
+    </div>
+
+
+
 
     {{-- <body class="h-screen bg-gray-100 pt-5">
         <div class="container px-4 mx-auto col-md-6">

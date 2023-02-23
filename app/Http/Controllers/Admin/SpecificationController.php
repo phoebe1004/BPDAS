@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Charts\BackyardGardeningChart;
+use App\Charts\WaterSourceChart;
+use App\Charts\SanitaryToiletChart;
+use App\Charts\WasteManagementChart;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,9 +16,19 @@ class SpecificationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(
+        WaterSourceChart $chart,
+        SanitaryToiletChart $chart1,
+        WasteManagementChart $chart2,
+        BackyardGardeningChart $chart3
+    )
     {
-        return view('admin.specification.index');
+        return view('admin.specification.index',[
+            'chart' => $chart->build(),
+            'chart1' => $chart1->build(),
+            'chart2' => $chart2->build(),
+            'chart3' => $chart3->build(),
+        ]);
     }
 
     /**

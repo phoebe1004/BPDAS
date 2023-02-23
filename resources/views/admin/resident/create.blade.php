@@ -400,23 +400,31 @@
                         <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="education" id="education">
                                 <option disabled selected>--Select Eduactional Attainment--</option>
                                 <option value="None" name="education">None</option>
-                                <option value="EL" name="education">Elementary Level</option>
-                                <option value="EG" name="education">Elementary Graduate</option>
-                                <option value="JHSL" name="education">Junior High School Level</option>
-                                <option value="SHSL" name="education">Senior High School Level</option>
-                                <option value="V" name="education">Vocational</option>
-                                <option value="CL" name="education">College Level</option>
-                                <option value="CG" name="education">College Graduate</option>
-                                <option value="PG" name="education">Post Graduate</option>
+                                <option value="Elementary Level" name="education">Elementary Level</option>
+                                <option value="Elementary Graduate" name="education">Elementary Graduate</option>
+                                <option value="Junior High School Level" name="education">Junior High School Level</option>
+                                <option value="Junior High School Graduate" name="education">Junior High School Graduate</option>
+                                <option value="Senior High School Level" name="education">Senior High School Level</option>
+                                <option value="Senior High School Graduate" name="education">Senior High School Graduate</option>
+                                <option value="Vocational" name="education">Vocational</option>
+                                <option value="College Level" name="education">College Level</option>
+                                <option value="College Graduate" name="education">College Graduate</option>
+                                <option value="Post Graduate" name="education">Post Graduate</option>
                             </select></p>
                         @error('education')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
                     </div>
+
                     <div class="col-md-6 mt-3">
                         <span>Occupation</span>
-                        <input type="text" class="form-control" name="occupation" id="occupation"
-                            placeholder="occupation" value="{{ old('occupation') }}">
+                        <p><select class="form-select form-select-lg" aria-label=".form-select-lg" name="occupation" id="occupation">
+                                <option disabled selected>--Select Eduactional Attainment--</option>
+                                <option value="Employed" name="occupation">Employed</option>
+                                <option value="Unemployed" name="occupation">Unemployed</option>
+                                <option value="Self Employed" name="occupation">Self Employed</option>
+                                <option value="Student" name="occupation">Student</option>
+                            </select></p>
                         @error('occupation')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
@@ -486,7 +494,7 @@
                                 <option value="women" name="com_grp_type">Women</option>
                                 <option value="senior citizens" name="com_grp_type">Senior Citizens</option>
                                 <option value="youth" name="com_grp_type">Youth</option>
-                                <option value="pwd's" name="com_grp_type">PWD's</option>
+                                <option value="pwds" name="com_grp_type">PWD's</option>
                             </select>
                             @error('com_grp_type')
                                 <span class="text-danger">{{ $message }}</span>

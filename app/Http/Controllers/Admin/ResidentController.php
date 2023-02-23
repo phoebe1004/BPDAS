@@ -451,7 +451,7 @@ class ResidentController extends Controller
             "type_of_vegetables" => 'required',
             "type" => 'required',
             "number" => 'required',
-            "vaccinated" => 'required',
+            //"vaccinated" => 'required',
         ]);
 
         $resident = Resident::find($id);
