@@ -27,7 +27,7 @@
                 <li class="user-select-none">
                     <div class="d-flex justify-content-between align-items-center " data-bs-toggle="collapse"
                         data-bs-target="#home-collapse" aria-expanded="true">
-                        <a href="{{ route('dashboard.index') }}"><span class="text-white"><i class="fas fa-tachometer-alt"></i> Dashboard</span></a>
+                        <a href="#"><span class="text-white"><i class="fas fa-tachometer-alt"></i> Dashboard</span></a>
                         {{-- <svg class="" width="6" height="12" fill="none">
                             <use xlink:href="#drop-down-arrow" />
                         </svg> --}}

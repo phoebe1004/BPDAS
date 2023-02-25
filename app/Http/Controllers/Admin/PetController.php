@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Charts\PetAniSexChart;
+use App\Charts\PetAniTypeChart;
+use App\Charts\PetAniVaccinated;
+use App\Http\Controllers\Controller;
 
 class PetController extends Controller
 {
@@ -12,9 +15,13 @@ class PetController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(PetAniTypeChart $chart, PetAniSexChart $chart6, PetAniVaccinated $charts)
     {
-        return view('admin.pet.index');
+        return view('admin.pet.index', [
+            'chart' => $chart->build(),
+            'chart6' => $chart6->build(),
+            'charts' => $charts->build(),
+        ]);
     }
 
     /**
