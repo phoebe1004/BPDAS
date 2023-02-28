@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('home.view')
 
 @section('title', 'Population')
 @section('content')
@@ -84,84 +84,81 @@
 
     <h3 class="">Population Page</h3>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="bg-white rounded shadow">
-                    {!! $chart->container() !!}
-                </div>
-                <script src="{{ $chart->cdn() }}"></script>
-                {{ $chart->script() }}
+    <div class="row">
+        <div class="col-md-5">
+            <div class="bg-white rounded shadow">
+                {!! $chart->container() !!}
             </div>
+            <script src="{{ $chart->cdn() }}"></script>
+            {{ $chart->script() }}
+        </div>
 
-            <div class="col-md-4">
-                <div class="bg-white rounded shadow">
-                    {!! $chart2->container() !!}
-                </div>
-                <script src="{{ $chart2->cdn() }}"></script>
-                {{ $chart2->script() }}
+        <div class="col-md-4">
+            <div class="bg-white rounded shadow">
+                {!! $chart2->container() !!}
             </div>
+            <script src="{{ $chart2->cdn() }}"></script>
+            {{ $chart2->script() }}
+        </div>
 
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="bg-white rounded shadow">
-                            {!! $chart3->container() !!}
-                        </div>
-                        <script src="{{ $chart3->cdn() }}"></script>
-                        {{ $chart3->script() }}
+        <div class="col-md-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="bg-white rounded shadow">
+                        {!! $chart3->container() !!}
                     </div>
+                    <script src="{{ $chart3->cdn() }}"></script>
+                    {{ $chart3->script() }}
+                </div>
 
-                    <div class="col-12 mt-4">
-                        <div class="bg-white rounded shadow">
-                            {!! $chart4->container() !!}
-                        </div>
-                        <script src="{{ $chart4->cdn() }}"></script>
-                        {{ $chart4->script() }}
+                <div class="col-12 mt-4">
+                    <div class="bg-white rounded shadow">
+                        {!! $chart4->container() !!}
                     </div>
+                    <script src="{{ $chart4->cdn() }}"></script>
+                    {{ $chart4->script() }}
                 </div>
             </div>
         </div>
+    </div>
 
+    <h1 class="text-center mt-5"><b>Social Economic Status (National Household Targeting System)</b></h1>
 
-        <h1 class="text-center mt-5"><b>Social Economic Status (National Household Targeting System)</b></h1>
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="bg-white rounded shadow">
-                    {!! $chart9->container() !!}
-                </div>
-                <script src="{{ $chart9->cdn() }}"></script>
-                {{ $chart9->script() }}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="bg-white rounded shadow">
+                {!! $chart9->container() !!}
             </div>
-            <div class="col-md-3">
-                <div class="bg-white rounded shadow">
-                    {!! $chart6->container() !!}
-                </div>
-                <script src="{{ $chart6->cdn() }}"></script>
-                {{ $chart6->script() }}
+            <script src="{{ $chart9->cdn() }}"></script>
+            {{ $chart9->script() }}
+        </div>
+        <div class="col-md-3">
+            <div class="bg-white rounded shadow">
+                {!! $chart6->container() !!}
             </div>
-            <div class="col-md-3">
-                <div class="bg-white rounded shadow">
-                    {!! $chart7->container() !!}
-                </div>
-                <script src="{{ $chart7->cdn() }}"></script>
-                {{ $chart7->script() }}
+            <script src="{{ $chart6->cdn() }}"></script>
+            {{ $chart6->script() }}
+        </div>
+        <div class="col-md-3">
+            <div class="bg-white rounded shadow">
+                {!! $chart7->container() !!}
             </div>
-            <div class="col-md-3">
-                <div class="bg-white rounded shadow">
-                    {!! $chart8->container() !!}
-                </div>
-                <script src="{{ $chart8->cdn() }}"></script>
-                {{ $chart8->script() }}
+            <script src="{{ $chart7->cdn() }}"></script>
+            {{ $chart7->script() }}
+        </div>
+        <div class="col-md-3">
+            <div class="bg-white rounded shadow">
+                {!! $chart8->container() !!}
             </div>
-            <div class="col-12 mt-5">
-                <div class="bg-white rounded shadow">
-                    {!! $chart5->container() !!}
-                </div>
-                <script src="{{ $chart5->cdn() }}"></script>
-                {{ $chart5->script() }}
+            <script src="{{ $chart8->cdn() }}"></script>
+            {{ $chart8->script() }}
+        </div>
+        <div class="col-12 mt-5">
+            <div class="bg-white rounded shadow">
+                {!! $chart5->container() !!}
             </div>
+            <script src="{{ $chart5->cdn() }}"></script>
+            {{ $chart5->script() }}
         </div>
     </div>
 @endsection

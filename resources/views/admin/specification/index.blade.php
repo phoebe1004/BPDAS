@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('home.view')
 
 @section('title', 'Specification')
 
@@ -86,7 +86,7 @@
 
         <h3 class="">Specification Type Page</h3>
 
-        <div class="row mt-5">
+        <div class="row mt-5 g-4">
             <div class="col-md-6">
                 <div class="bg-white rounded shadow">
                     {!! $chart->container() !!}

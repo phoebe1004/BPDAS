@@ -20,14 +20,17 @@
         <!-- Side Bar-->
         <div class="sidebar overflow-auto m-0 p-0 flex-shrink-0 d-flex flex-column align-items-stretch ">
             <div class="logo d-flex justify-content-center align-items-center border-bottom ">
-                <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+                <svg class="bi pe-none me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
                 <span class="fw-semibold text-white">RPDAS Admin</span>
             </div>
             <ul class="main-list list-unstyled flex-fill mt-2">
                 <li class="user-select-none">
                     <div class="d-flex justify-content-between align-items-center " data-bs-toggle="collapse"
                         data-bs-target="#home-collapse" aria-expanded="true">
-                        <a href="#"><span class="text-white"><i class="fas fa-tachometer-alt"></i> Dashboard</span></a>
+                        <a href="#"><span class="text-white"><i class="fas fa-tachometer-alt"></i>
+                                Dashboard</span></a>
                         {{-- <svg class="" width="6" height="12" fill="none">
                             <use xlink:href="#drop-down-arrow" />
                         </svg> --}}
@@ -39,14 +42,16 @@
                     </div>
 
                     <div class="collapse show sub-items" id="home-collapse">
-                        <a href="{{ route('specifications.index') }}"><span><i class="fa-sharp fa-solid fa-pump-soap"></i> Facility Structure</span></a>
+                        <a href="{{ route('specifications.index') }}"><span><i class="fa-sharp fa-solid fa-pump-soap"></i>
+                                Facility Structure</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
                         <a href="{{ route('healthcases.index') }}"><span><i class="fa-solid fa-kit-medical"></i> Health
                                 Cases</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
-                        <a href="{{ route('educationoccupations.index') }}"><span><i class="fa-sharp fa-solid fa-school"></i>
+                        <a href="{{ route('educationoccupations.index') }}"><span><i
+                                    class="fa-sharp fa-solid fa-school"></i>
                                 Education and Occupation</span></a>
                     </div>
                     <div class="collapse show sub-items" id="home-collapse">
@@ -64,9 +69,9 @@
                 </div>
             </ul>
             <!--Sidebar Footer
-                                                        <div class="d-flex justify-content-center align-items-center border-top">
-                                                            <span class="fw-bold">Login</span>
-                                                        </div>-->
+                                                                <div class="d-flex justify-content-center align-items-center border-top">
+                                                                    <span class="fw-bold">Login</span>
+                                                                </div>-->
         </div>
         <!--End Side Bar-->
         <!-- Top Bar-->
@@ -76,9 +81,9 @@
                     <a class="nav-link mt-3" data-widget="pushmenu" href="#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li> --}}
-                <button class="btn btn-primary d-flex ms-auto p-2" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <span class="mt-3">Super Admin  <i class="fa-solid fa-caret-down"></i></span>
+                <button class="btn btn-primary d-flex ms-auto p-2" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="mt-3">Super Admin <i class="fa-solid fa-caret-down"></i></span>
                 </button>
                 <ul class="dropdown-menu nav col-12 col-lg-auto my-2 my-md-0 text-small">
                     <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user-tie"></i> SuperAdmin's
@@ -88,75 +93,11 @@
                     <li><a class="dropdown-item" href="{{ route('admin-logout') }}"><i
                                 class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
                 </ul>
-
             </div>
 
-            <!--End of Top Bar-->
-            <!-- Sub Content-->
-            <div class="sub-content flex-fill">
-                <div class="card">
-                    <div class="card-header">
-                        {{-- <h3 class="">Population of Residents Page</h3> --}}
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Specification Type</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('depart') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Health Cases</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('employee') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card bg-secondary text-white mb-4">
-                                    <div class="card-body">Attainment</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('depart') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Facility Structure</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('employee') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Pets/Animals</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('depart') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="card bg-info text-white mb-4">
-                                    <div class="card-body">Community Group</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="{{ url('employee') }}">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+            <div class="container-fluid">
                 @yield('content')
             </div>
         </div>
-    </div>
     </div>
 @endsection

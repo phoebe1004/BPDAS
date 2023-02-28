@@ -41,8 +41,75 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-    @yield('body')
+<body style="overflow-x: hidden;">
+    <div class="wrapper d-flex">
+        <div class="main-sidebar d-flex flex-column flex-shrink-0 p-3 px-0 elevation-4 bg-white" style="width: 240px; min-height: 100vh; height: 100%;">
+            <a href="#" class="brand-link">
+                <img src="image/bpdaslogo.jpg" alt="BPDASLogo" class="brand-image img-circle elevation-3">
+                <span class="brand-text font-weight-light">RPDAS InfoSys</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{{ route('populations.index') }}" class="nav-link active" aria-current="page">
+                        Residents Population
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('specifications.index') }}" class="nav-link link-dark">
+                        Facility Structure
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('healthcases.index') }}" class="nav-link link-dark">
+                        Health Cases
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('educationoccupations.index') }}" class="nav-link link-dark">
+                        Education and Occupation
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('pets.index') }}" class="nav-link link-dark">
+                        Pets/Animals
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('groups.index') }}" class="nav-link link-dark">
+                        Community group
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="container-fluid px-0 mx-0">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-dark navbar-success">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                                class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="content-wrapper py-4 me-0 pe-0">
+               <div class="container-fluid">
+                    @yield('content')
+               </div>
+            </div>
+
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <strong>Copyright © 2023 <a href="#">Barangay Profiling with Demographic Analysis System</a></strong>
+                All rights reserved.
+                <div class="float-right d-none d-sm-inline-block">
+                </div>
+            </footer>
+        </div>
+    </div>
 
     <!-Scripts--->
         <script src="//code.jquery.com/jquery-1.12.3.js"></script>
@@ -89,7 +156,13 @@
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('js/view/demo.js') }}" ></script>
 
-
+    <script type="text/javascript">
+        // Write your startup script here
+        // document.write("page loaded");
+        $("a[href$='dashboard.php']").addClass("active");
+        $("#dashboard").addClass("active");
+        $(".userloggedin").hide();
+    </script>
 
 </body>
 
