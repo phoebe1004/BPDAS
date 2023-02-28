@@ -7,6 +7,7 @@ use App\Charts\PetAniSexChart;
 use App\Charts\PetAniTypeChart;
 use App\Charts\PetAniVaccinated;
 use App\Http\Controllers\Controller;
+use App\Models\PetsAnimals;
 
 class PetController extends Controller
 {
@@ -17,10 +18,25 @@ class PetController extends Controller
      */
     public function index(PetAniTypeChart $chart, PetAniSexChart $chart6, PetAniVaccinated $charts)
     {
+        $petsanimals = PetsAnimals::groupBy('type')
+        ->selectRaw('count(type) as total, type')
+        ->orderByDesc('total')
+        ->get();
+        $mostPetCountByType = $petsanimals->first();
+        $petsanimalsTotal = $petsanimals->sum('total');
+
+        $unvaccinatedPetsTotal = PetsAnimals::groupBy('vaccinated')
+        ->selectRaw('count(vaccinated) as total, vaccinated')
+        ->firstWhere('vaccinated', 'no');
+
         return view('admin.pet.index', [
             'chart' => $chart->build(),
             'chart6' => $chart6->build(),
             'charts' => $charts->build(),
+            'mostPetCountByType' => $mostPetCountByType->total ?? 0,
+            'mostPetCountByTypeText' => $mostPetCountByType->type,
+            'petsanimalsTotal' => $petsanimalsTotal,
+            'unvaccinatedPetsTotal' => $unvaccinatedPetsTotal->total ?? 0,
         ]);
     }
 

@@ -3,79 +3,165 @@
 @section('title', 'BarangayCases')
 
 @section('content')
+    <!-- Cards -->
+    <div class="row mb-5">
+        <div class="col-md-3">
+            <div class="card bg-primary">
+                <div class="card-header border-0 pb-0">
+                    <h5>Total Health cases</h5>
+                </div>
+                <div class="card-body py-0">
+                    <div class="row py-3 px-2">
+                        <div class="col-md-3">
+                            <h2 class="p-0 m-0 text-nowrap">{{$totalHealthCases}}</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-flex align-items-center justify-content-end text-end h-100">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card bg-primary">
+                <div class="card-header border-0 pb-0">
+                    <h5>Most Common Health Case</h5>
+                </div>
+                <div class="card-body py-0">
+                    <div class="row py-3 px-2">
+                        <div class="col-md-3">
+                            <h2 class="p-0 m-0 text-nowrap">{{$residentHealthMedicalCount}}</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-flex align-items-center justify-content-end text-end h-100">
+                                <small class="fw-bold">{{$residentHealthMedicalCountText}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-primary">
+                <div class="card-header border-0 pb-0">
+                    <h5>Purok with most health cases</h5>
+                </div>
+                <div class="card-body py-0">
+                    <div class="row py-3 px-2">
+                        <div class="col-md-3">
+                            <h2 class="p-0 m-0 text-nowrap">{{$residentHealthPurokCount}}</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-flex align-items-center justify-content-end text-end h-100">
+                                {{$residentHealthMedicalCountText}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-primary">
+                <div class="card-header border-0 pb-0">
+                    <h5>Most Common Type of Covid-19 Vaccination</h5>
+                </div>
+                <div class="card-body py-0">
+                    <div class="row py-3 px-2">
+                        <div class="col-md-3">
+                            <h2 class="p-0 m-0 text-nowrap">{{$covidVaccineCount}}</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-flex align-items-center justify-content-end text-end h-100">
+                                <small class="fw-bold">{{$covidVaccineCountText}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card bg-primary">
+                <div class="card-header border-0 pb-0">
+                    <h5>Most Common Type of Measles-Rubella-Tetanus-Diphtheria Vaccine</h5>
+                </div>
+                <div class="card-body py-0">
+                    <div class="row py-3 px-2">
+                        <div class="col-md-3">
+                            <h2 class="p-0 m-0 text-nowrap">{{$mrtdCount}}</h2>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="d-flex align-items-center justify-content-end text-end h-100">
+                                <small class="fw-bold">{{$mrtdCountText}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <h3 class="">Healthcase Page</h3>
 
-   <div>
-    <body class="h-screen bg-gray-100">
-        <div class="container px-4 mx-auto col-md-12">
-            <div class="p-6 m-20 bg-white rounded shadow">
+    <div class="row mt-5 g-5">
+        <div class="col-md-12">
+            <div class="bg-white rounded shadow">
                 {!! $chart->container() !!}
             </div>
+            <script src="{{ $chart->cdn() }}"></script>
+            {{ $chart->script() }}
         </div>
-        <script src="{{ $chart->cdn() }}"></script>
-        {{ $chart->script() }}
-    </body>
-   </div>
-</div>
 
-    <div>
-        <body class="h-screen bg-gray-100">
-            <div class="container px-4 mx-auto col-md-4">
-                <div class="p-6 m-20 bg-white rounded shadow">
-                    {!! $chart2->container() !!}
-                </div>
+        <div class="col-md-12">
+            <div class="bg-white rounded shadow">
+                {!! $chart2->container() !!}
             </div>
             <script src="{{ $chart2->cdn() }}"></script>
             {{ $chart2->script() }}
-        </body>
-
-        <body class="h-screen bg-gray-100">
-            <div class="container px-1 col-md-3 mt-5 pt-5">
-                <div class="p-6 bg-white">
-                    {!! $chart3->container() !!}
-                    <div class="mt-5">{!! $chart4->container() !!}</div>
-                </div>
+        </div>
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
+                {!! $chart3->container() !!}
             </div>
             <script src="{{ $chart3->cdn() }}"></script>
             {{ $chart3->script() }}
-
+        </div>
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
+                {!! $chart4->container() !!}
+            </div>
             <script src="{{ $chart4->cdn() }}"></script>
             {{ $chart4->script() }}
-        </body>
-
-        <body class="h-screen bg-gray-100">
-            <div class="container px-4 mx-auto col-md-5">
-                <div class="p-6 m-20 bg-white rounded shadow">
-                    {!! $chart5->container() !!}
-                </div>
+        </div>
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
+                {!! $chart5->container() !!}
             </div>
             <script src="{{ $chart5->cdn() }}"></script>
             {{ $chart5->script() }}
-        </body>
-    </div>
-</div>
-
-    <body class="h-screen bg-gray-100">
-        <div class="container px-4 mx-auto col-md-8">
-            <div class="p-6 m-20 bg-white rounded shadow">
+        </div>
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
                 {!! $chart6->container() !!}
             </div>
+            <script src="{{ $chart6->cdn() }}"></script>
+            {{ $chart6->script() }}
         </div>
-        <script src="{{ $chart6->cdn() }}"></script>
-        {{ $chart6->script() }}
-    </body>
-    <body class="h-screen bg-gray-100">
-        <div class="container px-1 col-md-3 mt-5 pt-">
-            <div class="p-6 bg-white">
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
                 {!! $chart7->container() !!}
-                <div class="mt-5">{!! $chart8->container() !!}</div>
             </div>
+            <script src="{{ $chart7->cdn() }}"></script>
+            {{ $chart7->script() }}
         </div>
-        <script src="{{ $chart7->cdn() }}"></script>
-        {{ $chart7->script() }}
-
-        <script src="{{ $chart8->cdn() }}"></script>
-        {{ $chart8->script() }}
-    </body>
+        <div class="col-6">
+            <div class="bg-white rounded shadow">
+                {!! $chart8->container() !!}
+            </div>
+            <script src="{{ $chart8->cdn() }}"></script>
+            {{ $chart8->script() }}
+        </div>
+    </div>
 @endsection

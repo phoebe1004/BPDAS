@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Charts\CommunityGroupChart;
 use App\Charts\CommunityIndication;
 use App\Http\Controllers\Controller;
+use App\Models\CommunityGroup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GroupController extends Controller
 {
@@ -17,9 +19,16 @@ class GroupController extends Controller
     public function index(CommunityGroupChart $chart3,
                          CommunityIndication $chart8)
     {
+        $groupType = CommunityGroup::select(DB::raw('COUNT("com_grp_type") AS total'), 'com_grp_type')
+        ->groupBy('com_grp_type')
+        ->orderByDesc('total')
+        ->first();
+
         return view('admin.group.index', [
             'chart3' => $chart3->build(),
             'chart8' => $chart8->build(),
+            'groupType' => $groupType->total,
+            'groupTypeText' => $groupType->com_grp_type,
         ]);
     }
 

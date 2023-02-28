@@ -28,4 +28,11 @@ class Resident extends Model
      ];
 
 
+    public function health_information() {
+        return $this->hasOne(HealthInformation::class, 'resident_id');
+    }
+
+    public function educ_occupation() {
+        return $this->hasOne(EducOccupation::class, 'resident_id');
+    }
 }
