@@ -16,6 +16,7 @@ class HealthInformation extends Model
         'medical_history',
         'remark',
     ];
+
     public function resident()
     {
         return $this->belongsTo(Resident::class, 'resident_id','id');

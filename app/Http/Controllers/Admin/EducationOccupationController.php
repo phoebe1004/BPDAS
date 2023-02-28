@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Charts\AttainmentChart;
+use App\Charts\OccupationChart;
 use App\Http\Controllers\Controller;
+use App\Models\EducOccupation;
 use Illuminate\Http\Request;
 
 class EducationOccupationController extends Controller
@@ -14,11 +16,33 @@ class EducationOccupationController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(
-        AttainmentChart $chart
+        AttainmentChart $chart,
+        OccupationChart $chart2
     )
     {
+        $mostUneducatedByPurok = EducOccupation::with('resident')->where('education', 'None')->get()->groupBy(['resident.purok']);
+        $uneducatedTotal = $mostUneducatedByPurok->flatten()->count();
+        $mostUneducatedByPurok  = $mostUneducatedByPurok
+        ->sortByDesc(fn($column) => $column->count() ?? 0)
+        ->map(fn($column, $key) => [$column->count() ?? 0, $key])
+        ->first();
+
+        $mostUnemployedByPurok = EducOccupation::with('resident')->where('occupation', 'Unemployed')->get()->groupBy(['resident.purok']);
+        $mostUnemployedTotal = $mostUnemployedByPurok->flatten()->count();
+        $mostUnemployedByPurok  = $mostUnemployedByPurok
+        ->sortByDesc(fn($column) => $column->count() ?? 0)
+        ->map(fn($column, $key) => [$column->count() ?? 0, $key])
+        ->first();
+
         return view('admin.education_occupation.index',[
             'chart' => $chart->build(),
+            'chart2' => $chart2->build(),
+            'mostUneducatedByPurok' => $mostUneducatedByPurok[0] ?? 0,
+            'mostUneducatedByPurokText' => $mostUneducatedByPurok[1],
+            'uneducatedTotal' => $uneducatedTotal,
+            'mostUnemployedByPurok' => $mostUnemployedByPurok[0] ?? 0,
+            'mostUnemployedByPurokText' => $mostUnemployedByPurok[1],
+            'mostUnemployedTotal' => $mostUnemployedTotal,
         ]);
     }
 

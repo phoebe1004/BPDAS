@@ -2,6 +2,7 @@
 
 namespace App\Charts;
 
+use App\Models\PetsAnimals;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 
 class PetAniSexChart

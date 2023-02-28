@@ -7,6 +7,8 @@ use App\Charts\WaterSourceChart;
 use App\Charts\SanitaryToiletChart;
 use App\Charts\WasteManagementChart;
 use App\Http\Controllers\Controller;
+use App\Models\BackyardGardening;
+use App\Models\FacilityStructure;
 use Illuminate\Http\Request;
 
 class SpecificationController extends Controller
@@ -23,11 +25,24 @@ class SpecificationController extends Controller
         BackyardGardeningChart $chart3
     )
     {
+        $waterSource = FacilityStructure::selectRaw('COUNT(type_of_water_source) as total, type_of_water_source')->groupBy('type_of_water_source')->orderByDesc('total')->first();
+        $sanitaryToilet = FacilityStructure::selectRaw('COUNT(type_of_toilet_facility) as total, type_of_toilet_facility')->groupBy('type_of_toilet_facility')->orderByDesc('total')->first();
+        $wasteManagement = FacilityStructure::selectRaw('COUNT(type_of_waste_management) as total, type_of_waste_management')->groupBy('type_of_waste_management')->orderByDesc('total')->first();
+        $backyardGardening = BackyardGardening::selectRaw('COUNT(gardening_indication) as total, gardening_indication')->groupBy('gardening_indication')->orderByDesc('total')->first();
+
         return view('admin.specification.index',[
             'chart' => $chart->build(),
             'chart1' => $chart1->build(),
             'chart2' => $chart2->build(),
             'chart3' => $chart3->build(),
+            'waterSource' => $waterSource->total ?? 0,
+            'waterSourceText' => $waterSource->type_of_water_source,
+            'sanitaryToilet' => $sanitaryToilet->total ?? 0,
+            'sanitaryToiletText' => $sanitaryToilet->type_of_toilet_facility,
+            'wasteManagement' => $wasteManagement->total ?? 0,
+            'wasteManagementText' => $wasteManagement->type_of_waste_management,
+            'backyardGardening' => $backyardGardening->total ?? 0,
+            'backyardGardeningText' => $backyardGardening->gardening_indication === 'no' ? 'Has Backyard Gardening' : 'Has No Backyard Gardening',
         ]);
     }
 

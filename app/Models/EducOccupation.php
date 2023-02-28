@@ -15,6 +15,7 @@ class EducOccupation extends Model
         'education',
         'occupation'
     ];
+
     public function resident()
     {
         return $this->belongsTo(Resident::class, 'resident_id','id');

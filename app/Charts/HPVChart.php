@@ -2,7 +2,9 @@
 
 namespace App\Charts;
 
+use App\Models\Hpv;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
+use Illuminate\Support\Facades\DB;
 
 class HPVChart
 {
@@ -15,11 +17,18 @@ class HPVChart
 
     public function build(): \ArielMejiaDev\LarapexCharts\DonutChart
     {
+        $hpvIndication = Hpv::select(DB::raw('COUNT("hpv_indication") AS hpv_indication_count'), 'hpv_indication')
+        ->groupBy('hpv_indication')
+        ->get();
+
         return $this->chart4->donutChart()
             ->setTitle('Human papillomavirus (HPV)')
-            ->setSubtitle('Female age (9/13 Years Old)')
+            ->setSubtitle('Barangay Cabantian Davao City')
             ->setColors(['#EB455F','#7DB9B6'])
-            ->addData([20, 24])
+            ->addData([
+                $hpvIndication->firstWhere('hpv_indication', 'yes')?->hpv_indication_count ?? 0,
+                $hpvIndication->firstWhere('hpv_indication', 'no')?->hpv_indication_count ?? 0,
+            ])
             ->setLabels(['Yes', 'No']);
     }
 }

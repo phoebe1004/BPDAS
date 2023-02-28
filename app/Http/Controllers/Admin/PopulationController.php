@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\File;
 use App\Charts\SocialEconomicStatusChart;
 use App\Charts\PopulationOfResidentsChart;
 use App\Charts\PopulationOfResidentsBySexChart;
+use App\Models\Resident;
 
 class PopulationController extends Controller
 {
@@ -35,6 +36,12 @@ class PopulationController extends Controller
         SES3Chart $chart9
         )
     {
+        $residentBySex = Resident::selectRaw('COUNT(sex) as total, sex')->groupBy('sex')->orderByDesc('total')->get();
+        $residentByPurok = Resident::selectRaw('COUNT(purok) as total, purok')->groupBy('purok')->orderByDesc('total')->first();
+        $residentByCivil = Resident::selectRaw('COUNT(civil_status) as total, civil_status')->groupBy('civil_status')->orderByDesc('total')->first();
+        $totalResident = $residentBySex->sum('total') ?? 0;
+        $residentBySex = $residentBySex->first();
+
         return view('admin.population.index',
         [
         'chart' => $chart->build(),
@@ -45,7 +52,14 @@ class PopulationController extends Controller
         'chart6' => $chart6->build(),
         'chart7' => $chart7->build(),
         'chart8' => $chart8->build(),
-        'chart9' => $chart9->build()
+        'chart9' => $chart9->build(),
+        'residentBySex' => $residentBySex->total ?? 0,
+        'residentBySexText' => $residentBySex->sex,
+        'residentByPurok' => $residentByPurok->total ?? 0,
+        'residentByPurokText' => $residentByPurok->purok,
+        'residentByCivil' => $residentByCivil->total ?? 0,
+        'residentByCivilText' => $residentByCivil->civil_status,
+        'totalResident' => $totalResident,
         ]);
 
     }
