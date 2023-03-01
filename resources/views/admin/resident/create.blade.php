@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('home.view')
 
 @section('title', 'BarangayCases')
 
@@ -906,13 +906,6 @@
                 </div>
             </div>
 
-            {{-- <div class="tab">
-                <h4>Resident's Pets & Animals:</h4>
-                <div class="form-row mt-2">
-                </div>
-            </div> --}}
-
-
             <div style="overflow:auto;" class=>
                 <div style="float:right;">
                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -929,121 +922,118 @@
                 <span class="step"></span>
                 <span class="step"></span>
             </div>
-
-
-
-        <script>
-            var currentTab = 0; // Current tab is set to be the first tab (0)
-            showTab(currentTab); // Display the current tab
-
-            function showTab(n) {
-                // This function will display the specified tab of the form...
-                var x = document.getElementsByClassName("tab");
-                x[n].style.display = "block";
-                //... and fix the Previous/Next buttons:
-                if (n == 0) {
-                    document.getElementById("prevBtn").style.display = "none";
-                } else {
-                    document.getElementById("prevBtn").style.display = "inline";
-                }
-                if (n == (x.length - 1)) {
-                    document.getElementById("ne xtBtn").innerHTML = "Submit";
-                } else {
-                    document.getElementById("nextBtn").innerHTML = "Next";
-                }
-                //... and run a function that will display the correct step indicator:
-
-            }
-
-            function nextPrev(n) {
-
-                // This function will figure out which tab to display
-                var x = document.getElementsByClassName("tab");
-                // Exit the function if any field in the current tab is invalid:
-                if (n == 1 && !validateForm()) return false;
-                // Hide the current tab:
-                x[currentTab].style.display = "none";
-                // Increase or decrease the current tab by 1:
-                currentTab = currentTab + n;
-                validateTab();
-                // if you have reached the end of the form...
-                if (currentTab >= x.length) {
-                    // ... the form gets submitted:
-                    document.getElementById("regForm").submit();
-                    return false;
-                }
-                // Otherwise, display the correct tab:
-                showTab(currentTab);
-            }
-
-            function validateTab() {
-                if (currentTab == 6) {
-                    document.getElementById('nextBtn').style = 'display: none;';
-                } else {
-                    document.getElementById('nextBtn').style = 'display: inline;';
-                }
-            }
-
-            function validateForm() {
-                // This function deals with validation of the form fields
-                var x, y, i, valid = true;
-                x = document.getElementsByClassName("tab");
-                y = x[currentTab].getElementsByTagName("input");
-                // A loop that checks every input field in the current tab:
-                // for (i = 0; i < y.length; i++) {
-                //     // If a field is empty...
-                //     if (y[i].value == "") {
-                //         // add an "invalid" class to the field:
-                //         y[i].className += " invalid";
-                //         // and set the current valid status to false
-                //         valid = false;
-                //     }
-                // }
-                // If the valid status is true, mark the step as finished and valid:
-                if (valid) {
-                    document.getElementsByClassName("step")[currentTab].className += " finish";
-                }
-                return valid; // return the valid status
-            }
-
-            function fixStepIndicator(n) {
-                // This function removes the "active" class of all steps...
-                var i, x = document.getElementsByClassName("step");
-                for (i = 0; i < x.length; i++) {
-                    x[i].className = x[i].className.replace(" active", "");
-                }
-                //... and adds the "active" class on the current step:
-                x[n].className += " active";
-            }
-        </script>
-
-        <script>
-            var residents = <?php echo $resident ?>;
-            var ids = new Set();
-
-            for (var i = 0; i < residents.length; i++) {
-                var id = residents[i].firstname + '@' + residents[i].middlename + '@' + residents[i].lastname;
-
-                ids.add(id);
-            }
-
-            function validateInformation() {
-                let firstname = document.getElementById('firstname').value;
-                let lastname = document.getElementById('lastname').value;
-                let middlename = document.getElementById('middlename').value;
-                let id = firstname + '@' + middlename + '@' + lastname;
-
-                if (ids.has(id)) {
-                    document.getElementById('nextBtn').disabled = true;
-                    document.getElementById('error-msg').style = 'color: red; display: block';
-                } else {
-                    document.getElementById('nextBtn').disabled = false;
-                    document.getElementById('error-msg').style = 'color: red; display: none';
-                }
-            }
-
-        </script>
-</form>
+        </form>
     </div>
 
+    <script>
+        var currentTab = 0; // Current tab is set to be the first tab (0)
+        showTab(currentTab); // Display the current tab
+
+        function showTab(n) {
+            // This function will display the specified tab of the form...
+            var x = document.getElementsByClassName("tab");
+            x[n].style.display = "block";
+            //... and fix the Previous/Next buttons:
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (x.length - 1)) {
+                document.getElementById("ne xtBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+            //... and run a function that will display the correct step indicator:
+
+        }
+
+        function nextPrev(n) {
+
+            // This function will figure out which tab to display
+            var x = document.getElementsByClassName("tab");
+            // Exit the function if any field in the current tab is invalid:
+            if (n == 1 && !validateForm()) return false;
+            // Hide the current tab:
+            x[currentTab].style.display = "none";
+            // Increase or decrease the current tab by 1:
+            currentTab = currentTab + n;
+            validateTab();
+            // if you have reached the end of the form...
+            if (currentTab >= x.length) {
+                // ... the form gets submitted:
+                document.getElementById("regForm").submit();
+                return false;
+            }
+            // Otherwise, display the correct tab:
+            showTab(currentTab);
+        }
+
+        function validateTab() {
+            if (currentTab == 6) {
+                document.getElementById('nextBtn').style = 'display: none;';
+            } else {
+                document.getElementById('nextBtn').style = 'display: inline;';
+            }
+        }
+
+        function validateForm() {
+            // This function deals with validation of the form fields
+            var x, y, i, valid = true;
+            x = document.getElementsByClassName("tab");
+            y = x[currentTab].getElementsByTagName("input");
+            // A loop that checks every input field in the current tab:
+            // for (i = 0; i < y.length; i++) {
+            //     // If a field is empty...
+            //     if (y[i].value == "") {
+            //         // add an "invalid" class to the field:
+            //         y[i].className += " invalid";
+            //         // and set the current valid status to false
+            //         valid = false;
+            //     }
+            // }
+            // If the valid status is true, mark the step as finished and valid:
+            if (valid) {
+                document.getElementsByClassName("step")[currentTab].className += " finish";
+            }
+            return valid; // return the valid status
+        }
+
+        function fixStepIndicator(n) {
+            // This function removes the "active" class of all steps...
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+            //... and adds the "active" class on the current step:
+            x[n].className += " active";
+        }
+    </script>
+
+    <script>
+        var residents = <?php echo $resident ?>;
+        var ids = new Set();
+
+        for (var i = 0; i < residents.length; i++) {
+            var id = residents[i].firstname + '@' + residents[i].middlename + '@' + residents[i].lastname;
+
+            ids.add(id);
+        }
+
+        function validateInformation() {
+            let firstname = document.getElementById('firstname').value;
+            let lastname = document.getElementById('lastname').value;
+            let middlename = document.getElementById('middlename').value;
+            let id = firstname + '@' + middlename + '@' + lastname;
+
+            if (ids.has(id)) {
+                document.getElementById('nextBtn').disabled = true;
+                document.getElementById('error-msg').style = 'color: red; display: block';
+            } else {
+                document.getElementById('nextBtn').disabled = false;
+                document.getElementById('error-msg').style = 'color: red; display: none';
+            }
+        }
+
+    </script>
 @endsection

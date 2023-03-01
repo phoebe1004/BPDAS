@@ -18,7 +18,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
-                w
+
             </div><!-- /.container-fluid -->
         </section>
         <!-- /.content -->
