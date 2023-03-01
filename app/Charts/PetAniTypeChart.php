@@ -26,7 +26,7 @@ class PetAniTypeChart
         ->setSubtitle('Barangay Cabantian Davao City')
         ->setColors(['#0057ff'])
         ->addData('total', $petsanimals->map(fn($row) => $row->total)->toArray())
-        ->setXAxis($petsanimals->map(fn($row) => $row->type)->toArray());
+        ->setXAxis($petsanimals->count() ? $petsanimals->map(fn($row) => $row->type)->toArray() : [""]);
 
     }
 }

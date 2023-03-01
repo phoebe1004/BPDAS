@@ -88,34 +88,47 @@ class HealthcaseController extends Controller
         $mrIndicationCount = MrTd::select(DB::raw('COUNT("mr_indication") AS total'), 'mr_indication')
         ->groupBy('mr_indication')
         ->firstWhere('mr_indication', 'yes');
-        $mrIndicationCount->title = 'Measles and Rubella';
+        if($mrIndicationCount?->mr_indication) {
+            $mrIndicationCount->title = 'Measles and Rubella';
+        }
+
         $tdIndicationCount = MrTd::select(DB::raw('COUNT("td_indication") AS total'), 'td_indication')
         ->groupBy('td_indication')
         ->firstWhere('td_indication', 'yes');
-        $tdIndicationCount->title = 'Tetanus and Diphtheria';
+        if($tdIndicationCount?->td_indication) {
+            $tdIndicationCount->title = 'Tetanus and Diphtheria';
+        }
+
         $mrtdCount = collect([$mrIndicationCount, $tdIndicationCount]);
         $mrtdCount  = $mrtdCount
             ->sortByDesc(fn($column) => $column->total ?? 0)
-            ->map(fn($column, $key) => [$column->total ?? 0, $column->title])
+            ->map(fn($column, $key) => [$column->total ?? 0, $column->title ?? ''])
             ->first();
 
         // covid
         $cplusIndication = CovidPlus::select(DB::raw('COUNT("c_plus_indication") AS total'), 'c_plus_indication')
         ->groupBy('c_plus_indication')
         ->firstWhere('c_plus_indication', 'yes');
-        $cplusIndication->title = 'Covid-19 Plus';
+        if($cplusIndication?->c_plus_indication) {
+            $cplusIndication->title = 'Covid-19 Plus';
+        }
+
         $cvacIndication = CovidVaccine::select(DB::raw('COUNT("c_vac_indication") AS total'), 'c_vac_indication')
         ->groupBy('c_vac_indication')
         ->firstWhere('c_vac_indication', 'yes');
-        $cvacIndication->title = 'Covid-19 Vaccines';
+        if($cvacIndication?->c_vac_indication) {
+            $cvacIndication->title = 'Covid-19 Vaccines';
+        }
         $cboostIndication = CovidBooster::select(DB::raw('COUNT("c_boost_indication") AS total'), 'c_boost_indication')
         ->groupBy('c_boost_indication')
         ->firstWhere('c_boost_indication', 'yes');
-        $cboostIndication->title = 'Covid-19 Boosters';
+        if($cboostIndication?->c_boost_indication) {
+            $cboostIndication->title = 'Covid-19 Boosters';
+        }
         $covidVaccineCount = collect([$cplusIndication, $cvacIndication, $cboostIndication]);
         $covidVaccineCount  = $covidVaccineCount
             ->sortByDesc(fn($column) => $column->total ?? 0)
-            ->map(fn($column, $key) => [$column->total ?? 0, $column->title])
+            ->map(fn($column, $key) => [$column->total ?? 0, $column->title ?? ''])
             ->first();
 
         return view('admin.healthcase.index',[
@@ -129,13 +142,13 @@ class HealthcaseController extends Controller
             'chart8' => $chart8->build(),
             'totalHealthCases' => $totalHealthCases ?? 0,
             'residentHealthPurokCount' => $residentHealthPurokCount[0] ?? 0,
-            'residentHealthPurokCountText' => $residentHealthPurokCount[1],
+            'residentHealthPurokCountText' => $residentHealthPurokCount[1] ?? '',
             'residentHealthMedicalCount' => $residentHealthMedicalCount[0] ?? 0,
-            'residentHealthMedicalCountText' => $residentHealthMedicalCount[1],
+            'residentHealthMedicalCountText' => $residentHealthMedicalCount[1] ?? '',
             'mrtdCount' => $mrtdCount[0] ?? 0,
-            'mrtdCountText' => $mrtdCount[1],
+            'mrtdCountText' => $mrtdCount[1] ?? '',
             'covidVaccineCount' => $covidVaccineCount[0] ?? 0,
-            'covidVaccineCountText' => $covidVaccineCount[1],
+            'covidVaccineCountText' => $covidVaccineCount[1] ?? '',
         ]);
     }
 

@@ -26,7 +26,7 @@ use App\Http\Controllers\Admin\EducationOccupationController;
 */
 
 Route::get('/', function () {
-    return view("home.home");
+    return redirect()->route('populations.index');
 });
 
 Route::get('/login', function () {
@@ -37,16 +37,18 @@ Route::post("authenticate",[LoginController::class,"adminLogin"])->name("admin-l
 
 Route::get('/health_cases', [AdminController::class, "health_cases"])->name('health_cases');
 
+Route::resource('populations', PopulationController::class);
+Route::resource('specifications', SpecificationController::class);
+Route::resource('educationoccupations', EducationOccupationController::class);
+Route::resource('healthcases', HealthcaseController::class);
+Route::resource('facilitystructures', FacilitystructureController::class);
+Route::resource('pets', PetController::class);
+Route::resource('groups', GroupController::class);
+
 Route::middleware(['ifLoggedOut'])->group(function () {
-    Route::resource('populations', PopulationController::class);
     Route::resource('dashboard', DashboardController::class);
-    Route::resource('specifications', SpecificationController::class);
+
     Route::resource('residents', ResidentController::class);
-    Route::resource('healthcases', HealthcaseController::class);
-    Route::resource('educationoccupations', EducationOccupationController::class);
-    Route::resource('facilitystructures', FacilitystructureController::class);
-    Route::resource('pets', PetController::class);
-    Route::resource('groups', GroupController::class);
 
     Route::get('/csv', [ResidentController::class, 'importForm']);
     Route::post('/import', [ResidentController::class, 'import'])->name('resident.import');

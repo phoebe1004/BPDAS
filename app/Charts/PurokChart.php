@@ -29,7 +29,7 @@ class PurokChart
             ->setSubtitle('Barangay Cabantian Davao City')
             ->setColors(['#379237'])
             ->addData('total',  $residentPurok->map(fn($row) => $row->total)->toArray())
-            ->setXAxis($residentPurok->map(fn($row) => $row->purok)->toArray());
+            ->setXAxis($residentPurok->count() ? $residentPurok->map(fn($row) => $row->purok)->toArray() : [""]);
             // ->addData('Bacahoa Village', [2])
             // ->addData('Camelon Compound', [3])
             // ->addData('CDE Phase 4', [4])

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('home.view')
 
 @section('title', 'Resident')
 
@@ -9,7 +9,7 @@
     }
 </style>
 
-<div class="container bg-info bg-gradient">
+<div class="container">
     <div class="row">
       <div class="col-md-12">
         <h1>{{ $resident->id }}.

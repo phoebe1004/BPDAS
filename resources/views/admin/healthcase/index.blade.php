@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('home.view')
 
 @section('title', 'BarangayCases')
 
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-md-9">
                             <div class="d-flex align-items-center justify-content-end text-end h-100">
-                                {{$residentHealthMedicalCountText}}
+                                {{$residentHealthPurokCountText}}
                             </div>
                         </div>
                     </div>
