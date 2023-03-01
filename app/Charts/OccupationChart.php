@@ -25,7 +25,7 @@ class OccupationChart
             ->addData('Employed', [
                 $education->has('Antonio Village') ? $education['Antonio Village']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
                 $education->has('Bacahoa Village') ? $education['Bacahoa Village']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
-                $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Employed')->count() ?? 0 : 0,
+                $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
                 $education->has('CDE Phase 4') ? $education['CDE Phase 4']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
                 $education->has('CDE Phase 3') ? $education['CDE Phase 3']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
                 $education->has('CDE Phase 2') ? $education['CDE Phase 2']->firstWhere(fn ($i, $k) => $k === 'Employed')?->count() ?? 0 : 0,
@@ -91,7 +91,7 @@ class OccupationChart
                 [
                     $education->has('Antonio Village') ? $education['Antonio Village']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
                     $education->has('Bacahoa Village') ? $education['Bacahoa Village']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
-                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Unemployed')->count() ?? 0 : 0,
+                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 4') ? $education['CDE Phase 4']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 3') ? $education['CDE Phase 3']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 2') ? $education['CDE Phase 2']->firstWhere(fn ($i, $k) => $k === 'Unemployed')?->count() ?? 0 : 0,
@@ -158,7 +158,7 @@ class OccupationChart
                 [
                     $education->has('Antonio Village') ? $education['Antonio Village']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
                     $education->has('Bacahoa Village') ? $education['Bacahoa Village']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
-                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Self Employed')->count() ?? 0 : 0,
+                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 4') ? $education['CDE Phase 4']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 3') ? $education['CDE Phase 3']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 2') ? $education['CDE Phase 2']->firstWhere(fn ($i, $k) => $k === 'Self Employed')?->count() ?? 0 : 0,
@@ -225,7 +225,7 @@ class OccupationChart
                 [
                     $education->has('Antonio Village') ? $education['Antonio Village']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,
                     $education->has('Bacahoa Village') ? $education['Bacahoa Village']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,
-                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Student')->count() ?? 0 : 0,
+                    $education->has('Camelon Compound') ? $education['Camelon Compound']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 4') ? $education['CDE Phase 4']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 3') ? $education['CDE Phase 3']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,
                     $education->has('CDE Phase 2') ? $education['CDE Phase 2']->firstWhere(fn ($i, $k) => $k === 'Student')?->count() ?? 0 : 0,

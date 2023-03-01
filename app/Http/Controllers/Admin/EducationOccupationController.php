@@ -34,6 +34,9 @@ class EducationOccupationController extends Controller
         ->map(fn($column, $key) => [$column->count() ?? 0, $key])
         ->first();
 
+
+        // dd($mostUneducatedByPurok);
+
         return view('admin.education_occupation.index',[
             'chart' => $chart->build(),
             'chart2' => $chart2->build(),

@@ -88,11 +88,11 @@ class HealthcaseController extends Controller
         $mrIndicationCount = MrTd::select(DB::raw('COUNT("mr_indication") AS total'), 'mr_indication')
         ->groupBy('mr_indication')
         ->firstWhere('mr_indication', 'yes');
-        $mrIndicationCount = $mrIndicationCount?->title ? 'Measles and Rubella' : '';
+        $mrIndicationCount->title = $mrIndicationCount?->title ? 'Measles and Rubella' : '';
         $tdIndicationCount = MrTd::select(DB::raw('COUNT("td_indication") AS total'), 'td_indication')
         ->groupBy('td_indication')
         ->firstWhere('td_indication', 'yes');
-        $tdIndicationCount = $tdIndicationCount?->title ? 'Tetanus and Diphtheria' : '';
+        $tdIndicationCount->title = $tdIndicationCount?->title ? 'Tetanus and Diphtheria' : '';
         $mrtdCount = collect([$mrIndicationCount, $tdIndicationCount]);
         $mrtdCount  = $mrtdCount
             ->sortByDesc(fn($column) => $column->total ?? 0)
@@ -103,11 +103,11 @@ class HealthcaseController extends Controller
         $cplusIndication = CovidPlus::select(DB::raw('COUNT("c_plus_indication") AS total'), 'c_plus_indication')
         ->groupBy('c_plus_indication')
         ->firstWhere('c_plus_indication', 'yes');
-        $cplusIndication = $cplusIndication?->title ? 'Covid-19 Plus' : '';
+        $cplusIndication->title = $cplusIndication?->title ? 'Covid-19 Plus' : '';
         $cvacIndication = CovidVaccine::select(DB::raw('COUNT("c_vac_indication") AS total'), 'c_vac_indication')
         ->groupBy('c_vac_indication')
         ->firstWhere('c_vac_indication', 'yes');
-        $cvacIndication = $cvacIndication?->title ? 'Covid-19 Vaccines' : '';
+        $cvacIndication->title = $cvacIndication?->title ? 'Covid-19 Vaccines' : '';
         $cboostIndication = CovidBooster::select(DB::raw('COUNT("c_boost_indication") AS total'), 'c_boost_indication')
         ->groupBy('c_boost_indication')
         ->firstWhere('c_boost_indication', 'yes');
@@ -133,7 +133,7 @@ class HealthcaseController extends Controller
             'residentHealthMedicalCount' => $residentHealthMedicalCount[0] ?? 0,
             'residentHealthMedicalCountText' => $residentHealthMedicalCount[1] ?? '',
             'mrtdCount' => $mrtdCount[0] ?? 0,
-            'mrtdCountText' => $mrtdCount[1],
+            'mrtdCountText' => $mrtdCount[1] ?? '',
             'covidVaccineCount' => $covidVaccineCount[0] ?? 0,
             'covidVaccineCountText' => $covidVaccineCount[1] ?? '',
         ]);

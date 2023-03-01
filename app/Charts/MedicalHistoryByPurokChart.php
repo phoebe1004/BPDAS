@@ -24,7 +24,7 @@ class MedicalHistoryByPurokChart
             ->addData('HPN (Hypertension)', [
                 $residentHealth->has('Antonio Village') ? $residentHealth['Antonio Village']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
                 $residentHealth->has('Bacahoa Village') ? $residentHealth['Bacahoa Village']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
-                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Hypertension')->count() ?? 0 : 0,
+                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 4') ? $residentHealth['CDE Phase 4']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 3') ? $residentHealth['CDE Phase 3']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 2') ? $residentHealth['CDE Phase 2']->firstWhere(fn($i, $k) => $k === 'Hypertension')?->count() ?? 0 : 0,
@@ -88,7 +88,7 @@ class MedicalHistoryByPurokChart
             ->addData('Diabetes (DM)', [
                 $residentHealth->has('Antonio Village') ? $residentHealth['Antonio Village']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
                 $residentHealth->has('Bacahoa Village') ? $residentHealth['Bacahoa Village']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
-                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Diabetes')->count() ?? 0 : 0,
+                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 4') ? $residentHealth['CDE Phase 4']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 3') ? $residentHealth['CDE Phase 3']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 2') ? $residentHealth['CDE Phase 2']->firstWhere(fn($i, $k) => $k === 'Diabetes')?->count() ?? 0 : 0,
@@ -152,7 +152,7 @@ class MedicalHistoryByPurokChart
             ->addData('Tuberculosis (TB)', [
                 $residentHealth->has('Antonio Village') ? $residentHealth['Antonio Village']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
                 $residentHealth->has('Bacahoa Village') ? $residentHealth['Bacahoa Village']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
-                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')->count() ?? 0 : 0,
+                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 4') ? $residentHealth['CDE Phase 4']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 3') ? $residentHealth['CDE Phase 3']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 2') ? $residentHealth['CDE Phase 2']->firstWhere(fn($i, $k) => $k === 'Tuberculosis')?->count() ?? 0 : 0,
@@ -216,7 +216,7 @@ class MedicalHistoryByPurokChart
             ->addData('Surgery (S)', [
                 $residentHealth->has('Antonio Village') ? $residentHealth['Antonio Village']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
                 $residentHealth->has('Bacahoa Village') ? $residentHealth['Bacahoa Village']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
-                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Surgery')->count() ?? 0 : 0,
+                $residentHealth->has('Camelon Compound') ? $residentHealth['Camelon Compound']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 4') ? $residentHealth['CDE Phase 4']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 3') ? $residentHealth['CDE Phase 3']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
                 $residentHealth->has('CDE Phase 2') ? $residentHealth['CDE Phase 2']->firstWhere(fn($i, $k) => $k === 'Surgery')?->count() ?? 0 : 0,
