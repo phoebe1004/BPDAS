@@ -34,7 +34,7 @@ class PetController extends Controller
             'chart6' => $chart6->build(),
             'charts' => $charts->build(),
             'mostPetCountByType' => $mostPetCountByType->total ?? 0,
-            'mostPetCountByTypeText' => $mostPetCountByType->type,
+            'mostPetCountByTypeText' => $mostPetCountByType->type ?? '',
             'petsanimalsTotal' => $petsanimalsTotal,
             'unvaccinatedPetsTotal' => $unvaccinatedPetsTotal->total ?? 0,
         ]);

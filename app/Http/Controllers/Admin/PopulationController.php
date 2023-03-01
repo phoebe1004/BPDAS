@@ -54,11 +54,11 @@ class PopulationController extends Controller
         'chart8' => $chart8->build(),
         'chart9' => $chart9->build(),
         'residentBySex' => $residentBySex->total ?? 0,
-        'residentBySexText' => $residentBySex->sex,
+        'residentBySexText' => $residentBySex?->sex,
         'residentByPurok' => $residentByPurok->total ?? 0,
-        'residentByPurokText' => $residentByPurok->purok,
+        'residentByPurokText' => $residentByPurok?->purok,
         'residentByCivil' => $residentByCivil->total ?? 0,
-        'residentByCivilText' => $residentByCivil->civil_status,
+        'residentByCivilText' => $residentByCivil?->civil_status,
         'totalResident' => $totalResident,
         ]);
 

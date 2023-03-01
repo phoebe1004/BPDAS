@@ -25,7 +25,21 @@ class PopulationOfResidentsChart
         ->setSubtitle('Barangay Cabantian Davao City')
         ->setColors(['#0057ff'])
         ->addData('total', $residentClassification->map(fn($row) => $row->total)->toArray())
-        ->setXAxis($residentClassification->map(fn($row) => $row->classification_by_age)->toArray());
+        ->setXAxis([
+            "none" ,
+            "Newborn" ,
+            "Senior citizens" ,
+            "Adolescent" ,
+            "Adult (20-59 yrs old)" ,
+            "15-49 y.o., not pregnant & non-PP" ,
+            "Pregnant" ,
+            "Adolescent Pregnant" ,
+            "Post Partum" ,
+            "Infant (29 days - 11 month old)" ,
+            "Under 5 (0-59 months)" ,
+            "PWD" ,
+        ]);
+        // ->setXAxis($residentClassification->map(fn($row) => $row->classification_by_age)->toArray());
 
         // 'Newborn',
         // 'Senior citizens',

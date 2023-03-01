@@ -36,13 +36,13 @@ class SpecificationController extends Controller
             'chart2' => $chart2->build(),
             'chart3' => $chart3->build(),
             'waterSource' => $waterSource->total ?? 0,
-            'waterSourceText' => $waterSource->type_of_water_source,
+            'waterSourceText' => $waterSource?->type_of_water_source,
             'sanitaryToilet' => $sanitaryToilet->total ?? 0,
-            'sanitaryToiletText' => $sanitaryToilet->type_of_toilet_facility,
+            'sanitaryToiletText' => $sanitaryToilet?->type_of_toilet_facility,
             'wasteManagement' => $wasteManagement->total ?? 0,
-            'wasteManagementText' => $wasteManagement->type_of_waste_management,
+            'wasteManagementText' => $wasteManagement?->type_of_waste_management,
             'backyardGardening' => $backyardGardening->total ?? 0,
-            'backyardGardeningText' => $backyardGardening->gardening_indication === 'no' ? 'Has Backyard Gardening' : 'Has No Backyard Gardening',
+            'backyardGardeningText' => $backyardGardening?->gardening_indication === 'no' ? 'Has Backyard Gardening' : 'Has No Backyard Gardening',
         ]);
     }
 
