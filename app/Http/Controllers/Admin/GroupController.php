@@ -20,6 +20,7 @@ class GroupController extends Controller
                          CommunityIndication $chart8)
     {
         $groupType = CommunityGroup::select(DB::raw('COUNT("com_grp_type") AS total'), 'com_grp_type')
+        ->where('com_grp_type', '!=', 'None')
         ->groupBy('com_grp_type')
         ->orderByDesc('total')
         ->first();
