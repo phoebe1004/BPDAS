@@ -60,11 +60,14 @@
             </a>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="{{ route('residents.index') }}" class="nav-link active" aria-current="page">
-                        Resident Profile
-                    </a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a href="{{ route('residents.index') }}" class="nav-link active" aria-current="page">
+                            Resident Profile
+                        </a>
+                    </li>
+                @endauth
+
                 <li class="nav-item">
                     <a href="{{ route('populations.index') }}" class="nav-link link-dark">
                         Residents Population
@@ -104,10 +107,19 @@
                 <!-- Left navbar links -->
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
-                                class="fas fa-bars"></i></a>
+                        <a class="nav-link py-1" data-widget="pushmenu" href="#" role="button">
+                            <i class="fas fa-bars fs-2"></i>
+                        </a>
                     </li>
                 </ul>
+
+                <div class="me-5 ms-auto">
+                    @auth
+                        <a href="{{route('admin-logout')}}" class="text-white fw-bold">Sign Out</a>
+                    @else
+                        <a href="{{route('admin-login')}}" class="text-white fw-bold">Sign In</a>
+                    @endauth
+                </div>
             </nav>
 
             <div class="content-wrapper py-4 me-0 pe-0">

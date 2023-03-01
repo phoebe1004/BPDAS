@@ -26,7 +26,7 @@ use App\Http\Controllers\Admin\EducationOccupationController;
 */
 
 Route::get('/', function () {
-    return view("home.home");
+    return redirect()->route('populations.index');
 });
 
 Route::get('/login', function () {
