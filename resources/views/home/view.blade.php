@@ -130,7 +130,7 @@
 
             <!-- /.content-wrapper -->
             <footer class="main-footer">
-                <strong>Copyright © 2023 <a href="#">Barangay Profiling with Demographic Analysis
+                <strong>Copyright © 2023 <a href="#">Resident Profiling in Cabantian Davao City with Demographic Analysis
                         System</a></strong>
                 All rights reserved.
                 <div class="float-right d-none d-sm-inline-block">
