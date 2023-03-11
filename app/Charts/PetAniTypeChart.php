@@ -24,7 +24,7 @@ class PetAniTypeChart
         return $this->chart->barChart()
         ->setTitle('Type of Pets and Animals')
         ->setSubtitle('Barangay Cabantian Davao City')
-        ->setColors(['#0057ff'])
+        ->setColors(['#3F497F'])
         ->addData('total', $petsanimals->map(fn($row) => $row->total)->toArray())
         ->setXAxis($petsanimals->count() ? $petsanimals->map(fn($row) => $row->type)->toArray() : [""]);
 

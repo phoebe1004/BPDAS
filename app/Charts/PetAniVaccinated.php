@@ -23,7 +23,7 @@ class PetAniVaccinated
         return $this->charts->barChart()
             ->setTitle('Number of Pets and Animals Vaccinated')
             ->setSubtitle('Barangay Cabantian Davao City')
-            ->setColors(['#F90716','#06FF00'])
+            ->setColors(['#2E4F4F','#0E8388', '#3F497F'])
             ->addData('Yes', [$petsanimals->firstWhere('vaccinated', 'yes')?->total ?? 0])
             ->addData('No', [$petsanimals->firstWhere('vaccinated', 'no')?->total ?? 0])
             ->addData('Some', [$petsanimals->firstWhere('vaccinated', 'some')?->total ?? 0])
